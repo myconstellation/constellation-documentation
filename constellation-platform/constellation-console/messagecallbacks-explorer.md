@@ -1,0 +1,35 @@
+---
+ID: 2712
+post_title: Le MessageCallbacks Explorer
+author: Sebastien Warin
+post_date: 2016-09-23 08:33:37
+post_excerpt: ""
+layout: post
+permalink: >
+  https://developer.myconstellation.io/constellation-platform/constellation-console/messagecallbacks-explorer/
+published: true
+post_modified: 2016-11-03 17:51:49
+---
+Le MessageCallbacks Explorer permet d’afficher la liste des MessageCallbacks exposés par les packages de votre Constellation.
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-44.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-43.png" alt="image" width="350" height="172" border="0" /></a></p>
+<p align="left">Pour chaque MessageCallback déclaré vous retrouverez une description, la liste des paramètres du MessageCallback avec un formulaire de test et un bouton d’envoi.</p>
+<p align="left">Il est ainsi possible de tester directement les MC de vos packages depuis la Console Constellation.</p>
+<p align="left">Vous disposez également d’un moteur de recherche :</p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-45.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-44.png" alt="image" width="205" height="114" border="0" /></a></p>
+<p align="left">Si le package est déployé sur plusieurs sentinelle le bouton “Invoke” vous proposera d’envoyer votre message à une instance en particulier ou à toutes les instances du package dans votre Constellation :</p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-51.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-50.png" alt="image" width="350" height="130" border="0" /></a></p>
+<p align="left">Aussi le MessageCallbacks Explorer dispose d’un générateur de code permettant d’afficher des “code snippets” d’invocation du MC pour chaque API Constellation.</p>
+<p align="left">Vous pouvez ouvrir ce générateur de code en cliquant sur le bouton <img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-57.png" alt="image" width="26" height="25" border="0" /> à côté du nom de chaque MessageCallback.</p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-46.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-45.png" alt="image" width="350" height="225" border="0" /></a></p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-47.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-46.png" alt="image" width="350" height="216" border="0" /></a></p>
+<p align="left">Les types personnalisés sont affichés sous forme de lien sur lesquels vous pouvez cliquer pour ouvrir la fenêtre de description de type :</p>
+<p align="left"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-53.png"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-52.png" alt="image" width="350" height="102" border="0" /></a></p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-54.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-53.png" alt="image" width="350" height="187" border="0" /></a></p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-55.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-54.png" alt="image" width="350" height="172" border="0" /></a></p>
+<p align="left">Enfin pour les MessageCallbacks avec message de réponse, vous pouvez les invoquer en envoyant le message dans une saga en cochant la case “With Saga” :</p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-56.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-55.png" alt="image" width="95" height="66" border="0" /></a></p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-48.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-47.png" alt="image" width="350" height="139" border="0" /></a></p>
+<p align="left">Les messages de réponse des sagas apparaissent sous forme de notification dans la barre du haut :</p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-49.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-48.png" alt="image" width="350" height="117" border="0" /></a></p>
+En cliquant dessus vous pourrez consulter le message de réponse ainsi que l’ensemble des informations liées à la saga :
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-50.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-49.png" alt="image" width="350" height="238" border="0" /></a></p>

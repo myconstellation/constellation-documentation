@@ -1,0 +1,125 @@
+---
+ID: 1491
+post_title: 'Acc&eacute;der au hub de contr&ocirc;le avec le ControlManager'
+author: Sebastien Warin
+post_date: 2016-03-21 11:24:49
+post_excerpt: ""
+layout: post
+permalink: >
+  https://developer.myconstellation.io/client-api/net-package-api/controlmanager/
+published: true
+post_modified: 2016-03-22 17:02:58
+---
+<p>Le hub de contrôle permet d’accéder à différente fonction de pilotage de votre Constellation. Voyons en détail quand y accéder depuis vos packages .NET.</p> <h3>Accéder au hub de contrôle</h3> <p>Tout d’abord il faut déclarer que vous souhaitez vous connecter au hub de contrôle dans le manifeste de votre package .</p> <p>Vous devez donc ajouter l’attribut “EnableControlHub” à <em>true</em> sur la balise “Package” en éditant le fichier PacxkageInfo.xml.</p> <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/03/image-151.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/03/image_thumb-128.png" width="424" height="258"></a></p> <p>Ensuite, il faut que votre package se connecte à votre Constellation avec une “Access Key” qui possède l’autorisation d’accès au hub de contrôle.</p> <p>Il faudra donc ajouter l’attribut “enableControlHub” à true sur un de vos credentials et affecter ce credential à votre package :</p> <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/03/image-152.png"><img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/03/image_thumb-129.png" width="424" height="233"></a></p> <p>Ainsi votre package pourra accéder au hub de contrôle de contrôle. Vous devriez d’ailleurs toujours tester la propriété “HasControlManager” pour gérer les erreurs où l’accès au ControlManager n’est pas autorisé.</p><pre class="lang:C# decode:true">if (PackageHost.HasControlManager)
+{
+    PackageHost.WriteInfo("ControlHub OK");
+}
+else
+{
+    PackageHost.WriteError("ControlHub access denied !");
+}</pre>
+<h3>Suivre les sentinelles et leurs statuts</h3>
+<p>Il y a deux manières d’obtenir la liste à un instant T des sentinelles enregistrées dans votre Constellation :</p>
+<ul>
+<li><u>RequestSentinelsList</u> : vous retourne la liste des sentinelles en une seule fois par l’évènement “<em>SentinelsListUpdated</em>” 
+<li><u>RequestSentinelUpdates</u> : vous retourne l’état de chaque sentinelle dans l’évènement “<em>SentinelUpdated</em>” (cette évènement est levé pour chaque sentinelle)</li></ul>
+<p>En principe pour récupérer la liste des sentinelles de votre Constellation, vous utiliserez toujours la première méthode.</p>
+<p>Par exemple :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.SentinelsListUpdated += (s, e) =&gt;
+{
+    PackageHost.WriteInfo("Il y a {0} sentinelle(s)", e.Sentinels.Count);
+    foreach (SentinelInfo sentinel in e.Sentinels)
+    {
+        PackageHost.WriteInfo("Sentinelle '{0}' (Plateforme: {1}) =&gt; IsConnected = {2}",
+            sentinel.Description.SentinelName,
+            sentinel.Description.Platform,
+            sentinel.IsConnected);
+    }
+};
+PackageHost.ControlManager.RequestSentinelsList();</pre>
+<p>Vous pouvez également vous abonner en temps réel aux mises à jour des sentinelles de votre Constellation.</p>
+<p>Pour cela il faut activer la réception des mises à jour :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.ReceiveSentinelUpdates = true;</pre>
+<p>Puis attacher un handler sur l’evenement “SentinelUpdated” qui se produit à chaque mise à jour du statut d’une sentinelle :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.SentinelUpdated += (s, e) =&gt;
+{
+    PackageHost.WriteInfo("Sentinelle '{0}' (Plateforme: {1}) =&gt; IsConnected = {2}",
+        e.Sentinel.Description.SentinelName,
+        e.Sentinel.Description.Platform,
+        e.Sentinel.IsConnected);
+};</pre>
+<h3>Superviser les packages</h3>
+<h4>Récupérer les packages d’une sentinelle</h4>
+<p>Pour récupérer la liste des packages qui sont déployés sur une sentinelle vous devez attacher un handler sur l’évènement “<em>PackagesListUpdated</em>” et appeler la méthode “<em>RequestPackagesList</em>” en spécifiant le nom de la sentinelle.</p>
+<p>Vous récupèrerez une liste de de <em>PackageInfo</em> :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PackagesListUpdated += (s, e) =&gt;
+{
+    PackageHost.WriteInfo("Il y a {0} package(s) sur la sentinelle {1}", e.Packages.Count, e.SentinelName);
+};
+PackageHost.ControlManager.RequestPackagesList("MA-SENTINELLE");</pre>
+<p>Chaque “PackageInfo” contiendra différente information sur l’instance du package (description du package, état du package, état de la connexion, version du package, etc…) :</p><pre class="lang:C# decode:true">foreach (PackageInfo package in e.Packages)
+{
+    PackageHost.WriteInfo("Package '{0}' - Etat = {1}", package.Package.Name, package.State);
+}
+</pre>
+<h4>Suivre l’état des packages</h4>
+<p>Vous pouvez aussi vous abonnez aux mises à jour des états des packages en activant la réception cette propriété :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.ReceivePackageState = true;</pre>
+<p>Vous pourrez ensuite être notifier de tout changement d’état de vos packages de votre Constellation :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PackageStateUpdated += (s, e) =&gt;
+{
+    PackageHost.WriteInfo("Le package '{0}' est maintenant dans l'état {1}", e.PackageName, e.State);
+};</pre>
+<h4>Suivre la consommation des packages</h4>
+<p>Vous pouvez aussi récupérer la consommation des ressources (CPU et RAM) de vos package avec cette propriété :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.ReceivePackageUsage = true;</pre>
+<p>Une mesure est réalisée toutes les secondes via l’évènement “PackageUsageUpdated ”.</p>
+<p>Par exemple, on pourrait écrire un warning si un package consomme plus de 50% (juste pour l’exemple) :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PackageUsageUpdated += (s, e) =&gt;
+{
+    if (e.CPU &gt; 50) // Package consommant plus de 50% du CPU à un instant T
+    {
+        PackageHost.WriteWarn("Le package {0} consomme maintenant plus de 50% !!! CPU={1}% RAM={2}ko",
+            e.PackageName, e.CPU, e.RAM / 1024);
+    }
+};</pre>
+<h4>Contrôler les packages</h4>
+<p>Vous pouvez démarrer un package sur une sentinelle avec la méthode “StartPackage” :</p><pre class="lang:C# decode:true">// Démrrage du package "MonPremierPackage" sur la sentinelle "MON-PC"
+PackageHost.ControlManager.StartPackage("MON-PC", "MonPremierPackage");</pre>
+<p>Ou encore l’arrêter avec la méthode “StopPackage” :</p><pre class="lang:C# decode:true">// Arret du package "MonPremierPackage" sur la sentinelle "MON-PC"
+PackageHost.ControlManager.StopPackage("MON-PC", "MonPremierPackage");</pre>
+<p>Pour redémarrer (Stop puis Start) un package sur une sentinelle donnée, utilisez la méthode “RestartPackage” :</p><pre class="lang:C# decode:true">// Redémarrage du package "MonPremierPackage" sur la sentinelle "MON-PC"
+PackageHost.ControlManager.RestartPackage("MON-PC", "MonPremierPackage");</pre>
+<p>Enfin pour mettre à jour un package, utilisez la méthode “ReloadPackage”.</p>
+<p>Un “reload” stoppe le package, ordonne à la sentinelle de re-télécharger le package sur le serveur, puis le déploie en local avant de le démarrer.</p><pre class="lang:C# decode:true">// Mise à jour du package "MonPremierPackage" sur la sentinelle "MON-PC"
+PackageHost.ControlManager.ReloadPackage("MON-PC", "MonPremierPackage");</pre>
+<h3>Accèder aux logs en temps réel</h3>
+<p>Pour récupérer les logs qui circulent dans votre Constellation, activer la propriété suivante :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.ReceivePackageLog = true;</pre>
+<p>Il suffit ensuite d’attacher handler sur l’évènement “LogEntryReceived “. Vous recevrez en parametre&nbsp; l’object “LogEntry” qui contient toutes les informaitons sur un log (le message, la date, le couple Sentinelle/Package à l’origine du log et la sévérité du message).</p>
+<p>Par exemple :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.LogEntryReceived += (s, e) =&gt;
+{
+    if (e.LogEntry.PackageName != PackageHost.PackageInstanceName) // Ne pas prendre mes prendre les logs de ce package
+    {
+        // /!\ On log des logs, juste pour l'exemple ;)
+        PackageHost.WriteInfo("Je recois un log daté du {0} du package {1} sur la sentinelle {2} de type {3}." +
+            "Message = {4}",
+            e.LogEntry.Date.ToString(),
+            e.LogEntry.SentinelName,
+            e.LogEntry.PackageName,
+            e.LogEntry.Level,
+            e.LogEntry.Message);
+    }
+};</pre>
+<p>Notez qu’ici on logue dans Constellation (“WriteInfo”) les logs des autres packages (d’où le &lt;if&gt;). Ca n’a pas de sens, c’est juste pour l’exemple !</p>
+<h3>Récupérer les descriptions des packages</h3>
+<p>Comme vous le savez, tous les <a href="/client-api/net-package-api/messagecallbacks/#Decrire_ses_MessageCallbacks">MessageCallbacks ainsi que les types personnalisés</a> utilisés en entrée ou en sortie sont décrit. Tout comme les <a href="/client-api/net-package-api/stateobjects/#Decrire_les_types_de_StateObjects">types personnalisés des StateObjects</a>.</p>
+<p>En vous connectant au hub de contrôle vous pouvez récupérer le <em>PackageDescriptor</em> de chaque package :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PackageDescriptorUpdated += (s, e) =&gt;
+{
+    PackageHost.WriteInfo("Pour le package {0}, il y a {1} MessageCallback(s) associés à " +
+                         "{2} type(s) ainsi que {3} type(s) de StateObject",
+        e.PackageName,
+        e.Descriptor.MessageCallbacks.Count,
+        e.Descriptor.MessageCallbackTypes.Count,
+        e.Descriptor.StateObjectTypes.Count);
+};
+PackageHost.ControlManager.RequestPackageDescriptor("MonPremierPackage");</pre>
+<h3>Purger les StateObjects</h3>
+<p>Pour supprimer tous les StateObjects d’un package déployé une sentinelle :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PurgeStateObjects("MON-PC", "MonPremierPackage");</pre>
+<p>Ou seulement un package en particulier (identifié par son nom) :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PurgeStateObjects("MON-PC", "MonPremierPackage", "Demo");</pre>
+<p>Ou encore, tous les StateObjects d’un type particulier d’une instance de package :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.PurgeStateObjects("MON-PC", "MonPremierPackage", type:"TypeDemo");</pre>
+<h3>Recharger la configuration</h3>
+<p>Vous pouvez recharger et déployer la configuration Constellation en invoquant la méthode :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.ReloadServerConfiguration();</pre>
+<p>Vous pouvez également passer un booléen pour indiquer si il faut déployer la configuration (c’est à dire pousser la configuration sur chaque sentinelle et package). Par défaut, la valeur est à “true” (la configuration est déployée).</p>
+<p>Autrement :</p><pre class="lang:C# decode:true">PackageHost.ControlManager.ReloadServerConfiguration(false);</pre>
