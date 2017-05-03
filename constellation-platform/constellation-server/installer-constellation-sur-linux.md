@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/constellation-server/installer-constellation-sur-linux/
 published: true
-post_modified: 2017-05-04 00:59:59
+post_modified: 2017-05-04 01:19:07
 ---
 Dans cet article nous allons découvrir comment installer Constellation sur un système Linux/Debian et ses dérivés (Raspbian, Ubuntu, etc..).
 
@@ -123,7 +123,7 @@ Ici sélectionnons la deuxième option :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-27.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration des clés d'accès" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-27.png" alt="Configuration des clés d'accès" width="244" height="156" border="0" /></a><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-28.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration des clés d'accès" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-28.png" alt="Configuration des clés d'accès" width="244" height="156" border="0" /></a></p>
 <p align="left">Et pour la clé “Administrator”, utilisons le couple “admin/password” :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-29.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration des clés d'accès" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-29.png" alt="Configuration des clés d'accès" width="244" height="156" border="0" /></a><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-30.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration des clés d'accès" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-30.png" alt="Configuration des clés d'accès" width="244" height="156" border="0" /></a></p>
-<p align="left">Pour finir, vous pouvez ajouter le droits de débogage sur la clé “Administrator”. Cela nous permettra de tester des packages connectés à votre Constellation depuis le SDK sous Visual Studio.</p>
+<p align="left">Pour finir, vous pouvez ajouter le droit de débogage sur la clé “Administrator”. Cela nous permettra de tester des packages connectés à votre Constellation depuis le SDK sous Visual Studio.</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-31.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration des clés d'accès" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-31.png" alt="Configuration des clés d'accès" width="428" height="273" border="0" /></a></p>
 
 <h4>Etape 6 : installation et configuration de la Console Constellation</h4>
