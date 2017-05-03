@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/installer-constellation/
 published: true
-post_modified: 2017-05-03 17:56:06
+post_modified: 2017-05-03 18:00:49
 ---
 Après avoir <a href="/plateforme/">introduit Constellation</a>, découvrons comment installer la plateforme sur vos ordinateurs ou serveurs.
 <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hD8Upyb2jXo" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
@@ -100,7 +100,7 @@ Dans ce guide, sélectionnons le profil “Développeur” :
 <p align="left">Le serveur Constellation utilise le protocole HTTP pour exposer ses différents hubs et API. Pour cela vous avez besoin de choisir le port d’écoute et de l’ouvrir au niveau de votre firewall.</p>
 <p align="left">L’assistant peut déclarer le port que vous avez choisi dans le pare-feu de Windows. Si vous souhaitez ouvrir Constellation à l’extérieur de votre réseau local, à vous d’ouvrir le port sur votre routeur.</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-15.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration réseau" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-15.png" alt="Configuration réseau" width="428" height="333" border="0" /></a></p>
-<p align="left">A noter que vous pouvez déclarer dans la configuration du serveur Constellation sur plusieurs port HTTP et/ou HTTPS et même définir un chemin HTTP personnalisé. Il est d’ailleurs conseiller d’activer le HTTPS pour ouvrir votre serveur Constellation sur Internet. Vous retrouverez plusieurs articles sur la configuration avancée du serveur dans la rubrique consacrée au <a href="/constellation-platform/constellation-server/">Constellation Server</a>.</p>
+<p align="left">A noter que vous pouvez déclarer dans la configuration du serveur Constellation sur plusieurs ports HTTP et/ou HTTPS ou même définir un chemin HTTP personnalisé. Il est d’ailleurs conseillé d’activer le protocole HTTPS si vous comptez exposer votre serveur Constellation sur Internet. Vous retrouverez plusieurs articles sur la configuration avancée du serveur dans la rubrique consacrée au <a href="https://developer.myconstellation.io/constellation-platform/constellation-server/">Constellation Server</a>.</p>
 
 <h5 align="left">Etape 6.4 : choix des clés d’accès</h5>
 <p align="left">Pour se connecter à Constellation vous avez besoin de créer des clés d’accès (les “Access Keys”). Dans le cas d’une nouvelle installation, l’assistant vous proposera de créer deux clés :</p>
