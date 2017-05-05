@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-angular-js/
 published: true
-post_modified: 2017-05-05 17:24:36
+post_modified: 2017-05-05 17:31:55
 ---
 <h3>Préparer la page AngularJS</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Angular” et ses dépendances :
@@ -204,7 +204,7 @@ constellation.registerMessageCallback("HelloWorld", function (msg) {
 </pre>
 Ici on enregistre deux MessageCallbacks.
 
-Si votre page reçoit un MessageCallback “HelloWorld”, une alerte sera ouverte, si elle reçoit un MessageCallback “ChangeTitle”, le titre de votre page sera modifiée avec l’argument passé dans le MC.
+Si votre page reçoit un MessageCallback “HelloWorld”, une alerte sera ouverte, si elle reçoit un MessageCallback “ChangeTitle”, le titre de votre page sera modifié avec l’argument passé dans le MC.
 
 Bien entendu, comme vos pages HTML peuvent enregistrer autant de MessageCallbacks qu’elles souhaitent et que ces MessageCallbacks sont invocables depuis n’importe quel système connecté à Constellation, d’autres pages Web, des objets à base d’Arduino, ESP ou autre, des programmes Python, .NET, etc… vous pouvez imaginer tout type d’usage.
 <h3>Consommer des StateObjects</h3>
