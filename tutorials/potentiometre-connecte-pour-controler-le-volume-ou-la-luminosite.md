@@ -8,10 +8,10 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/potentiometre-connecte-pour-controler-le-volume-ou-la-luminosite/
 published: true
-post_modified: 2017-05-10 11:15:44
+post_modified: 2017-05-10 11:32:15
 ---
 Dans ce tutoriel nous allons créer un encodeur rotatif connecté pour piloter tout type de chose comme le volume ou la luminosité de vos ordinateurs Windows par exemple grâce au package <a href="/package-library/windowscontrol/">WindowsControl</a>.
-<p style="text-align: center;"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Volume2" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/Volume2.gif" alt="Volume2" width="400" height="225" border="0" /></p>
+<p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Volume2" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/Volume2.gif" alt="Volume2" width="400" height="225" border="0" /></p>
 Pour cela nous allons utiliser un encodeur rotatif aussi nommé potentiomètre angulaire comme le KY-040 (comptez entre 50 cts et 2 euros pièce) avec un ESP8266 connecté en Wifi à votre Constellation.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/ky040.jpg"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="KY-040" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ky040_thumb.jpg" alt="KY-040" width="240" height="184" border="0" /></a></p>
 
