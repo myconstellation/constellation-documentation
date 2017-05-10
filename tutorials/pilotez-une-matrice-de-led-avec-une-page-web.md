@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/pilotez-une-matrice-de-led-avec-une-page-web/
 published: true
-post_modified: 2017-05-09 14:56:21
+post_modified: 2017-05-10 11:33:23
 ---
 Découvrons dans ce tutoriel comment piloter en temps réel une matrice de LED bicolore depuis une page Web en quelque ligne.
 <p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="ESP Matrix Controller" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ESPMatrix2.gif" alt="ESP Matrix Controller" width="400" height="225" border="0" /></p>
@@ -352,5 +352,5 @@ $(document).ready(function() {
 Et voilà notre page HTML est prête ! Lancez-la dans notre navigateur et profitez du résultat.
 <h3 align="left">Demos</h3>
 Quelques démonstrations animées ....
-<p style="text-align: center;" align="left"><img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="ESP Matrix Controller" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ESPMatrix1.gif" alt="ESP Matrix Controller" width="400" height="225" border="0" /></p>
-<p style="text-align: center;" align="left"><img class="aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="ESPMatrix3" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ESPMatrix3.gif" alt="ESPMatrix3" width="400" height="225" border="0" /></p>
+<p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="ESP Matrix Controller" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ESPMatrix1.gif" alt="ESP Matrix Controller" width="400" height="225" border="0" /></p>
+<p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="ESPMatrix3" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ESPMatrix3.gif" alt="ESPMatrix3" width="400" height="225" border="0" /></p>
