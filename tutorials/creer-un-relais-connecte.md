@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-relais-connecte/
 published: true
-post_modified: 2017-05-10 17:46:17
+post_modified: 2017-05-10 17:51:19
 ---
 Dans ce tutoriel nous allons créer un relais connecté qu’on pourra contrôler depuis une page Web, une montre ou même un script Powershell pour piloter une lumière, une porte de garage, une chaudière ou n’importe quelle charge électrique (10 ampères max) ou contact sec.
 <h3>Prérequis</h3>
@@ -35,10 +35,12 @@ Attention tout de même si vous manipulez des sources AC 220V et n’oubliez pas
 Pour démarrer vous devez dans Constellation déclarer une sentinelle associée à une clé d’accès et un package virtuel. Ici notre ESP8266 est représenté par la sentinelle nommée “ESP8266” et le package virtuel se nomme “MyRelay”.
 
 Dans l’Arduino IDE, nous créons un nouveau projet à partir du Starter Kit Constellation pour ESP8266 dans lequel nous allons définir le nom de notre réseau Wifi (SSID) ainsi que sa clé d’accès  puis nous configurerons le client Constellation en spécifiant l’identité de notre package virtuel, sa clé d’accès et l’adresse/port de notre serveur Constellation :
-<pre class="lang:default decode:true">// ESP8266 Wifi
+<pre class="lang:default decode:true crayon-selected">// ESP8266 Wifi
 #include &lt;ESP8266WiFi.h&gt;
 char ssid[] = "MON SSID";
-char password[] = "macléWifi!!!!";   // Constellation client
+char password[] = "macléWifi!!!!";
+
+// Constellation client
 Constellation&lt;WiFiClient&gt; constellation("X.X.X.X", 8088, "ESP8266", "MyRelay", "xxxxxxxxxxxxxxxxx")</pre>
 Encore une fois si tout cela est nouveau pour vous, je vous recommande <a href="/getting-started/connecter-un-arduino-ou-un-esp8266-constellation/">de suivre ce guide d’introduction à l’API Constellation pour Arduino/ESP8266</a>.
 
