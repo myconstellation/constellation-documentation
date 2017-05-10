@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-relais-connecte/
 published: true
-post_modified: 2017-05-10 17:51:19
+post_modified: 2017-05-10 17:55:29
 ---
 Dans ce tutoriel nous allons créer un relais connecté qu’on pourra contrôler depuis une page Web, une montre ou même un script Powershell pour piloter une lumière, une porte de garage, une chaudière ou n’importe quelle charge électrique (10 ampères max) ou contact sec.
 <h3>Prérequis</h3>
