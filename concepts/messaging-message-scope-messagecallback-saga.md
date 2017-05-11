@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/messaging-message-scope-messagecallback-saga/
 published: true
-post_modified: 2017-05-11 16:34:35
+post_modified: 2017-05-11 16:36:58
 ---
 Tous systèmes connectés dans Constellation (les packages réels ou virtuels et les consommateurs) peuvent tous envoyer ou recevoir des messages (sauf si des autorisations restreignent cela).
 <h3>Message &amp; Scope</h3>
@@ -47,8 +47,6 @@ Les messages dans Constellation servent essentiellement à invoquer des méthode
 Il s’agit tout simplement déclarer une méthode de votre code comme "MessageCallback", c’est à dire que si le package reçoit un message dont la clé du message est le nom d’une méthode déclarée comme MessageCallback, alors cette méthode sera invoquée. Le contenu du message reçu (c’est à dire les “Datas”)  contiendra les paramètres de la méthode.
 
 De la même façon, pour invoquer une méthode d’un autre package, il suffit d’envoyer un message dont la clé est la méthode à invoquer avec comme contenu de message les paramètres à passer à cette méthode.
-
-&nbsp;
 <h3>Les Sagas</h3>
 Chaque message envoyé dans Constellation est à sens unique. Il n’y a aucun retour.
 
@@ -72,4 +70,4 @@ Il s’agit de la description du package qui contient entre autre les MessageCal
 
 Le <a href="/constellation-platform/constellation-console/messagecallbacks-explorer/">MessageCallback Explorer</a> de la Console Constellation exploite les “Package Descriptors” connus pour créer la liste de l'ensemble des MessageCallbacks exposés par les package d'une Constellation avec le détail des paramètres en entrée et le type de retour. Il est également possible d'invoquer ces MC avec une interface de test et de générer le code pour invoquer ces MC sur les différentes API de Constellation.
 
-<a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-59.png"><img class="wp-image-4600  aligncenter" title="MessageCallbacks Explorer" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-59-300x91.png" alt="MessageCallbacks Explorer" width="323" height="98" /></a>
+<a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-59.png"><img class="wp-image-4600 aligncenter" title="MessageCallbacks Explorer" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-59-300x91.png" alt="MessageCallbacks Explorer" width="323" height="98" /></a>
