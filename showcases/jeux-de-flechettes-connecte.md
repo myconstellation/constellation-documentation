@@ -2,15 +2,15 @@
 ID: 4642
 post_title: 'Jeux de fl&eacute;chettes connect&eacute; &agrave; Constellation'
 author: Sebastien Warin
-post_date: 2017-05-10 19:44:59
+post_date: 2016-11-20 19:44:59
 post_excerpt: ""
 layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/jeux-de-flechettes-connecte/
 published: true
-post_modified: 2017-05-10 19:44:59
+post_modified: 2017-05-11 11:27:58
 ---
-Projet réalisé par : Buguel Maxime, Cartiaux Charles, Douillard Thomas et Roeland Quentin.
+Projet réalisé par Buguel Maxime, Cartiaux Charles, Douillard Thomas et Roeland Quentin en Novembre 2016.
 <h3>Introduction</h3>
 Nous sommes quatre étudiants en Master 2 à l’ISEN Lille. Nous nous sommes récemment découverts une passion pour les fléchettes, surement lié à la présence d’une cible dans le bar que nous fréquentons (avec modération) après les cours.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image18.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Cible de fléchettes Phoenix-Darts" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image18_thumb.png" alt="Cible de fléchettes Phoenix-Darts" width="156" height="240" border="0" /></a></p>
