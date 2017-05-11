@@ -4,14 +4,14 @@ post_title: >
   Connecter ses volets dans la
   Constellation avec des Arduino et un
   Raspberry
-author: Sebastien Warin
+author: Lucas
 post_date: 2015-06-08 11:21:39
 post_excerpt: ""
 layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/connecter-volets-constellation-arduino-raspberry/
 published: true
-post_modified: 2017-05-11 11:23:34
+post_modified: 2017-05-11 11:24:39
 ---
 <em>Ecrit par Lucas Dupuis en Juin 2015.</em>
 
