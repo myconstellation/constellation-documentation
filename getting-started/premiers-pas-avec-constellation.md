@@ -8,9 +8,9 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/premiers-pas-avec-constellation/
 published: true
-post_modified: 2017-05-11 18:04:18
+post_modified: 2017-05-11 18:06:47
 ---
-Ça y est, on y arrive… C’est l’heure de démarrer votre première expérience Constellation !
+Ça y est, on y arrive… C’est l’heure de démarrer votre première expérience Constellation mais avant de commencer, <strong>vous devez obligatoirement avoir <a href="/login/?reauth=1&amp;redirect_to=/getting-started/premiers-pas-avec-constellation/">créer un compte</a></strong> pour pouvoir déployer Constellation.
 <p align="center"><img class="size-full wp-image-3693 aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; padding-right: 0px; border: 0px;" src="https://developer.myconstellation.io/wp-content/uploads/2016/11/clip_image002.png" alt="" width="211" height="211" border="0" /></p>
 Si pour vous Constellation est encore nouveau je vous recommande vivement la lecture de ces deux articles :
 <ul>
@@ -27,9 +27,7 @@ En parlant de concepts, il important de bien les comprendre :
 </ul>
 Ca va ? Vous en savez suffisamment ? Prêt pour le grand bain ?
 
-Avant de commencer, <strong>vous devez obligatoirement avoir <a href="/login/?reauth=1&amp;redirect_to=/getting-started/premiers-pas-avec-constellation/">créer un compte</a></strong> pour pouvoir déployer Constellation.
-
-Maintenant vous pouvez déployer votre serveur Constellation, la Console, ajouter des sentinelles, installer le SDK et gérer les mises à jour grâce au <strong>Web Platform Installer</strong>.
+N'oubliez pas de<strong> <a href="/login/?reauth=1&amp;redirect_to=/getting-started/premiers-pas-avec-constellation/">créer un compte</a></strong> avant de pouvoir déployer votre serveur Constellation, la Console, ajouter des sentinelles, installer le SDK et gérer les mises à jour grâce au <strong>Web Platform Installer</strong>.
 
 Sous <strong>Windows</strong> : [wpfilebase tag=file id=42 tpl=default /]
 <ul>
