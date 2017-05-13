@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-capteur-de-luminosite-dans-une-prise-220v/
 published: true
-post_modified: 2017-05-13 15:35:14
+post_modified: 2017-05-13 15:37:25
 ---
 Ce tutoriel est sur le principe identique à celui ici : <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/">Créer un capteur de température, humidité et luminosité connecté</a> sauf que nous allons utiliser un ESP-01 beaucoup plus petit et moins cher qu'un D1 Mini Pro.
 
