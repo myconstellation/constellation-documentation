@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/premiers-pas-avec-constellation/
 published: true
-post_modified: 2017-05-13 15:42:30
+post_modified: 2017-05-13 15:44:52
 ---
 Ça y est, on y arrive… C’est l’heure de démarrer votre première expérience Constellation mais avant de commencer, <strong>vous devez obligatoirement avoir <a href="/login/?reauth=1&amp;redirect_to=/getting-started/premiers-pas-avec-constellation/">créer un compte</a></strong> pour pouvoir déployer Constellation.
 <p align="center"><img class="size-full wp-image-3693 aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; padding-right: 0px; border: 0px;" src="https://developer.myconstellation.io/wp-content/uploads/2016/11/clip_image002.png" alt="" width="211" height="211" border="0" /></p>
@@ -47,12 +47,12 @@ Prêt pour développer avec Constellation ?
  	<li><a href="/getting-started/connectez-vos-pages-web-constellation/">Connectez vos pages Web à Constellation</a></li>
  	<li><a href="/getting-started/creez-votre-premier-package-constellation-en-python/">Créez votre premier package Constellation en Python</a></li>
  	<li><a href="/getting-started/connecter-un-arduino-ou-un-esp8266-constellation/">Connectez un Arduino ou un ESP8266 à Constellation</a></li>
+ 	<li>Suivez également <a href="/tutorials/">les tutoriels</a> avec des projets prêts à l'emploi</li>
 </ul>
 Pas envie de lire ? Visionnez les webcasts de découverte :
 <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZd0WwMuqdfAirIlnlsrTlCHTJ5UJZIvU" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
 Besoin d’aide ?
 <ul>
- 	<li>Suivez <a href="/tutorials/">les tutoriels</a></li>
  	<li>N’hésitez pas à <a href="/questions/">poser vos questions ici</a></li>
  	<li>Ou discuter de vos projets, de vos idées <a href="/forums/">sur les forums</a></li>
  	<li>C’est privé ? <a href="/contact/">Contactez-nous</a></li>
