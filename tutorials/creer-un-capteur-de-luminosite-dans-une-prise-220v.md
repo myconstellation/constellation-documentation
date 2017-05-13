@@ -8,9 +8,9 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-capteur-de-luminosite-dans-une-prise-220v/
 published: true
-post_modified: 2017-05-13 15:38:21
+post_modified: 2017-05-13 15:41:17
 ---
-Ce tutoriel est sur le principe identique à celui ici : <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/">Créer un capteur de température, humidité et luminosité connecté</a> sauf que nous allons utiliser un ESP-01 beaucoup plus petit et moins cher qu'un D1 Mini Pro.
+Ce tutoriel est sur le principe identique à celui-ci : <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/">Créer un capteur de température, humidité et luminosité connecté</a> sauf que nous allons utiliser un ESP-01 beaucoup plus petit et moins cher qu'un D1 Mini Pro.
 
 Nous assemblerons l'ESP8266 et le capteur de luminosité TSL2561 dans une prise 220v avec un convertisseur 220v -&gt; 3v3.
 <h3>Prérequis</h3>
@@ -137,14 +137,10 @@ La méthode "<em>pushLuxOnConstellation</em>" récupère les données du capteur
 <pre class="lang:default decode:true">constellation.pushStateObject("Lux", stringFormat("{ 'Lux':%d, 'Broadband':%d, 'IR':%d }", lux, full, ir), "LightSensor.Lux", 300);</pre>
 Une fois le programme téléversé, votre prise publiera le StateObject à l'intervalle régulier la luminosité ambiante.
 <h3>Exploiter le capteur</h3>
-Comme vous le savez, une fois les données mesurées publiées dans un StateObject n'importe quel système connecté dans Constellation peut récuperer ou s'abonner en temps réel au StateObject.
-
-&nbsp;
+Comme vous le savez, une fois les données mesurées publiées dans un StateObject n'importe quel système connecté dans Constellation peut récupérer ou s'abonner en temps réel au StateObject.
 
 On peut donc écrire des pages Web, des scripts, des packages .NET ou Python, Arduino, etc… qui exploiteront ces mesures en temps réel.
 
-Je vous renvoie sur <a href="/tutorials/un-capteur-de-luminosite-exterieur-pilote-par-raspberry/#Exploitez_les_donnees">cette page</a> ou<a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/#Etape_3_Une_page_Web_pour_afficher_votre_capteur_en_temps_reel"> cette autre page</a> pour avoir quelque idée.
+Je vous renvoie sur <a href="/tutorials/un-capteur-de-luminosite-exterieur-pilote-par-raspberry/#Exploitez_les_donnees">cette page</a> ou<a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/#Etape_3_Une_page_Web_pour_afficher_votre_capteur_en_temps_reel"> cette autre page</a> pour avoir quelques idées.
 
 Pour ma part ce capteur installé dans le salon est affiché en temps réel sur <a href="https://sebastien.warin.fr/2015/07/15/3033-s-panel-une-interface-domotique-et-iot-multi-plateforme-avec-cordova-angularjs-et-constellation-ou-comment-crer-son-dashboard-domotique-mural/">un dashboard Web</a>,  stocké dans ElasticSearch et Cacti et exploité dans un package .NET nommé "MyBrain" car cette information sur la luminosité ambiante sert dans beaucoup de scénario : gestion des éclairages ou des volets.
-
-&nbsp;
