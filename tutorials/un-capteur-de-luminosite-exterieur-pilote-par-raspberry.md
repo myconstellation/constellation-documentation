@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/un-capteur-de-luminosite-exterieur-pilote-par-raspberry/
 published: true
-post_modified: 2017-05-13 14:46:15
+post_modified: 2017-05-13 14:54:00
 ---
 Dans un précédent tutoriel, nous avons découvert comment créer un <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/">capteur de luminosité avec un ESP8266</a> connecté par Wifi. Ici je vous propose de créer un capteur extérieur piloté par un Raspberry Pi.
 
@@ -131,8 +131,6 @@ Le plus simple et le plus fiable pour récupérer les données du capteur TSL256
 
 Il suffit récupérer les 3 fichiers C et de les compiler avec GCC pour générer le binaire. Pour vous simplifier la tache, vous pouvez directement récupérer le binaire <a href="https://developer.myconstellation.io/download/resources/tutorials/GetTSL2561">GetTSL2561 ici</a>.
 
-&nbsp;
-
 Ajoutez ensuite un deuxième script nommé "Lux.py" dans le répertoire "Scripts" de votre projet et <strong>n'oubliez pas</strong> d'inclure votre script dans le package en définissant la Build Action à "Content" et en activant la copie du fichier dans le répertoire de sortie :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-77.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Inclure les scripts Python dans le package" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-77.png" alt="Inclure les scripts Python dans le package" width="254" height="339" border="0" /></a></p>
 Copiez également le binaire <a href="https://developer.myconstellation.io/download/resources/tutorials/GetTSL2561">GetTSL2561</a> dans le répertoire "Scripts" de votre package en l'incluant également dans le package (Build Action à Content et Copy if newer).
@@ -177,7 +175,7 @@ def Start():
 Constellation.Start(Start)</pre>
 Comme pour le script "Light.py", on déclare la méthode "<em>Start</em>" comme méthode de démarrage. Celle-ci boucle tant que le package est démarré à l'intervalle défini par le setting "Interval" qu'on a déclaré à 10 secondes par défaut dans le manifeste.
 
-A chaque itération, on invoque la méthode "<em>DoMeasure</em>" qui démarre le programme "<em>GetTSL2561</em>" et on parse avec une regex le résultat de la sortie du programme (process.stdout) pour extraire le code de retour, le broadband (spectre visible), l'infrarouge et le nombre de lux courant mesuré par le capteur.
+A chaque itération, on invoque la méthode "<em>DoMeasure</em>" qui démarre le programme "<em>GetTSL2561</em>" et on parse avec une regex le résultat de la sortie du programme (<em>process.stdout</em>) pour extraire le code de retour, le broadband (spectre visible), l'infrarouge et le nombre de lux courant mesuré par le capteur.
 
 Si le code de retour est égal à 0 c'est que la mesure est correcte, on publie alors un StateObject nommé "Lux" contenant les trois propriétés mesurées : Broadband, IR et Lux.
 <pre class="lang:python decode:true">Constellation.PushStateObject("Lux", { "Broadband": broadband, "IR" : ir, "Lux" : lux }, "LightSensor.Lux")</pre>
@@ -191,14 +189,12 @@ Notre nouveau StateObject "Lux" est un objet complexe contenant trois propriét�
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-79.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Detail du StateObject Lux" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-79.png" alt="Detail du StateObject Lux" width="454" height="330" border="0" /></a></p>
 
 <h3>Exploitez les données</h3>
-Notre package Python vis sa vie sur notre Raspberry et publie à intervalle régulier deux StateObjects sur base des mesures réalisées par la photoresistance et/ou le capteur de lux TSL2561.
+Notre package Python vit sa vie sur notre Raspberry et publie à intervalle régulier deux StateObjects sur base des mesures réalisées par la photorésistance et/ou le capteur de lux TSL2561.
 
-On peut maintenant écrire des pages Web, des scripts, des packages .NET ou Python, Arduino, etc… qui exploiterons ces mesures en temps réel.
+On peut maintenant écrire des pages Web, des scripts, des packages .NET ou Python, Arduino, etc… qui exploiteront ces mesures en temps réel.
 <h4>Un dashboard Web</h4>
-// page web / dashboard
-
-Depuis <a href="/getting-started/connectez-vos-pages-web-constellation/">une page Web</a>, il suffit d'ajouter un <a href="/client-api/javascript-api/consommer-constellation-angular-js/">StateObjectLink</a>. Vous pouvez vous inspiré <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/#Etape_3_Une_page_Web_pour_afficher_votre_capteur_en_temps_reel">de ce tutoriel</a> par exemple.
-<pre class="lang:js decode:true ">constellation.registerStateObjectLink("*", "LightSensor", "Lux", "*", function (so) {
+Depuis <a href="/getting-started/connectez-vos-pages-web-constellation/">une page Web</a>, il suffit d'ajouter un <a href="/client-api/javascript-api/consommer-constellation-angular-js/">StateObjectLink</a>. Vous pouvez vous inspirer <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/#Etape_3_Une_page_Web_pour_afficher_votre_capteur_en_temps_reel">de ce tutoriel</a> par exemple.
+<pre class="lang:js decode:true">constellation.registerStateObjectLink("*", "LightSensor", "Lux", "*", function (so) {
   $scope.$apply(function () {
     console.log("Lux = ", so.Value.Lux);
   });
@@ -208,7 +204,7 @@ Par exemple sur le <a href="https://sebastien.warin.fr/2015/07/15/3033-s-panel-u
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-81.png"><img title="S-Panel" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-81.png" alt="S-Panel" width="354" height="210" border="0" /></a></p>
 
 <h4>Un programme .NET</h4>
-Vous pouvez là aussi vous inspirer <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/#Etape_4_optionnelle_creer_un_package_NET_pour_exploiter_les_donnees_du_capteur">de ce tutoriel</a>. En clair, il suffit dans votre code C# d'ajouter des <a href="/client-api/net-package-api/consommer-des-stateobjects/">StateObjectLinks </a>:
+Vous pouvez là aussi vous inspirer <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/#Etape_4_optionnelle_creer_un_package_NET_pour_exploiter_les_donnees_du_capteur">de ce tutoriel</a>. En clair, il suffit dans votre code C# d'ajouter des <a href="/client-api/net-package-api/consommer-des-stateobjects/">StateObjectLinks </a>avec l'API.NET :
 <pre class="lang:c# decode:true ">[StateObjectLink("LightSensor", "Lux")]
 public StateObjectNotifier Lux { get; set; }</pre>
 Ainsi la propriété .NET nommée "Lux" ci-dessus sera liée en temps réel au StateObject "Lux" du package "LigthSensor".
@@ -220,7 +216,7 @@ Vous pouvez ajouter des événements dès que la valeur change :
 };</pre>
 <img class="alignnone size-medium wp-image-4596 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-57-300x153.png" alt="" width="300" height="153" />
 
-Vous pouvez ainsi faire ce que bon vous semble avec cette information. Par exemple allumer automatiquement les lumières si la luminosité est trop faible, fermer les volet, enregistrer les données dans un fichier Excel ou une base de données, etc.. etc..
+Vous pouvez ainsi faire ce que bon vous semble avec cette information. Par exemple allumer automatiquement les lumières si la luminosité est trop faible, fermer les volets, enregistrer la valeur des Lux dans un fichier Excel ou une base de données, etc.. etc..
 <h4>Historisation avec ElasticSearch / Kibana</h4>
 En utilisant le package <a href="/package-library/graylogconnector">Graylog </a>du <a href="/plateforme/package-repository/">catalogue de package</a>, on peut historiser les mesures de notre capteur dans une base ElasticSearch.
 
@@ -234,11 +230,11 @@ Dans la configuration du package Graylog, on aura quelque chose comme :
         &lt;gelfOutput name="Graylog server UDP" host="graylog.ajsinfo.loc" port="12201" protocol="Udp" /&gt;
     &lt;/outputs&gt;
 &lt;/graylogConfiguration&gt;</pre>
-La documentation du package <a href="/package-library/graylogconnector">Graylog</a> est disponible <a href="/package-library/graylogconnector">ici</a>. En résume on crée ici un abonnement au StateObject "Lux" du package "LightSensor" et dans les "outputs" on a déclaré le serveur Graylog.
+La documentation du package <a href="/package-library/graylogconnector">Graylog</a> est disponible <a href="/package-library/graylogconnector">ici</a>. En résumé on crée ici un abonnement pour la StateObject "Lux" du package "LightSensor" et dans les "outputs" on a déclaré notre serveur Graylog.
 
-De ce fait dès que le StateObject "Lux" est mis à jour par notre package Python, le package Graylog enregistre la nouvelle version du StateObject sur le serveur Graylog qui lui même utilise ElasticSearch comme base de stockage.
+De ce fait dès que le StateObject "Lux" est mis à jour par notre package Python, le package Graylog enregistre la nouvelle version du StateObject sur le serveur Graylog qui lui-même utilise ElasticSearch comme base de stockage.
 
-Ainsi on pourra utiliser un outils comme Kibana pour visualiser l'évolution de notre StateObject :
+Ainsi on pourra utiliser un outil comme Kibana pour visualiser l'évolution de notre StateObject :
 
 <img class="aligncenter" title="Kibana" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-83.png" alt="Kibana" width="454" height="304" border="0" />
 
