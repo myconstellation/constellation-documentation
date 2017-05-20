@@ -8,8 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-04-29 14:10:10
+post_modified: 2017-05-20 14:10:45
 ---
+<h3>20/05/2017 : Update Client 1.8.2.17140</h3>
+<ul>
+ 	<li>Common : bugfix lors des réponses de Saga sur le framework Mono (veuillez mettre à jour la librairie sur vos packages depuis Nuget)</li>
+ 	<li>Common : détection du framework .NET 4.6.2 et .NET 4.7 dans la description du package au serveur</li>
+</ul>
 <h3>28/04/2017 : Release 1.8.2.17118</h3>
 <ul>
  	<li>Server / Management API : enregistrement des tableaux JSON dans un SettingContent (et non un SettingValue)</li>
