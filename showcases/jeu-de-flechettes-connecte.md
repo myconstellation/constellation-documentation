@@ -1,14 +1,14 @@
 ---
 ID: 4642
-post_title: 'Jeux de fl&eacute;chettes connect&eacute; &agrave; Constellation'
+post_title: 'Jeu de fl&eacute;chettes connect&eacute; &agrave; Constellation'
 author: Sebastien Warin
 post_date: 2016-11-20 19:44:59
 post_excerpt: ""
 layout: post
 permalink: >
-  https://developer.myconstellation.io/showcases/jeux-de-flechettes-connecte/
+  https://developer.myconstellation.io/showcases/jeu-de-flechettes-connecte/
 published: true
-post_modified: 2017-05-11 11:27:58
+post_modified: 2017-05-25 23:19:51
 ---
 Projet réalisé par Buguel Maxime, Cartiaux Charles, Douillard Thomas et Roeland Quentin en Novembre 2016.
 <h3>Introduction</h3>
