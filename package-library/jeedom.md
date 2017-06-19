@@ -133,35 +133,7 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 <h3>Le plugin pour Jeedom (version 1.0)</h3>
 <h4>Installation</h4>
 Afin d’éviter de questionner Jeedom toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour Jeedom a été développé.
-
-Pour l’installer, il faut rajouter le répertoire <a href="http://erwann.laville.free.fr/repo.xml">http://erwann.laville.free.fr/repo.xml</a> en bas de la page plugins de votre Logitech Media Server.
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0064.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image006[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0064_thumb.png" alt="clip_image006[4]" width="354" height="49" border="0" /></a></p>
-Une fois validé, un nouveau plugin sera disponible à l’installation. Il faudra le coche, valider et redémarrer pour l’installer.
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0084.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image008[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0084_thumb.png" alt="clip_image008[4]" width="354" height="21" border="0" /></a></p>
-Une fois installé, vous pourrez indiquer les informations de Constellation dans les paramètres du plugin :
-<ul>
- 	<li>L’adresse IP de Constellation sans http:// et sans le port</li>
- 	<li>Le port de Constellation (par défaut 8088)</li>
- 	<li>La clé API correspondant au package virtuel</li>
- 	<li>Le nom de la sentinel dans laquelle sera publiée les informations (par défaut Squeezebox)</li>
- 	<li>Le nom du package dans lequel sera publié les informations (par défaut Info)</li>
-</ul>
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image010.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image010" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image010_thumb.png" alt="clip_image010" width="354" height="173" border="0" /></a></p>
-Une fois tout indiqué, celui-ci va envoyer un message dans les logs de Constellation afin de tester la connexion.
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image012.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image012" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image012_thumb.png" alt="clip_image012" width="354" height="92" border="0" /></a></p>
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0134.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image013[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0134_thumb.png" alt="clip_image013[4]" width="354" height="106" border="0" /></a></p>
-Vous pouvez alors rafraichir cette page de paramètre pour voir le résultat de cette communication (cela peut prendre jusqu’à 5 secondes).
-
-Si le résultat est Ok, vous aurez « Communication Ok » dans la partie résultat.
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0154.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image015[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0154_thumb.png" alt="clip_image015[4]" width="354" height="89" border="0" /></a></p>
-S’il y a eu un problème de transmission, cette erreur s’affichera.
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0174.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image017[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0174_thumb.png" alt="clip_image017[4]" width="354" height="90" border="0" /></a></p>
-Vous aurez également en dernier l’url qu’utilisera LMS pour envoyer des informations à Constellation.
-
-À noter qu’à la connexion avec Constellation, LMS réalise une purge de la Sentinel / du Package indiqués dans la configuration.
-
-Voilà la configuration du plugin est terminé. Tous les StateObjects seront envoyés vers la sentinelle et le package indiqués.
-
+Celui-ci vous permet d'envoyer toutes les informations d'un équipement quand une ou plusieurs informations de cet équipement se mettent à jour.
 Il faut donc les rajouter dans Constellation, par exemple ici :
 <pre class="lang:xhtml decode:true">&lt;sentinel name="Squeezebox" credential="Standard"&gt;
   &lt;packages&gt;
@@ -169,7 +141,10 @@ Il faut donc les rajouter dans Constellation, par exemple ici :
   &lt;/packages&gt;
 &lt;/sentinel&gt;</pre>
 <h4>Les StateObjects</h4>
-Vous retrouverez autant de StateObject que de lecteurs connectés au LMS ainsi qu’un StateObject indiquant la liste des Squeezebox connectées :
+Le plugin Constellation pour Jeedom envoit un SO par type d'équipement ajouté dans la configuration.
+Pour le moment, les SO ont comme nom  le chemin de l'équipement dansJeedom, par exemple : 
+<h4>Les Plugins compatiblent</h4>
+Du fait du système utilisé (fonction listener) tous les plugins de Jeedom ne sont pas compatibles. Voici une liste non exhaustive des plugins Jeedom essayés  :
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
