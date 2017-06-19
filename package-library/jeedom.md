@@ -135,9 +135,13 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 Afin d’éviter de questionner Jeedom toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour Jeedom a été développé.
 Celui-ci vous permet d'envoyer toutes les informations d'un équipement quand une ou plusieurs informations de cet équipement se mettent à jour.
 
-Dans la page de configuration du plugin, vous pouvez indiquer le nom de la sentinelle pour les SO envoyés. 
+Le plugin peut être téléchargé à cette adresse : http://erwann.laville.free.fr/Jeedom/constellation.zip
 
-Pour chaque équipement créé, son nom sera le nom du  package.
+Il vous suffit alors de l'extraire dans le dossier plugin de Jeedom. Une fois installé, vous pourrez l'activer dans la liste des plugins sur Jeedom :
+
+Une fois activé, vous aurez accès à la configuration générale du plugin. Il vous faudra indiquer l'url de Constellation (sans le http), le nom de la sentinelle et la clé créditential associée au plugin.
+
+Par la suite vous pouvez ajouter autant d'équipement que souhaités. Chaque équipement créé correspondra à un package différent sur Constellation. Le nom de cet équipement correspondra au nom du State Object.
 
 <h4>Les StateObjects</h4>
 
