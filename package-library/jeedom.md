@@ -110,7 +110,7 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 <td width="167">Aucun</td>
 <td width="259">Aucun</td>
 </tr>
-<tr>
+<tr> 
 <td width="132">Slider</td>
 <td width="121"><i>Id de l'équipement</i></td>
 <td width="167">Valeur souhaitée</td>
@@ -134,6 +134,12 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 <h4>Installation</h4>
 Afin d’éviter de questionner Jeedom toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour Jeedom a été développé.
 Celui-ci vous permet d'envoyer toutes les informations d'un équipement quand une ou plusieurs informations de cet équipement se mettent à jour.
+Dans la page de configuration du plugin, vous pouvez indiquer le nom de la sentinelle pour les SO envoyés. 
+Pour chaque équipement créé, son nom sera le nom du  package.
+Le plugin Constellation pour Jeedom envoit un SO par équipement ajouté dans la configuration.
+Pour le moment, les SO ont comme nom  le chemin de l'équipement dans Jeedom, par exemple : 
+<h4>Les Plugins compatiblent</h4>
+
 Il faut donc les rajouter dans Constellation, par exemple ici :
 <pre class="lang:xhtml decode:true">&lt;sentinel name="Squeezebox" credential="Standard"&gt;
   &lt;packages&gt;
@@ -141,16 +147,14 @@ Il faut donc les rajouter dans Constellation, par exemple ici :
   &lt;/packages&gt;
 &lt;/sentinel&gt;</pre>
 <h4>Les StateObjects</h4>
-Le plugin Constellation pour Jeedom envoit un SO par type d'équipement ajouté dans la configuration.
-Pour le moment, les SO ont comme nom  le chemin de l'équipement dansJeedom, par exemple : 
-<h4>Les Plugins compatiblent</h4>
+
 Du fait du système utilisé (fonction listener) tous les plugins de Jeedom ne sont pas compatibles. Voici une liste non exhaustive des plugins Jeedom essayés  :
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td valign="bottom" width="200" align="center"><u>Nom du plugin</u></td>
-<td valign="bottom" width="100" align="center"><u>Fonctionne</u></td>
-<td valign="bottom" width="100" align="center"><u>Fonctionne pas</u></td>
+<td valign="bottom" width="100" align="center"><u>Compatible</u></td>
+<td valign="bottom" width="100" align="center"><u>Non compatible</u></td>
 </tr>
 <tr>
 <td valign="bottom" width="200" align="center">Agenda</td>
