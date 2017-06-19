@@ -17,11 +17,14 @@ Cette documentation a été réalisé avec la version 1.0 du package Jeedom ains
 Le code source est disponible sur <a title="https://github.com/myconstellation/constellation-packages/tree/master/Jeedom" href="https://github.com/myconstellation/constellation-packages/tree/master/Jeedom">https://github.com/myconstellation/constellation-packages/tree/master/Jeedom</a>
 <h3>Installation du package Jeedom</h3>
 Depuis le “Online Package Repository” de votre Console Constellation, déployez le package Jeedom :
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0024.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image002[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0024_thumb.png" alt="clip_image002[4]" width="354" height="226" border="0" /></a></p>
+
+<p align="center"><a href="http://i.imgur.com/dftrTld.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image002[4]" src="http://i.imgur.com/dftrTld.png" alt="clip_image002[4]" width="354" height="226" border="0" /></a></p>
 Une fois le package télécharger votre repository local, sélectionnez la sentinelle sur laquelle déployer le package.
 
 Pour finir, sur la page de Settings vous devez obligatoirement spécifier l’adresse URL ainsi que la clé API de votre installation Jeedom sans le « http:// » :
-<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0044.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0044_thumb.png" alt="clip_image004[4]" width="354" height="176" border="0" /></a></p>
+
+<p align="center"><a href="http://i.imgur.com/D5VLHMX.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="http://i.imgur.com/D5VLHMX.png" alt="clip_image004[4]" width="354" height="176" border="0" /></a></p>
+
 Vous pouvez également déployer ce package manuellement dans la configuration de votre Constellation :
 <pre class="lang:xhtml decode:true">&lt;package name="Jeedom"&gt;
   &lt;settings&gt;
@@ -136,6 +139,7 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 </table>
 <h3>Le plugin pour Jeedom (version 1.0)</h3>
 <h4>Installation</h4>
+
 Afin d’éviter de questionner Jeedom toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour Jeedom a été développé.
 
 Celui-ci vous permet d'envoyer toutes les informations d'un équipement quand une ou plusieurs informations de cet équipement se mettent à jour.
@@ -144,24 +148,34 @@ Le plugin peut être téléchargé à cette adresse : http://erwann.laville.free
 
 Il vous suffit alors de l'extraire dans le dossier plugin de Jeedom. Une fois installé, vous pourrez l'activer dans la liste des plugins sur Jeedom :
 
+<p align="center"><a href="http://i.imgur.com/JAqfqUX.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="http://i.imgur.com/JAqfqUX.png" width="354" height="176" border="0" /></a></p>
+
 Une fois activé, vous aurez accès à la configuration générale du plugin. Il vous faudra indiquer l'url de Constellation (sans le http), le nom de la sentinelle et la clé créditential associée au plugin.
+
+<p align="center"><a href="http://i.imgur.com/4RLHco7.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="http://i.imgur.com/4RLHco7.png" width="354" height="176" border="0" /></a></p>
 
 Par la suite vous pouvez ajouter autant d'équipement que souhaités. Chaque équipement créé correspondra à un package différent sur Constellation. Le nom de cet équipement correspondra au nom du package.
 
+<p align="center"><a href="http://i.imgur.com/jytCq2H.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="http://i.imgur.com/jytCq2H.png" width="354" height="176" border="0" /></a></p>
+
+<p align="center"><a href="http://i.imgur.com/eHOQm3f.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="http://i.imgur.com/eHOQm3f.png" width="354" height="176" border="0" /></a></p>
+
 <h4>Les StateObjects</h4>
 
-Le plugin Constellation pour Jeedom envoi un SO par équipement ajouté dans le package. 
+Le plugin Constellation pour Jeedom envoi un SO par équipement ajouté dans le "package". 
 
 Si vous ajoutez plusieurs commandes d'un même équipement dans le package, les informations de l'équipement seront envoyés au même package dans Constellation à chaque mise à jour de chaque commandes indiquées.
 
 Par exemple dans mon équipement Zwave, je rajoute #[Salle de Bains][Wall Plug][Etat]# et #[Salle de Bains][Wall Plug][Puissance]#. Les informations de mon Wall Plug seront envoyés à Constellation si l'état ou si la puissance changent.
+
+<p align="center"><a href="http://i.imgur.com/Vn2H4I4.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image004[4]" src="http://i.imgur.com/Vn2H4I4.png" width="354" height="176" border="0" /></a></p>
 
 Pour le moment, les SO ont comme nom  le chemin de l'équipement dans Jeedom, par exemple : [Salle de Bains][Wall Plug]
 
 N'oubliez pas de rajouter dans Constellation la sentinel et le package, par exemple ici :
 <pre class="lang:xhtml decode:true">&lt;sentinel name="Squeezebox" credential="Standard"&gt;
   &lt;packages&gt;
-    &lt;package name="Info" /&gt;
+    &lt;package name="Zwave" /&gt;
   &lt;/packages&gt;
 &lt;/sentinel&gt;</pre>
 <h4>Les Plugins compatiblent</h4>
