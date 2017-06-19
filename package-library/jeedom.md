@@ -1,7 +1,7 @@
 ---
 ID: 4912
 post_title: 'Jeedom dans Constellation'
-author: Sebastien WarinHydro
+author: Hydro
 post_date: 2017-06-18 21:25:00
 post_excerpt: ""
 layout: post
@@ -67,350 +67,72 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 <tr>
 <td valign="bottom" width="132"><u>Nom</u></td>
 <td valign="bottom" width="121"><u>Champ scene_id</u></td>
-<td valign="bottom" width="167"><u>Champ scene_command</u></td>
 <td valign="bottom" width="259"><u>Description</u></td>
 </tr>
 <tr>
 <td width="132">Start</td>
 <td width="121"><i>Id du scénario</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Ajoute un artiste par son id à la fin de la playlist</td>
+<td width="259">Démarre le scénario</td>
+</tr>
+<tr>
+<td width="132">Stop</td>
+<td width="121"><i>Id du scénario</i></td>
+<td width="259">Arrête le scénario</td>
+</tr>
+<tr>
+<td width="132">Activer</td>
+<td width="121"><i>Id du scénario</i></td>
+<td width="259">Active le scénario</td>
+</tr>
+<tr>
+<td width="132">Desactiver</td>
+<td width="121"><i>Id du scénario</i></td>
+<td width="259">Désactive le scénario</td>
 </tr>
 </tbody>
 </table>
 <ul>
- 	<li>SendToSqueezebox :</li>
+ 	<li>SendCommand :</li>
 </ul>
-Le champs Squeezebox correspond au nom ou à l’adresse MAC de la squeezebox cible.
-
-Si ce champ est laissé vide, la commande sera lancée sur toutes les squeezebox.
-
-Vous pouvez également indiquer plusieurs squeezebox en les séparant par une virgule, exemple : « SdB,Salon » ou « e4:f4:c6:47:5e:2a,00:15:5d:01:6a:04 »
-
 Ces Message Callbacks ne produisent aucunes réponses (saga).
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td valign="bottom" width="132"><u>Nom</u></td>
-<td valign="bottom" width="121"><u>Champ value</u></td>
-<td valign="bottom" width="167"><u>Champ squeezebox</u></td>
+<td valign="bottom" width="121"><u>Champ id</u></td>
+<td valign="bottom" width="167"><u>Champ value</u></td>
+<td valign="bottom" width="167"><u>Champ value2</u></td>
 <td valign="bottom" width="259"><u>Description</u></td>
 </tr>
 <tr>
-<td width="132">Add_Album_Id</td>
-<td width="121"><i>Id de l’album</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Ajoute un album par son id à la fin de la playlist</td>
+<td width="132">Switch</td>
+<td width="121"><i>Id de l'équipement</i></td>
+<td width="167">Aucun</td>
+<td width="259">Aucun</td>
 </tr>
 <tr>
-<td width="132">Add_Artist_Id</td>
-<td width="121"><i>Id de l’artiste</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Ajoute un artiste par son id à la fin de la playlist</td>
+<td width="132">Slider</td>
+<td width="121"><i>Id de l'équipement</i></td>
+<td width="167">Valeur souhaitée</td>
+<td width="259">Aucun</td>
 </tr>
 <tr>
-<td width="132">Add_Title_Id</td>
-<td width="121"><i>Id du titre</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Ajoute un titre par son id à la fin de la playlist</td>
+<td width="132">Message</td>
+<td width="121"><i>Id de l'équipement</i></td>
+<td width="167">Titre du message</td>
+<td width="259">Corps du message</td>
 </tr>
 <tr>
-<td width="132">Delete_Album_Id</td>
-<td width="121"><i>Id de l’album</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Supprime les titres de l’album de la playlist</td>
-</tr>
-<tr>
-<td width="132">Delete_Artist_Id</td>
-<td width="121"><i>Id de l’artiste</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Supprime les titres de l’artiste de la playlist</td>
-</tr>
-<tr>
-<td width="132">Delete_Title_Id</td>
-<td width="121"><i>Id du titre</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Supprime le titre de la playlist</td>
-</tr>
-<tr>
-<td width="132">Connect</td>
-<td width="121"><i>Adresse IP de l’autre serveur LMS</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox sur l’autre serveur LMS</i></td>
-<td width="259">Connecte la squeezebox d’un autre serveur à ce serveur</td>
-</tr>
-<tr>
-<td width="132">Connect_To</td>
-<td width="121"><i>Adresse IP de l’autre serveur LMS</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Connecte une squeezebox de ce serveur à un autre serveur</td>
-</tr>
-<tr>
-<td valign="top" width="132">Mute_Off</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Désactive l’option muet</td>
-</tr>
-<tr>
-<td valign="top" width="132">Mute_On</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Active l’option muet</td>
-</tr>
-<tr>
-<td valign="top" width="132">Mute_Toggle</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Active/désactive l’option muet</td>
-</tr>
-<tr>
-<td valign="top" width="132">Next</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance la prochaine musique dans la playlist</td>
-</tr>
-<tr>
-<td valign="top" width="132">Pause</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Met sur pause la musique</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Met en lecture la musique</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Album</td>
-<td width="121"><i>Nom de l’album</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un album basé sur son nom
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Album_Id</td>
-<td width="121"><i>Id de l’album</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un album basé sur son id
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Artist</td>
-<td width="121"><i>Nom de l’artiste</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un artiste basé sur son nom
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Artist_Id</td>
-<td width="121"><i>Id de l’artiste</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un artiste basé sur son id
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Index</td>
-<td width="121"><i>Index du titre dans la playlist</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance une musique par sa position dans la playlist</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Playlist</td>
-<td width="121"><i>Nom de la playlist</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance une playlist basée sur son nom
-
-(nom de la playlist requis – remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Playlist_Id</td>
-<td width="121"><i>Id de la playlist</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance une playlist basée sur son id
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Title</td>
-<td width="121"><i>Nom du titre</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un titre basé sur son nom
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Title_Id</td>
-<td width="121"><i>Id du titre</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un titre basé sur son id
-
-(remplace la playlist en cours)</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Title_Id_Next</td>
-<td width="121"><i>Id du titre</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Ajoute un titre à la prochaine position de la playlist basé sur son id</td>
-</tr>
-<tr>
-<td valign="top" width="132">Play_Toggle</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Alterne pause et lecture de la musique</td>
-</tr>
-<tr>
-<td valign="top" width="132">Playlist_Clear</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Vide la playlist en cours</td>
-</tr>
-<tr>
-<td valign="top" width="132">Power_Off</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Éteint virtuellement la squeezebox</td>
-</tr>
-<tr>
-<td valign="top" width="132">Power_On</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Allume virtuellement la squeezebox</td>
-</tr>
-<tr>
-<td valign="top" width="132">Power_Toggle</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Alterne éteindre/allumer virtuellement la squeezebox</td>
-</tr>
-<tr>
-<td valign="top" width="132">Previous</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance la musique précédente dans la playlist</td>
-</tr>
-<tr>
-<td valign="top" width="132">Random_Album</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un mix aléatoire par album</td>
-</tr>
-<tr>
-<td valign="top" width="132">Random_Artist</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un mix aléatoire par artiste</td>
-</tr>
-<tr>
-<td valign="top" width="132">Random_Title</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un mix aléatoire</td>
-</tr>
-<tr>
-<td valign="top" width="132">Random_Year</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Lance un mix aléatoire par année</td>
-</tr>
-<tr>
-<td valign="top" width="132">Repeat_Off</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Désactive la répétition</td>
-</tr>
-<tr>
-<td valign="top" width="132">Repeat_Playlist</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Active la répétition de la playlist</td>
-</tr>
-<tr>
-<td valign="top" width="132">Repeat_Title</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Active la répétition du titre en cours</td>
-</tr>
-<tr>
-<td valign="top" width="132">Repeat_Toggle</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Alterne les modes de répétition</td>
-</tr>
-<tr>
-<td valign="top" width="132">Shuffle_Album</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Active le mélange par album</td>
-</tr>
-<tr>
-<td valign="top" width="132">Shuffle_Off</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Désactive le mélange</td>
-</tr>
-<tr>
-<td valign="top" width="132">Shuffle_Title</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Active le mélange par titre</td>
-</tr>
-<tr>
-<td valign="top" width="132">Shuffle_Toggle</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Alterne les modes de mélange</td>
-</tr>
-<tr>
-<td valign="top" width="132">Stop</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Stop la musique en cours de lecture</td>
-</tr>
-<tr>
-<td valign="top" width="132">Sync</td>
-<td width="121"><i>Nom ou adresse MAC de la squeezebox qui sera synchronisée</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Synchronise une autre squeezebox avec celle-ci</td>
-</tr>
-<tr>
-<td valign="top" width="132">Sync_Off</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Désynchronise la squeezebox</td>
-</tr>
-<tr>
-<td valign="top" width="132">Sync_To</td>
-<td width="121"><i>Nom ou adresse MAC de la squeezebox « maître »</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Synchronise cette squeezebox à une autre</td>
-</tr>
-<tr>
-<td valign="top" width="132">Volume</td>
-<td width="121"><i>Niveau du volume</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Définie le niveau du volume</td>
-</tr>
-<tr>
-<td valign="top" width="132">Volume_Down</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Baisse le volume de 2%</td>
-</tr>
-<tr>
-<td valign="top" width="132">Volume_Up</td>
-<td width="121"><i>Aucun</i></td>
-<td width="167"><i>Nom ou adresse MAC de la squeezebox cible</i></td>
-<td width="259">Augmente le volume de 2%</td>
+<td width="132">Color</td>
+<td width="121"><i>Id de l'équipement</i></td>
+<td width="167">Couleur souhaitée</td>
+<td width="259">Aucun</td>
 </tr>
 </tbody>
 </table>
-<h3>Le plugin Logitech Media Server (version 2.0)</h3>
+<h3>Le plugin pour Jeedom (version 1.0)</h3>
 <h4>Installation</h4>
-Afin d’éviter de questionner le Logitech Media Server toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour le Logitech Media Server a été développé.
+Afin d’éviter de questionner Jeedom toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour Jeedom a été développé.
 
 Pour l’installer, il faut rajouter le répertoire <a href="http://erwann.laville.free.fr/repo.xml">http://erwann.laville.free.fr/repo.xml</a> en bas de la page plugins de votre Logitech Media Server.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0064.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="clip_image006[4]" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/clip_image0064_thumb.png" alt="clip_image006[4]" width="354" height="49" border="0" /></a></p>
@@ -451,19 +173,24 @@ Vous retrouverez autant de StateObject que de lecteurs connectés au LMS ainsi q
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td valign="bottom" width="71"><u>Nom</u></td>
-<td valign="bottom" width="56"><u>Type</u></td>
-<td valign="bottom" width="476"><u>Description</u></td>
+<td valign="bottom" width="200" align="center"><u>Nom du plugin</u></td>
+<td valign="bottom" width="100" align="center"><u>Fonctionne</u></td>
+<td valign="bottom" width="100" align="center"><u>Fonctionne pas</u></td>
 </tr>
 <tr>
-<td valign="bottom" width="71">Players</td>
-<td valign="bottom" width="56">N/A</td>
-<td valign="bottom" width="476">Liste des lecteurs avec pour chacun le nom et l’adresse MAC.</td>
+<td valign="bottom" width="200" align="center">Agenda</td>
+<td valign="bottom" width="100" align="center"></td>
+<td valign="bottom" width="100" align="center">X</td>
 </tr>
 <tr>
-<td valign="bottom" width="71">&lt;&lt; Nom du lecteur &gt;&gt;</td>
-<td valign="bottom" width="56">N/A</td>
-<td valign="bottom" width="476">Informations sur le lecteur (nom, adresse MAC, adresse IP…) ainsi que sur la lecture en cours (titre, album, artiste, volume, pochette…)</td>
+<td valign="bottom" width="200" align="center">Monitoring</td>
+<td valign="bottom" width="100" align="center">X</td>
+<td valign="bottom" width="100" align="center"></td>
+</tr>
+<tr>
+<td valign="bottom" width="200" align="center">Zwave</td>
+<td valign="bottom" width="100" align="center">X</td>
+<td valign="bottom" width="100" align="center"></td>
 </tr>
 </tbody>
 </table>
