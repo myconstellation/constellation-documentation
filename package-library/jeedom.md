@@ -66,27 +66,27 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 <tbody>
 <tr>
 <td valign="bottom" width="132"><u>Nom</u></td>
-<td valign="bottom" width="121"><u>Champ scene_id</u></td>
+<td valign="bottom" width="200"><u>Champ scene_id</u></td>
 <td valign="bottom" width="259"><u>Description</u></td>
 </tr>
 <tr>
 <td width="132">Start</td>
-<td width="121"><i>Id du scénario</i></td>
+<td width="200"><i>Id du scénario</i></td>
 <td width="259">Démarre le scénario</td>
 </tr>
 <tr>
 <td width="132">Stop</td>
-<td width="121"><i>Id du scénario</i></td>
+<td width="200"><i>Id du scénario</i></td>
 <td width="259">Arrête le scénario</td>
 </tr>
 <tr>
 <td width="132">Activer</td>
-<td width="121"><i>Id du scénario</i></td>
+<td width="200"><i>Id du scénario</i></td>
 <td width="259">Active le scénario</td>
 </tr>
 <tr>
 <td width="132">Desactiver</td>
-<td width="121"><i>Id du scénario</i></td>
+<td width="200"><i>Id du scénario</i></td>
 <td width="259">Désactive le scénario</td>
 </tr>
 </tbody>
@@ -108,31 +108,36 @@ Ces Message Callbacks ne produisent aucunes réponses (saga).
 <td width="132">Switch</td>
 <td width="121"><i>Id de l'équipement</i></td>
 <td width="167">Aucun</td>
-<td width="259">Aucun</td>
+<td width="167">Aucun</td>
+<td width="259">Pour un équipement de type switch</td>
 </tr>
 <tr> 
 <td width="132">Slider</td>
 <td width="121"><i>Id de l'équipement</i></td>
 <td width="167">Valeur souhaitée</td>
-<td width="259">Aucun</td>
+<td width="167">Aucun</td>
+<td width="259">Pour un équipement de type slider</td>
 </tr>
 <tr>
 <td width="132">Message</td>
 <td width="121"><i>Id de l'équipement</i></td>
 <td width="167">Titre du message</td>
-<td width="259">Corps du message</td>
+<td width="167">Corps du message</td>
+<td width="259">Pour un équipement de type message</td>
 </tr>
 <tr>
 <td width="132">Color</td>
 <td width="121"><i>Id de l'équipement</i></td>
 <td width="167">Couleur souhaitée</td>
-<td width="259">Aucun</td>
+<td width="167">Aucun</td>
+<td width="259">Pour un équipement de type color</td>
 </tr>
 </tbody>
 </table>
 <h3>Le plugin pour Jeedom (version 1.0)</h3>
 <h4>Installation</h4>
 Afin d’éviter de questionner Jeedom toutes les x secondes et pour obtenir les informations le plus rapidement possible, un plugin pour Jeedom a été développé.
+
 Celui-ci vous permet d'envoyer toutes les informations d'un équipement quand une ou plusieurs informations de cet équipement se mettent à jour.
 
 Le plugin peut être téléchargé à cette adresse : http://erwann.laville.free.fr/Jeedom/constellation.zip
@@ -141,15 +146,19 @@ Il vous suffit alors de l'extraire dans le dossier plugin de Jeedom. Une fois in
 
 Une fois activé, vous aurez accès à la configuration générale du plugin. Il vous faudra indiquer l'url de Constellation (sans le http), le nom de la sentinelle et la clé créditential associée au plugin.
 
-Par la suite vous pouvez ajouter autant d'équipement que souhaités. Chaque équipement créé correspondra à un package différent sur Constellation. Le nom de cet équipement correspondra au nom du State Object.
+Par la suite vous pouvez ajouter autant d'équipement que souhaités. Chaque équipement créé correspondra à un package différent sur Constellation. Le nom de cet équipement correspondra au nom du package.
 
 <h4>Les StateObjects</h4>
 
-Le plugin Constellation pour Jeedom envoit un SO par équipement ajouté dans la configuration.
+Le plugin Constellation pour Jeedom envoi un SO par équipement ajouté dans le package. 
 
-Pour le moment, les SO ont comme nom  le chemin de l'équipement dans Jeedom, par exemple : 
+Si vous ajoutez plusieurs commandes d'un même équipement dans le package, les informations de l'équipement seront envoyés au même package dans Constellation à chaque mise à jour de chaque commandes indiquées.
 
-Il faut donc les rajouter dans Constellation, par exemple ici :
+Par exemple dans mon équipement Zwave, je rajoute #[Salle de Bains][Wall Plug][Etat]# et #[Salle de Bains][Wall Plug][Puissance]#. Les informations de mon Wall Plug seront envoyés à Constellation si l'état ou si la puissance changent.
+
+Pour le moment, les SO ont comme nom  le chemin de l'équipement dans Jeedom, par exemple : [Salle de Bains][Wall Plug]
+
+N'oubliez pas de rajouter dans Constellation la sentinel et le package, par exemple ici :
 <pre class="lang:xhtml decode:true">&lt;sentinel name="Squeezebox" credential="Standard"&gt;
   &lt;packages&gt;
     &lt;package name="Info" /&gt;
