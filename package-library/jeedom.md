@@ -2,13 +2,13 @@
 ID: 4912
 post_title: 'Jeedom dans Constellation'
 author: Hydro
-post_date: 2017-06-18 21:25:00
+post_date: 2017-05-21 03:42:10 -0700
 post_excerpt: ""
 layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/jeedom/
 published: true
-post_modified: 2017-06-18 21:25:00
+post_modified: 2017-06-19 19:05:00
 ---
 Le package Jeedom vous permet de contrôler vos équipements et vos scénarios Jeedom.
 
