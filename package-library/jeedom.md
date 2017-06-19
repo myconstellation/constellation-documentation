@@ -157,12 +157,27 @@ Du fait du système utilisé (fonction listener) tous les plugins de Jeedom ne s
 <td valign="bottom" width="100" align="center"><u>Non compatible</u></td>
 </tr>
 <tr>
+<td valign="bottom" width="200" align="center">BLEA</td>
+<td valign="bottom" width="100" align="center">X</td>
+<td valign="bottom" width="100" align="center"></td>
+</tr>
+<tr>
+<td valign="bottom" width="200" align="center">Espeasy</td>
+<td valign="bottom" width="100" align="center">X</td>
+<td valign="bottom" width="100" align="center"></td>
+</tr>
+<tr>
 <td valign="bottom" width="200" align="center">Agenda</td>
 <td valign="bottom" width="100" align="center"></td>
 <td valign="bottom" width="100" align="center">X</td>
 </tr>
 <tr>
 <td valign="bottom" width="200" align="center">Monitoring</td>
+<td valign="bottom" width="100" align="center">X</td>
+<td valign="bottom" width="100" align="center"></td>
+</tr>
+<tr>
+<td valign="bottom" width="200" align="center">RFXCom</td>
 <td valign="bottom" width="100" align="center">X</td>
 <td valign="bottom" width="100" align="center"></td>
 </tr>
