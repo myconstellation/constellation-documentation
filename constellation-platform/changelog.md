@@ -8,8 +8,14 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-05-20 14:10:45
+post_modified: 2017-06-26 15:10:31
 ---
+<h3>22/06/2017 : Update Console 1.8.2.17173</h3>
+<ul>
+ 	<li>Console / Package : bugfix sur l'édition d'un setting de type boolean ou number sur un package sans manifeste (eg. Virtual Package)</li>
+ 	<li>Console / StateObjects Explorer : Refresh automatique du SO lorsqu'il arrive à expiration dans la modal de détail</li>
+ 	<li>Console / StateObjects Explorer : bugfix de la mise à jour des StateObjects qui n'était pas maintenus en cas de changement de page</li>
+</ul>
 <h3>20/05/2017 : Update Client 1.8.2.17140</h3>
 <ul>
  	<li>Common : bugfix lors des réponses de Saga sur le framework Mono (veuillez mettre à jour la librairie sur vos packages depuis Nuget)</li>
