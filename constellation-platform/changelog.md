@@ -8,8 +8,25 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-06-27 10:53:23
+post_modified: 2017-06-28 17:50:36
 ---
+<h3>28/06/2017 : Release 1.8.2.17178</h3>
+<ul>
+	<li>Common : déclenchement de la procédure d’arrêt (OnPreShutsown puis OnShutdown) sur les packages lancés hors sentinelle (mode Standalone)</li>
+	<li>PythonProxy : Mécanisme de Ping/Pong entre le package C# et les scripts Python pour vérifier l'état de vie des deux parties. Auto-fermeture du processus Python si pas de Ping reçu pdt plus de 30 secondes pour éviter les processus orphelins (notamment en cas de debug)</li>
+	<li>PythonProxy : Ajout d'une section de configuration dans App.config pour définir les scripts Python à lancer (plutôt que se baser sur les fichiers .py du dossier Scripts)</li>
+	<li>PythonProxy : Gestion d'un timeout du démarrage des scripts Python (30sec par défaut configurable en fichier de config)</li>
+	<li>PythonProxy : Mode unbuffered par défaut (configurable dans la section XML) et redirection du stream de sortie et d'erreur des processus Python dans les logs Constellation</li>
+	<li>PythonProxy : Monitoring des processus Python avec logging en cas d’arrêt</li>
+	<li>PythonProxy : Autre changement mineur (refactoring & improvment)</li>   
+	<li>SDK : Mise à jour des templates de projet avec le package Constellation 1.8.2.17178</li>
+	<li>SDK : Mise à jour des templates de projet avec le package PythonProxy 1.8.2.17178</li>
+	<li>SDK : Mise à jour du SDK sur la libraire Constellation 1.8.2.17178 et VisualStudio 15.0.26606</li>
+	<li>SDK : Nettoyage automatique de la solution avant compilation lors d'une publication de package</li>
+	<li>SDK : Ajout automatique de l'icone déclarée dans le manifeste dans le package (ajout de l'attribut CopyIfNewer & Build Action: Content)</li>
+	<li>SDK : Ajout d'un ItemTemplate "Constellation Python Script" (attribut CopyIfNewer sur le fichier et ajout dans le App.config automatique)</li>
+	<li>SDK : Ajout du schéma XSD de configuration des packages Python dans le SDK</li>
+</ul>
 <h3>22/06/2017 : Update Console 1.8.2.17173</h3>
 <ul>
  	<li>Console / Package : bugfix sur l'édition d'un setting de type boolean ou number sur un package sans manifeste (eg. Virtual Package)</li>
