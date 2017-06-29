@@ -8,8 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-06-28 17:50:36
+post_modified: 2017-06-29 16:16:04
 ---
+<h3>29/06/2017 : Update Console 1.8.2.17180</h3>
+<ul>
+	<li>Console : rechargement automatique du repository de package local lorsqu'un package est uploadé via la Management API</li>
+	<li>Console : ajout d'un timestamp sur les appels "RequestStateObjects" et de contrôle des dernières versions pour éviter les erreurs de cache navigateur</li>
+</ul>
 <h3>28/06/2017 : Release 1.8.2.17178</h3>
 <ul>
 	<li>Common : déclenchement de la procédure d’arrêt (OnPreShutsown puis OnShutdown) sur les packages lancés hors sentinelle (mode Standalone)</li>
