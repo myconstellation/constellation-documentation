@@ -8,14 +8,14 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-07-05 23:44:42
+post_modified: 2017-07-05 23:45:55
 ---
 <h3>05/07/2017 : Update API Javascript &amp; AngularJS 1.8.2</h3>
 <ul>
  	<li>API Javascript : ajout du proxy "Package" pour écrire des packages (virtuels) en Javascript (eg. NodeJS)</li>
  	<li>API Javascript : paramètre "data" optionnel sur la méthode sendMessage (avec ou sans Saga)</li>
  	<li>API Javascript : possibilité de passer directement plusieurs paramètres sur la méthode sendMessage (avec ou sans Saga) pour les MessageCallbacks avec plusieurs arguments sans devoir déclarer un tableau de paramètre</li>
- 	<li>API Javascript : le callback de retour d'une saga est désormais le premier paramètre de la méthode sendMessageWithSaga. Gestion de la rétro-compatibilité permettant de passer le callback comme dernier paramètre (pas de breacking change en cas d'update)</li>
+ 	<li>API Javascript : le callback de retour d'une saga est désormais le premier paramètre de la méthode sendMessageWithSaga. Gestion de la rétro-compatibilité permettant de passer le callback comme dernier paramètre (pas de breaking change en cas d'update)</li>
  	<li>API AngularJS : basée sur l'API Javascript 1.8.2 (intégration des nouveautés concernant les sendMessage et sendMessageWithSaga)</li>
  	<li>API AngularJS : ajout de la méthode disconnect sur les deux modules (Controller et Consumer)</li>
 </ul>
