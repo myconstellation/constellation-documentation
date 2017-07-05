@@ -8,29 +8,38 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-06-29 16:16:04
+post_modified: 2017-07-05 23:44:42
 ---
+<h3>05/07/2017 : Update API Javascript &amp; AngularJS 1.8.2</h3>
+<ul>
+ 	<li>API Javascript : ajout du proxy "Package" pour écrire des packages (virtuels) en Javascript (eg. NodeJS)</li>
+ 	<li>API Javascript : paramètre "data" optionnel sur la méthode sendMessage (avec ou sans Saga)</li>
+ 	<li>API Javascript : possibilité de passer directement plusieurs paramètres sur la méthode sendMessage (avec ou sans Saga) pour les MessageCallbacks avec plusieurs arguments sans devoir déclarer un tableau de paramètre</li>
+ 	<li>API Javascript : le callback de retour d'une saga est désormais le premier paramètre de la méthode sendMessageWithSaga. Gestion de la rétro-compatibilité permettant de passer le callback comme dernier paramètre (pas de breacking change en cas d'update)</li>
+ 	<li>API AngularJS : basée sur l'API Javascript 1.8.2 (intégration des nouveautés concernant les sendMessage et sendMessageWithSaga)</li>
+ 	<li>API AngularJS : ajout de la méthode disconnect sur les deux modules (Controller et Consumer)</li>
+</ul>
 <h3>29/06/2017 : Update Console 1.8.2.17180</h3>
 <ul>
-	<li>Console : rechargement automatique du repository de package local lorsqu'un package est uploadé via la Management API</li>
-	<li>Console : ajout d'un timestamp sur les appels "RequestStateObjects" et de contrôle des dernières versions pour éviter les erreurs de cache navigateur</li>
+ 	<li>Console : rechargement automatique du repository de package local lorsqu'un package est uploadé via la Management API</li>
+ 	<li>Console : ajout d'un timestamp sur les appels "RequestStateObjects" et de contrôle des dernières versions pour éviter les erreurs de cache navigateur</li>
 </ul>
 <h3>28/06/2017 : Release 1.8.2.17178</h3>
 <ul>
-	<li>Common : déclenchement de la procédure d’arrêt (OnPreShutsown puis OnShutdown) sur les packages lancés hors sentinelle (mode Standalone)</li>
-	<li>PythonProxy : Mécanisme de Ping/Pong entre le package C# et les scripts Python pour vérifier l'état de vie des deux parties. Auto-fermeture du processus Python si pas de Ping reçu pdt plus de 30 secondes pour éviter les processus orphelins (notamment en cas de debug)</li>
-	<li>PythonProxy : Ajout d'une section de configuration dans App.config pour définir les scripts Python à lancer (plutôt que se baser sur les fichiers .py du dossier Scripts)</li>
-	<li>PythonProxy : Gestion d'un timeout du démarrage des scripts Python (30sec par défaut configurable en fichier de config)</li>
-	<li>PythonProxy : Mode unbuffered par défaut (configurable dans la section XML) et redirection du stream de sortie et d'erreur des processus Python dans les logs Constellation</li>
-	<li>PythonProxy : Monitoring des processus Python avec logging en cas d’arrêt</li>
-	<li>PythonProxy : Autre changement mineur (refactoring & improvment)</li>   
-	<li>SDK : Mise à jour des templates de projet avec le package Constellation 1.8.2.17178</li>
-	<li>SDK : Mise à jour des templates de projet avec le package PythonProxy 1.8.2.17178</li>
-	<li>SDK : Mise à jour du SDK sur la libraire Constellation 1.8.2.17178 et VisualStudio 15.0.26606</li>
-	<li>SDK : Nettoyage automatique de la solution avant compilation lors d'une publication de package</li>
-	<li>SDK : Ajout automatique de l'icone déclarée dans le manifeste dans le package (ajout de l'attribut CopyIfNewer & Build Action: Content)</li>
-	<li>SDK : Ajout d'un ItemTemplate "Constellation Python Script" (attribut CopyIfNewer sur le fichier et ajout dans le App.config automatique)</li>
-	<li>SDK : Ajout du schéma XSD de configuration des packages Python dans le SDK</li>
+ 	<li>Common : déclenchement de la procédure d’arrêt (OnPreShutsown puis OnShutdown) sur les packages lancés hors sentinelle (mode Standalone)</li>
+ 	<li>PythonProxy : Mécanisme de Ping/Pong entre le package C# et les scripts Python pour vérifier l'état de vie des deux parties. Auto-fermeture du processus Python si pas de Ping reçu pdt plus de 30 secondes pour éviter les processus orphelins (notamment en cas de debug)</li>
+ 	<li>PythonProxy : Ajout d'une section de configuration dans App.config pour définir les scripts Python à lancer (plutôt que se baser sur les fichiers .py du dossier Scripts)</li>
+ 	<li>PythonProxy : Gestion d'un timeout du démarrage des scripts Python (30sec par défaut configurable en fichier de config)</li>
+ 	<li>PythonProxy : Mode unbuffered par défaut (configurable dans la section XML) et redirection du stream de sortie et d'erreur des processus Python dans les logs Constellation</li>
+ 	<li>PythonProxy : Monitoring des processus Python avec logging en cas d’arrêt</li>
+ 	<li>PythonProxy : Autre changement mineur (refactoring &amp; improvment)</li>
+ 	<li>SDK : Mise à jour des templates de projet avec le package Constellation 1.8.2.17178</li>
+ 	<li>SDK : Mise à jour des templates de projet avec le package PythonProxy 1.8.2.17178</li>
+ 	<li>SDK : Mise à jour du SDK sur la libraire Constellation 1.8.2.17178 et VisualStudio 15.0.26606</li>
+ 	<li>SDK : Nettoyage automatique de la solution avant compilation lors d'une publication de package</li>
+ 	<li>SDK : Ajout automatique de l'icone déclarée dans le manifeste dans le package (ajout de l'attribut CopyIfNewer &amp; Build Action: Content)</li>
+ 	<li>SDK : Ajout d'un ItemTemplate "Constellation Python Script" (attribut CopyIfNewer sur le fichier et ajout dans le App.config automatique)</li>
+ 	<li>SDK : Ajout du schéma XSD de configuration des packages Python dans le SDK</li>
 </ul>
 <h3>22/06/2017 : Update Console 1.8.2.17173</h3>
 <ul>
