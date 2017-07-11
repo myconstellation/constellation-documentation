@@ -8,8 +8,42 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-07-05 23:45:55
+post_modified: 2017-07-11 14:58:15
 ---
+<h3>10/07/2017 : Release 1.8.3 (1.8.3.17190)</h3>
+<ul>
+	<li>Common : Dépendances mises à jour vers JSON.NET 9.0.1 et SignalR 2.2.2</li>
+	<li>Common : Le PackageHost passe le ConstellationClientType à "net40" ou "net45" lors de la connexion à Constellation</li>
+	<li>Server : Dépendances mises à jour vers JSON.NET 9.0.1, SignalR 2.2.2, NLog 4.4.11 et OWIN 3.1.0</li>
+	<li>Server : Ajout du ConstellationClientType dans les informations des packages sur le hub "Controller"</li>
+	<li>Server : Extraction des propriétés 'PackageVersion', 'ConstellationClientVersion' et 'ConstellationClientType' depuis les QueryString si manquantes des headers HTTP (pour les packages Constellation utilisant la lib JS > 1.8.2)</li>
+	<li>Server / ControlHub : nouvelle gestion des packages (réécriture complète, chargé en mémoire et parfaitement synchronisé au niveau du serveur entre la configuration XML et les contrôleurs)</li>
+	<li>Server / ControlHub : le ReloadServerConfiguration envoi la liste des packages aux sentinelles seulement connectées et "Update settings" sur les packages connectés seulement et non à tous les groupes</li>
+	<li>Server / ControlHub : prise en charge des mises à jour de configuration des packages à volée</li>
+	<li>Server / Management API : ajout d'un objet de synchronisation pour les I/O vers le fichier de configuration pour éviter les écritures concurrentes</li>
+	<li>Server / Licensing : LeaseLicensing dans le domaine serveur si multi-tenant sinon dans le domaine de la constellation si mono-instance (permettant ainsi de récupérer les erreurs de licence dans la Console Log)</li>
+	<li>Server / API REST : Gestion du IsConnected sur les packages virtuels en se basant sur les abonnements de messages et/ou SO (SubscriptionId)</li>
+	<li>Server / API REST  : Timeout des sessions de 150 secondes par défaut configurable dans le fichier de configuration</li>
+	<li>Server : Ajout de la clé "Constellation.BaseDirectory" permettant de définir le répertoire de base de la Constellation dans lequel trouver le fichier de configuration (cela permet de séparer les binaires de la configuration, très utile dans un environnement Docker)</li>
+	<li>Server : refactoring et optimisations du code</li>
+	<li>Sentinel : Dépendances mises à jour vers JSON.NET 9.0.1, SignalR 2.2.2, NLog 4.4.11 (et NLog.Windows.Form 4.2.3 pour les SentinelUI)</li>
+	<li>Sentinel : Refactoring complet des sentinelles (suppression du ProcessManager présent depuis la 1.0, réécriture complète, chargement en mémoire et ne relance pas les packages au reload, plus stable et meilleure cohérence des états, etc..)</li>
+	<li>Sentinel : ne lève pas d'erreur si la collection est modifiée au CheckProcessUsage (InvalidOperationException)</li>
+	<li>Sentinel : les packages virtuels déployés sur une sentinelles réelles sont exclus (et ne lève pas d'erreur)</li>
+	<li>Console : nouvelle gestion des packages basée sur les nouveautés du Server 1.8.3 (il n'y a plus de lecture des package en XML)</li>
+	<li>Console : support complet des utilisateurs sans les droits de Management</li>
+	<li>Console / Sentinels : Ajout du nom du credential utilisé par une sentinelle sur la fenêtre de détail d'une Sentinelle</li>
+	<li>Console / Package : Ajout du ConstellationClientType dans la liste et fenêtre de détail</li>
+	<li>Console / Package : Gestion des packages virtuels avec un statut Unknown, menu contextuel synchronisé et mise à jour de l'activité pour les package virtuel</li>
+	<li>Console / Packages : "Update Settings" si le package est connecté et démarré (package virtuel compris)</li>
+	<li>Console / Packages : bugfix déploiement de package avec un setting de type DateTime (module $filter non injecté dans le contrôleur principal)</li>
+	<li>Console / Packages : bugfix déploiement de la configuration une fois que le SetRecoveryOption est terminé et non en parallèle</li>
+	<li>Console / Console Log : ajout d'un bouton pour vider la console</li>
+	<li>Console / MessageCallbacks Explorer : Mise à jour des code snippets avec les nouveautés des libs JS/NG 1.8.2</li>
+	<li>Console : déconnexion des deux hubs (consumer et controller) si l'un des deux est déconnecté (cas très rare où l'un des deux hubs parvient à se reconnecter et pas l'autre)</li>
+	<li>Console : Mise à jour de l'API Constellation Javascript & AngularJS en version 1.8.2 et de la librairie SignalR 2.2.2</li>
+	<li>SDK : Mise à jour des templates de projet avec les librairies Constellation 1.8.3.17190, SignalR 2.2.2 et Json.net 9.0.1</li>
+</ul>
 <h3>05/07/2017 : Update API Javascript &amp; AngularJS 1.8.2</h3>
 <ul>
  	<li>API Javascript : ajout du proxy "Package" pour écrire des packages (virtuels) en Javascript (eg. NodeJS)</li>
