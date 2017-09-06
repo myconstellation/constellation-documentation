@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-angular-js/
 published: true
-post_modified: 2017-09-06 11:58:14
+post_modified: 2017-09-06 11:59:55
 ---
 <h3>Préparer la page AngularJS</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Angular” et ses dépendances :
@@ -36,15 +36,15 @@ Et voilà votre squelette est prêt !
 Pour plus d’information sur AngularJS, je vous recommande la lecture de ce guide : <a title="https://docs.angularjs.org/misc/started" href="https://docs.angularjs.org/misc/started">https://docs.angularjs.org/misc/started</a>
 
 Pour résumer notre squelette page est donc :
-<pre class="lang:html5 decode:true">&lt;!DOCTYPE html&gt;
+<pre class="lang:html5 decode:true crayon-selected">&lt;!DOCTYPE html&gt;
 &lt;html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyDemoApp"&gt;
 &lt;head&gt;
     &lt;title&gt;Test API AngularJS&lt;/title&gt;
 	&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.1.min.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.1.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
     &lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.1.min.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
     
     &lt;script&gt;
 		var myDemoApp = angular.module('MyDemoApp', ['ngConstellation']);
