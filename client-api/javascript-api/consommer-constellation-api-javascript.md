@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-api-javascript/
 published: true
-post_modified: 2017-09-06 11:54:09
+post_modified: 2017-09-06 11:54:57
 ---
 <h3>Connecter une page HTML avec l’API Javascript</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Javascript” et ses dépendances :
@@ -82,7 +82,7 @@ Par exemple, le package “<a href="/package-library/networktools/">NetworkTools
 	}, { Scope: 'Package', Args: ['NetworkTools'] }, 'Ping', "www.google.fr");
 </pre>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-26.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-25.png" alt="image" width="350" height="160" border="0" /></a></p>
-<p align="left"><a href="/client-api/arduino-esp-api/recevoir-des-messages-et-exposer-des-methodes-messagecallback-sur-arduino-esp/#Exposer_des_MessageCallbacks_avec_reponse_les_sagas">Souvenez-vous de notre package virtuel de notre ESP8266 / Arduino</a>, on exposait un MessageCallback “Addition” capable de réaliser une addition locale (sur le CPU de l’Arduino ou ESP) en prenant en paramètre deux entiers. Le résultat était retourné dans la saga. Pour réaliser cet aller-retour depuis notre page Arduino, on aurait pu écrire :</p>
+<p align="left"><a href="/client-api/arduino-esp-api/recevoir-des-messages-et-exposer-des-methodes-messagecallback-sur-arduino-esp/#Exposer_des_MessageCallbacks_avec_reponse_les_sagas">Souvenez-vous de notre package virtuel de notre ESP8266 / Arduino</a>, on exposait un MessageCallback “Addition” capable de réaliser une addition locale (sur le CPU de l’Arduino ou ESP) en prenant en paramètre deux entiers. Le résultat était retourné dans la saga.</p>
 
 <pre class="lang:javascript decode:true">constellation.server.sendMessageWithSaga(function(response) {
 		console.log("Le resultat de 40+2 par l'Arduino est %s", response.Data);
