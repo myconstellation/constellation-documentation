@@ -8,17 +8,17 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-angular-js/
 published: true
-post_modified: 2017-05-05 17:31:55
+post_modified: 2017-09-06 11:58:14
 ---
 <h3>Préparer la page AngularJS</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Angular” et ses dépendances :
 <p align="center"><img src="https://developer.myconstellation.io/wp-content/uploads/2016/07/image.png" alt="image" /></p>
 Ou bien utiliser (ou copier en local) les scripts des CDN en ajoutant dans votre code HTML les balises suivantes :
 <pre class="lang:javascript decode:true">&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.1.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
 </pre>
 Dans votre code Javascript, vous devez créer un module Angular pour votre page que nous appelleront “MyDemoApp” et dans lequel nous injecterons le module “ngConstellation” :
 <pre class="lang:javascript decode:true">var myDemoApp = angular.module('MyDemoApp', ['ngConstellation']);</pre>
@@ -86,8 +86,8 @@ Pour envoyer des messages et donc invoquer des MessageCallbacks vous devez utili
 Par exemple, avec le package Nest déployé dans votre Constellation, on retrouvera un MessageCallback  “SetTargetTemperature” pour piloter la température de consigne d’un thermostat Nest.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-21.png"><img title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-20.png" alt="image" width="350" height="99" border="0" /></a></p>
 <p align="left">N’hésitez pas à utiliser le <a href="/constellation-platform/constellation-console/messagecallbacks-explorer/">MessageCallback Explorer</a> pour découvrir l’ensemble des MessageCallbacks exposés par les packages de votre Constellation.</p>
-Pour invoquer le MessageCallback  “SetTargetTemperature” depuis votre page Web :
-<pre class="lang:javascript decode:true">constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', [ "thermostatId", 19 ]);</pre>
+Pour invoquer le MessageCallback  “SetTargetTemperature” depuis votre page Web en passant en paramètre l’ID du thermostat et la température de consigne :
+<pre class="lang:javascript decode:true">constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', 'my_thermostat_id', 19);</pre>
 En AngularJS, pour lier l’invocation de ce code à un bouton, vous devez simplement ajouter l’attribut “ng-click” sur votre bouton.
 
 Par exemple, dans votre code HTML :
@@ -96,14 +96,14 @@ Par exemple, dans votre code HTML :
 &lt;/body&gt;</pre>
 Et dans votre contrôleur :
 <pre class="lang:javascript decode:true">$scope.SetNestTemperature = function () {
-   constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', [ "thermostatId", 19 ]);
+   constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', 'my_thermostat_id', 19);
 };
 </pre>
 Autre solution, exposer le client Consumer dans le scope AngularJS :
 <pre class="lang:javascript decode:true">$scope.constellation = constellation;</pre>
 Et donc s'en servir directement dans le template HTML :
 <pre class="lang:html5 decode:true">&lt;body ng-controller="MyController"&gt;
-    &lt;button ng-click="constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', [ "thermostatId", 19 ])"&gt;Set Nest to 19°C&lt;/button&gt;
+    &lt;button ng-click="constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', 'my_thermostat_id', 19)"&gt;Set Nest to 19°C&lt;/button&gt;
 &lt;/body&gt;</pre>
 Allons un peu plus loin en ajoutant un champ permettant à l’utilisateur de définir la température de consigne.
 
@@ -115,7 +115,7 @@ Le champ “input” est de type “number” et est lié à la variable de scop
 
 De ce  fait dans notre fonction “SetNestTemperature” nous pouvons récupérer la valeur définie par l’utilisateur :
 <pre class="lang:javascript decode:true">$scope.SetNestTemperature = function () {
-   constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', [ "thermostatId", $scope.targetTemperature ]);
+   constellation.sendMessage({ Scope: 'Package', Args: ['Nest'] }, 'SetTargetTemperature', 'my_thermostat_id', $scope.targetTemperature);
 };
 </pre>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-29.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-28.png" alt="image" width="350" height="60" border="0" /></a></p>
@@ -124,13 +124,13 @@ Comme pour l’<a href="/client-api/javascript-api/consommer-constellation-api-j
 Par exemple le MC “ShowNotification” du package <a href="/package-library/xbmc/">Xbmc</a> permettant d’afficher une notification sur une interface Kodi/XBMC prend deux paramètres : le nom d l’hôte XBMC (un type string) et le détail de la notification à afficher (un type complexe) :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-23.png"><img title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-22.png" alt="image" width="350" height="143" border="0" /></a></p>
 
-<pre class="lang:javascript decode:true">constellation.sendMessage({ Scope: 'Package', Args: ['Xbmc'] }, 'ShowNotification', [ xbmcName, { "Title":"Hello", "Message":"Hello from JS" } ]);</pre>
+<pre class="lang:javascript decode:true">constellation.sendMessage({ Scope: 'Package', Args: ['Xbmc'] }, 'ShowNotification', xbmcName, { "Title":"Hello", "Message":"Hello from JS" });</pre>
 Bien entendu vous pouvez invoquer des MessageCallbacks de n’importe quel package, réel (programme Linux/Windows) ou virtuel (Arduino/ESP, scripts, etc..) ou même sur d’autres consommateurs (pages Web par exemple).
 
 Ainsi vos pages Web peuvent, en envoyant des messages, invoquer des méthodes sur n'importe quel système connecté dans votre Constellation.
 
 Par exemple dans l’article sur les ESP/Arduinos, notre ESP8266 exposait un MC “Reboot” pour redémarrer la puce. Si l’on souhaite redémarrer notre Arduino/ESP depuis une page Web, il suffirai d’envoyer un message sans paramètre au bon scope. Par exemple :
-<pre class="lang:javascript decode:true">constellation.sendMessage({ Scope: 'Sentinel', Args: ['MyArduino'] }, 'Reboot', {});</pre>
+<pre class="lang:javascript decode:true">constellation.sendMessage({ Scope: 'Sentinel', Args: ['MyArduino'] }, 'Reboot');</pre>
 Ici le scope est “Sentinel” avec l’argument “MyArduino”, c’est à dire que le message “Reboot” sera envoyé à tous les packages de la sentinelle “MyArduino”.
 
 Les <a href="/concepts/messaging-message-scope-messagecallback-saga/">scopes</a> peuvent être :
@@ -166,13 +166,12 @@ L’affectation de la réponse dans la variable de scope “pingResult” est r�
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-30.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-29.png" alt="image" width="350" height="88" border="0" /></a></p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/09/image-31.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/image_thumb-30.png" alt="image" width="350" height="90" border="0" /></a></p>
 
-<pre class="lang:html5 decode:true">scope.Ping = function () {
-  constellation.sendMessageWithSaga({ Scope: 'Package', Args: ['NetworkTools'] }, 'Ping', $scope.host,
-    function(response) {
+<pre class="lang:html5 decode:true crayon-selected">scope.Ping = function () {
+  constellation.sendMessageWithSaga(function(response) {
       $scope.$apply(function() {
         $scope.pingResult = response.Data;
       });
-    });
+    }, { Scope: 'Package', Args: ['NetworkTools'] }, 'Ping', $scope.host);
 };
 </pre>
 Ainsi vos pages Web peuvent invoquer des méthodes et exploiter la réponse de tous les systèmes connectés sur Constellation exposant des MessageCallbacks.
