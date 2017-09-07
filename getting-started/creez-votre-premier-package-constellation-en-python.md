@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/creez-votre-premier-package-constellation-en-python/
 published: true
-post_modified: 2017-09-07 23:57:44
+post_modified: 2017-09-07 23:58:44
 ---
 Vous pouvez développer des packages Constellation avec le langage Python. Cela est très utile pour créer des packages à destination de vos sentinelles Linux comme vos Raspberry Pi où vous pourrez profiter des différentes libraires pour l’accès aux GPIO et autres ressources de ce SoC.
 
@@ -48,9 +48,9 @@ Si vous utilisez un Raspberry Pi, vous pouvez également <a href="/constellation
 
 Et voilà, votre environnement Linux est prêt !
 <h3>Développer un package Python en ligne de commande</h3>
-Vous pouvez soit utiliser le SDK Constellation basé sur Visual Studio pour créer, tester et déployer des packages Constellation (.NET ou Python) ou bien, utiliser l'outil en ligne de commande nommé "<a href="/client-api/python-api/developper-avec-le-package-tools-cli/"><strong><em>Constellation Package Tools CLI</em></strong></a>".
+Vous pouvez soit utiliser le SDK Constellation basé sur Visual Studio pour créer, tester et déployer des packages Constellation (.NET ou Python) ou bien, utiliser l'outil en ligne de commande nommé <a href="/client-api/python-api/developper-avec-le-package-tools-cli/"><strong><em>"Constellation Package Tools CLI"</em></strong></a>.
 
-Le développement sous Visual Studio est abordé ci-dessous. Pour l'outil en ligne de commande, rendez-vous <a href="/client-api/python-api/developper-avec-le-package-tools-cli/">ici</a> : <a href="/client-api/python-api/developper-avec-le-package-tools-cli/">Créer, tester et déployer des packages Python en ligne de commande</a>
+Le développement sous Visual Studio est abordé ci-dessous. Pour l'outil en ligne de commande, rendez-vous sur la page : <a href="/client-api/python-api/developper-avec-le-package-tools-cli/">Créer, tester et déployer des packages Python en ligne de commande</a>
 <h3>Développer un package Python avec Visual Studio</h3>
 Après avoir installé les prérequis et le <a href="/getting-started/installer-constellation/#Etape_5_selectionnez_les_composants_Constellation_a_installer">SDK Constellation</a>, lancez Visual Studio et créez un nouveau package Constellation de type “Python” :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/04/image.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Création d'un package Python" src="https://developer.myconstellation.io/wp-content/uploads/2016/04/image_thumb.png" alt="Création d'un package Python" width="424" height="294" border="0" /></a></p>
