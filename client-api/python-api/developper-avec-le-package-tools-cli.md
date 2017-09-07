@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/python-api/developper-avec-le-package-tools-cli/
 published: true
-post_modified: 2017-09-07 23:50:15
+post_modified: 2017-09-08 00:11:24
 ---
 Vous pouvez <a href="https://developer.myconstellation.io/getting-started/creez-votre-premier-package-constellation-en-python/">créer des packages Constellation Python avec Visual Studio</a> ou alors sans IDE avec l'outil en ligne de commande nommé <em><strong>"Constellation Package Tools CLI".</strong></em>
 
@@ -69,13 +69,13 @@ Pour faciliter le développement, vous n'êtes pas obligé de modifier manuellem
 Les scripts Constellation Python lancés par votre package peuvent être listés par la commande :
 <pre class="lang:default decode:true ">ctln pyscript list</pre>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/image-6.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Listing des scripts Python du package" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/image_thumb-6.png" alt="Listing des scripts Python du package" width="354" height="234" border="0" /></a></p>
-<p style="text-align: left;" align="center">Ici votre package "MyFirstPackage" ne contient qu'un seul script nommé "Main.py" dans le répertoire Scripts du package.</p>
+<p style="text-align: left;">Ici votre package "MyFirstPackage" ne contient qu'un seul script nommé "Main.py" dans le répertoire Scripts du package.</p>
 
-<h3 style="text-align: left;" align="center">Ajouter des scripts Python</h3>
-<p style="text-align: left;" align="center">Pour ajouter un script Constellation Python, vous pouvez soit ajouter un script existant sur votre système de fichier dans votre package ou soit créer un nouveau script à partir d'un modèle (template).</p>
+<h3 style="text-align: left;">Ajouter des scripts Python</h3>
+<p style="text-align: left;">Pour ajouter un script Constellation Python, vous pouvez soit ajouter un script existant sur votre système de fichier dans votre package ou soit créer un nouveau script à partir d'un modèle (template).</p>
 
-<h4 style="text-align: left;" align="center">Ajouter un script existant</h4>
-<p style="text-align: left;" align="center">Pour un script existant, il suffit d'utiliser l'option "add" :</p>
+<h4 style="text-align: left;">Ajouter un script existant</h4>
+<p style="text-align: left;">Pour un script existant, il suffit d'utiliser l'option "add" :</p>
 
 <pre class="lang:default decode:true">ctln pyscript add &lt;filepath&gt; [--filename=&lt;name&gt;]
 </pre>
@@ -83,8 +83,8 @@ Vous devez spécifier le chemin complet vers votre fichier à ajouter (filepath)
 
 Par exemple la commande ci-dessous ajoutera dans votre package le fichier "~/demo/MyDemo.py" sous le nom "DemoSeb.py"
 <pre class="lang:default decode:true">ctln pyscript add ~/demo/MyDemo.py --filename=DemoSeb.py</pre>
-<h4 style="text-align: left;" align="center">Ajouter de nouveau script</h4>
-<p style="text-align: left;" align="center">L'action la plus courante sera de créer un nouveau script Python dans votre package avec l'action "new" via la commande suivante :</p>
+<h4 style="text-align: left;">Ajouter de nouveau script</h4>
+<p style="text-align: left;">L'action la plus courante sera de créer un nouveau script Python dans votre package avec l'action "new" via la commande suivante :</p>
 
 <pre class="lang:default decode:true ">ctln pyscript new &lt;filename&gt; [&lt;item_template_name&gt;]</pre>
 Vous devez obligatoirement spécifier le nom du fichier (filename) avec ou sans l’extension .py (rajoutée automatiquement). Le script sera créé dans le répertoire Scripts de votre package et automatiquement déclaré dans la configuration.
@@ -104,8 +104,8 @@ Rajoutons également un troisieme scriupt de démonstation en utilisant le templ
 Notre package a maintenant trois scripts : Main.py (créé avec le template du package), Main2.py (créé ci-dessus avec le template de base), DemoConstellation.py (créé avec le template de demo) :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/image-8.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Ajout de scripts Python" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/image_thumb-8.png" alt="Ajout de scripts Python" width="354" height="226" border="0" /></a></p>
 
-<h3 style="text-align: left;" align="center">Renommer ou supprimer des scripts</h3>
-<p style="text-align: left;" align="center">Vous pouvez renommer les scripts du package avec l’option “rename”. Par exemple renommons “DemoConstellation” par “Demo” (les extensions “.py” sont optionnelles) :</p>
+<h3 style="text-align: left;">Renommer ou supprimer des scripts</h3>
+<p style="text-align: left;">Vous pouvez renommer les scripts du package avec l’option “rename”. Par exemple renommons “DemoConstellation” par “Demo” (les extensions “.py” sont optionnelles) :</p>
 
 <pre class="lang:default decode:true">ctln pyscript rename DemoConstellation Demo</pre>
 <a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/image-9.png"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border-width: 0px;" title="Renommer des scripts" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/image_thumb-9.png" alt="Renommer des scripts" width="354" height="226" border="0" /></a>
