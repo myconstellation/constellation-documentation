@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/creez-votre-premier-package-constellation-en-python/
 published: true
-post_modified: 2017-07-01 09:11:17
+post_modified: 2017-09-07 23:57:44
 ---
 Vous pouvez développer des packages Constellation avec le langage Python. Cela est très utile pour créer des packages à destination de vos sentinelles Linux comme vos Raspberry Pi où vous pourrez profiter des différentes libraires pour l’accès aux GPIO et autres ressources de ce SoC.
 
@@ -47,12 +47,16 @@ sudo pip install enum34</pre>
 Si vous utilisez un Raspberry Pi, vous pouvez également <a href="/constellation-platform/constellation-server/constellation-raspberry-pi/">consulter cet article en particulier</a>.
 
 Et voilà, votre environnement Linux est prêt !
-<h3>Créez le package Python dans Visual Studio</h3>
-Lancez Visual Studio et créez un nouveau package Constellation de type “Python” :
+<h3>Développer un package Python en ligne de commande</h3>
+Vous pouvez soit utiliser le SDK Constellation basé sur Visual Studio pour créer, tester et déployer des packages Constellation (.NET ou Python) ou bien, utiliser l'outil en ligne de commande nommé "<a href="/client-api/python-api/developper-avec-le-package-tools-cli/"><strong><em>Constellation Package Tools CLI</em></strong></a>".
+
+Le développement sous Visual Studio est abordé ci-dessous. Pour l'outil en ligne de commande, rendez-vous <a href="/client-api/python-api/developper-avec-le-package-tools-cli/">ici</a> : <a href="/client-api/python-api/developper-avec-le-package-tools-cli/">Créer, tester et déployer des packages Python en ligne de commande</a>
+<h3>Développer un package Python avec Visual Studio</h3>
+Après avoir installé les prérequis et le <a href="/getting-started/installer-constellation/#Etape_5_selectionnez_les_composants_Constellation_a_installer">SDK Constellation</a>, lancez Visual Studio et créez un nouveau package Constellation de type “Python” :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/04/image.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Création d'un package Python" src="https://developer.myconstellation.io/wp-content/uploads/2016/04/image_thumb.png" alt="Création d'un package Python" width="424" height="294" border="0" /></a></p>
-<p align="left">Une fois créé le projet Visual Studio à la structure suivante :</p>
+<p align="left">Une fois créé le projet Visual Studio a la structure suivante :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/04/image-4.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Structure d'un package Python" src="https://developer.myconstellation.io/wp-content/uploads/2016/04/image_thumb-4.png" alt="Structure d'un package Python" width="244" height="199" border="0" /></a></p>
-<p align="left">Vous retrouverez la structure classique d’un package Constellation :</p>
+<p align="left">Vous retrouverez une structure classique pour un package Constellation :</p>
 
 <ul>
  	<li>
@@ -78,7 +82,7 @@ Lancez Visual Studio et créez un nouveau package Constellation de type “Pytho
 <p align="left">Dans la catégorie "Constellation" sélectionnez "<strong><em>Constellation Python Script</em></strong>" :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/06/image-1.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Création d'un nouveau script Constellation Python" src="https://developer.myconstellation.io/wp-content/uploads/2017/06/image_thumb-1.png" alt="Création d'un nouveau script Constellation Python" width="354" height="246" border="0" /></a></p>
 <p align="left">Chaque script sera démarré dans un processus dédié et connecté à Constellation.</p>
-<p align="left"><u>Attention</u> : si vous rajoutez des scripts Python dans ce dossier, il faut obligatoirement les inclure dans le package en sélectionnant “<em>Copy if newer</em>” pour la propriété “<em>Copy to Output directory</em>”. Cette propriété est automatiquement définie à cette valeur si vous avez créé votre fichier Python en sélectionnant l’élément "Constellation Python Script" comme expliqué ci-dessus.</p>
+<p align="left"><u>Attention</u> : si vous rajoutez des scripts Python dans ce dossier, il faut obligatoirement les inclure dans le package en sélectionnant “<em>Copy if newer</em>” pour la propriété “<em>Copy to Output directory</em>”. Cette propriété est automatiquement définie à cette valeur si vous avez créé votre fichier Python en sélectionnant l’élément "<em>Constellation Python Script</em>" comme expliqué ci-dessus.</p>
 <p align="left"><strong>Dans le fichier "<em>App.config</em>" vous devez déclarer les fichiers Python à démarrer</strong>. Les scripts Python créé en sélectionnant l’élément "Constellation Python Script" sont automatiquement ajoutés dans ce fichier lors de la création. <strong>Si vous renommez ou supprimer vos scripts, n'oubliez pas de mettre à jour ce fichier</strong>.</p>
 
 <pre class="lang:xhtml decode:true">&lt;pythonProxy xmlns="urn:Constellation.PythonProxy"&gt;
