@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-09-15 16:43:25
+post_modified: 2017-09-15 16:45:03
 ---
 <h3>15/09/2017 : Release 1.8.3 (1.8.3.17258)</h3>
 <ul>
@@ -17,6 +17,7 @@ post_modified: 2017-09-15 16:43:25
  	<li>Sentinel : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
  	<li>Server : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
  	<li>Server : enregistrement de toutes erreurs Fatales dans le fichier de log "ConstellationServerManager" avant la fermeture du processus en cas de crash</li>
+ 	<li>SDK : Mise à jour des templates de projet avec le package Constellation 1.8.3.17258</li>
 </ul>
 <h3>26/08/2017 : Release 1.8.3 (1.8.3.17238)</h3>
 <ul>
