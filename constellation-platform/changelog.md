@@ -8,8 +8,16 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-08-27 14:41:18
+post_modified: 2017-09-15 16:43:25
 ---
+<h3>15/09/2017 : Release 1.8.3 (1.8.3.17258)</h3>
+<ul>
+ 	<li>Common : Correction interne d'un bug fatal entraînant le crash du serveur au démarrage, des sentinelles et dans certain cas des packages (si le package invoque <a href="/client-api/net-package-api/envoyer-des-messages-invoquer-des-messagecallbacks/#Utiliser_les_Tasks_awaitable_pour_attendre_la_reponse_dune_saga">une saga avec une Task&lt;T&gt;</a>) sur les systèmes utilisant la version 5.2 (ou supérieure) du runtime Mono (inclus nativement depuis Debian / Raspbian 9). Ce bug est lié au PR Mono <a href="https://github.com/mono/mono/pull/4404">#4404</a> publié depuis Mono 5.2.0.179 (remplacement du Microsoft.CSharp par l'implémentation du CoreFX)</li>
+ 	<li>Common : durcissement de la classe ci-dessus pour éviter qu'un bug de ce type ne soit "fatal" en cas de changement d'implémentation du RuntimeBinder.</li>
+ 	<li>Sentinel : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
+ 	<li>Server : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
+ 	<li>Server : enregistrement de toutes erreurs Fatales dans le fichier de log "ConstellationServerManager" avant la fermeture du processus en cas de crash</li>
+</ul>
 <h3>26/08/2017 : Release 1.8.3 (1.8.3.17238)</h3>
 <ul>
  	<li>Common : ajout de surcharges acceptant un string seulement sur les méthodes WriteInfo/WriteDebug/WriteWarn/WriteError pour bypasser le string.Format si aucun argument n'est passé (évitant également les erreurs où la valeur d'un string contient des accolades)</li>
