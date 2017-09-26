@@ -8,11 +8,11 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/stateobjects/
 published: true
-post_modified: 2017-05-11 16:36:20
+post_modified: 2017-09-26 16:22:15
 ---
-Les StateObjects sont des objets de données produits et publiés par des packages qu’ils soient “réels” ou “virtuels” d'un Constellation.
+Les StateObjects sont des objets de données produits et publiés par des packages qu’ils soient “réels” ou “virtuels” d'une Constellation.
 
-Ils représentent les variables de type simple (numérique, chaîne de caractère, booléen, etc..) ou de type complexe (objet formaté en JSON) de vos packages exposées publiquement.
+Ils représentent des variables de type simple (numérique, chaîne de caractère, booléen, etc..) ou de type complexe (objet formaté en JSON).
 
 Les StateObjects sont tous stockés sur le serveur Constellation et peuvent être interrogés par n’importe quels packages ou consommateurs de la Constellation (sauf si des autorisations restreignent l’accès).
 <h3>Le StateObject</h3>
