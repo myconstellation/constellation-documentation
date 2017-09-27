@@ -1,14 +1,14 @@
 ---
 ID: 5519
-post_title: 'Cr&eacute;er votre bo&icirc;te aux lettres connect&eacute;e avec Constellation'
+post_title: 'Cr&eacute;ez votre bo&icirc;te aux lettres connect&eacute;e avec Constellation'
 author: Sebastien Warin
 post_date: 2017-09-27 12:29:50
 post_excerpt: ""
 layout: post
 permalink: >
-  https://developer.myconstellation.io/showcases/crer-bote-aux-lettres-connecte-constellation/
+  https://developer.myconstellation.io/showcases/creez-votre-boite-aux-lettres-connectee-constellation/
 published: true
-post_modified: 2017-09-27 12:29:50
+post_modified: 2017-09-27 12:30:35
 ---
 <em>Projet réalisé par Judith Caroff, Jeanne Leclercq, Luc Fermaut, Pierre Hourdé, Jean-Baptiste Lavoine et Victorien Renault.</em>
 <h2>Introduction</h2>
