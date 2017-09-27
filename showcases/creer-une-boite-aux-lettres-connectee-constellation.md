@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/creer-une-boite-aux-lettres-connectee-constellation/
 published: true
-post_modified: 2017-09-27 12:46:59
+post_modified: 2017-09-27 15:03:54
 ---
 <em>Projet réalisé par Judith Caroff, Jeanne Leclercq, Luc Fermaut, Pierre Hourdé, Jean-Baptiste Lavoine et Victorien Renault.</em>
 <h2>Introduction</h2>
@@ -129,6 +129,7 @@ Ci-dessous, les correspondances entre les branches du capteur à ultrasons et le
 }
 </pre>
 <p style="text-align: center;"><img class="size-full wp-image-5527 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/video1-2.gif" alt="" width="196" height="350" /></p>
+
 <h3 style="text-align: left;">Etape 2 : Gérer les accès à la boîte aux lettres grâce à un lecteur de carte NFC</h3>
 <p style="text-align: left;">Dans cette partie, nous allons envoyer un Message Callback à Constellation grâce à l’ID du badge NFC détecté par notre lecteur de cartes.</p>
 <p style="text-align: left;">Cela nous permettra par la suite de gérer les autorisations d’accès à la boîte aux lettres, de contrôler l’ouverture par notre servo-moteur, et d’avertir l’utilisateur qu’un colis a été livré ou que le courrier a été récupéré. Nous devrons donc enregistrer les différents utilisateurs en renseignant leur ID de badge et leur statut (facteur ou utilisateur).</p>
@@ -235,6 +236,7 @@ Ci-dessous, les correspondances entre les branches du capteur à ultrasons et le
  }
 </pre>
 <p style="text-align: center;"><img class="alignnone size-full wp-image-5528 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/video2-2.gif" alt="" width="196" height="350" /></p>
+
 <h3 style="text-align: left;">Etape 4 : Synchroniser toutes nos parties avec un package Constellation</h3>
 <p style="text-align: left;">Vous pouvez retrouver notre code complet pour la boîte aux lettres sur GitHub pour plus de précision (<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fgithub.com%2FSqyluck%2FBoite-aux-lettres-connectee&amp;h=ATO-A7kid-AyGmrtD0hCDSOEWcwWMsyF8aAuEcrDY3b1Q9b-_NEMOnsJ9DOWADshjfo8FwRAmqfoT5MoHe3RwBJ1U_2af1vgeNd_XHbk_4LNVdA4-AYBgC-v6mcC5YakbL12cgMSWJFFBA">https://github.com/Sqyluck/Boite-aux-lettres-connectee</a>).</p>
 <p style="text-align: left;">Il est ensuite nécessaire de créer un package Constellation, qui va nous permettre de traiter toutes les données de nos différents éléments.</p>
@@ -249,7 +251,7 @@ Ci-dessous, les correspondances entre les branches du capteur à ultrasons et le
 <p style="text-align: center;" align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/Visuel-boite-au-lettre-composants.jpg"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Visuel boite au lettre composants" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/Visuel-boite-au-lettre-composants_thumb.jpg" alt="Visuel boite au lettre composants" width="223" height="244" border="0" /></a> <a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/Visuel-boite-au-lettre-intrieur.jpg"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Visuel boite au lettre intérieur" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/Visuel-boite-au-lettre-intrieur_thumb.jpg" alt="Visuel boite au lettre intérieur" width="207" height="244" border="0" /></a></p>
 <p style="text-align: center;" align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/Schma-composants.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Schéma composants" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/Schma-composants_thumb.png" alt="Schéma composants" width="450" height="232" border="0" /></a></p>
 
-<h2 style="text-align: left;">3. L’interface utilisateur</h2>
+<h2 style="text-align: left;">L’interface utilisateur</h2>
 <p style="text-align: left;"><i>Prérequis : disposer de Node.js et de npm</i></p>
 
 <h3 style="text-align: left;">Etape 1 : Créer une application avec ionic</h3>
