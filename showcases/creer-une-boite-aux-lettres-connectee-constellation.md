@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/creer-une-boite-aux-lettres-connectee-constellation/
 published: true
-post_modified: 2017-09-27 12:31:10
+post_modified: 2017-09-27 12:44:39
 ---
 <em>Projet réalisé par Judith Caroff, Jeanne Leclercq, Luc Fermaut, Pierre Hourdé, Jean-Baptiste Lavoine et Victorien Renault.</em>
 <h2>Introduction</h2>
@@ -128,6 +128,7 @@ Ci-dessous, les correspondances entre les branches du capteur à ultrasons et le
    }
 }
 </pre>
+<h3><img class="alignnone size-full wp-image-5527 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/video1-2.gif" alt="" width="196" height="350" /></h3>
 <h3 style="text-align: left;">Etape 2 : Gérer les accès à la boîte aux lettres grâce à un lecteur de carte NFC</h3>
 <p style="text-align: left;">Dans cette partie, nous allons envoyer un Message Callback à Constellation grâce à l’ID du badge NFC détecté par notre lecteur de cartes.</p>
 <p style="text-align: left;">Cela nous permettra par la suite de gérer les autorisations d’accès à la boîte aux lettres, de contrôler l’ouverture par notre servo-moteur, et d’avertir l’utilisateur qu’un colis a été livré ou que le courrier a été récupéré. Nous devrons donc enregistrer les différents utilisateurs en renseignant leur ID de badge et leur statut (facteur ou utilisateur).</p>
@@ -233,6 +234,7 @@ Ci-dessous, les correspondances entre les branches du capteur à ultrasons et le
    });  
  }
 </pre>
+<h3><img class="alignnone size-full wp-image-5528 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/video2-2.gif" alt="" width="196" height="350" /></h3>
 <h3 style="text-align: left;">Etape 4 : Synchroniser toutes nos parties avec un package Constellation</h3>
 <p style="text-align: left;">Vous pouvez retrouver notre code complet pour la boîte aux lettres sur GitHub pour plus de précision (<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fgithub.com%2FSqyluck%2FBoite-aux-lettres-connectee&amp;h=ATO-A7kid-AyGmrtD0hCDSOEWcwWMsyF8aAuEcrDY3b1Q9b-_NEMOnsJ9DOWADshjfo8FwRAmqfoT5MoHe3RwBJ1U_2af1vgeNd_XHbk_4LNVdA4-AYBgC-v6mcC5YakbL12cgMSWJFFBA">https://github.com/Sqyluck/Boite-aux-lettres-connectee</a>).</p>
 <p style="text-align: left;">Il est ensuite nécessaire de créer un package Constellation, qui va nous permettre de traiter toutes les données de nos différents éléments.</p>
@@ -364,6 +366,7 @@ $scope.deleteUser = function() {
 <pre class="lang:html5 decode:true">&lt;button ng-click="deleteUser()"&gt;Supprimer cet utilisateur&lt;/button&gt;
 </pre>
 <p style="text-align: left;">En vous servant de cette base, vous pouvez réaliser une application vous permettant de recevoir un message sur votre application lorsque vous recevez un courrier ou un colis mais aussi d’ajouter ou de supprimer des accès à la boite aux lettres.</p>
+<img class="alignnone size-full wp-image-5530 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/video3-2.gif" alt="" width="196" height="350" />
 <p style="text-align: left;">Il est également possible de réutiliser des packages existants, par exemple, nous nous sommes servis du package PushBullet afin de recevoir des notifications sur notre smartphone.</p>
 <p style="text-align: left;">Voici un aperçu de notre application ionic :</p>
 <p style="text-align: center;" align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/notifications.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="notifications" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/notifications_thumb.png" alt="notifications" width="150" height="295" border="0" /></a><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/paramtres.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="paramètres" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/paramtres_thumb.png" alt="paramètres" width="150" height="295" border="0" /></a><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/utilisateurs.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="utilisateurs" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/utilisateurs_thumb.png" alt="utilisateurs" width="150" height="295" border="0" /></a></p>
