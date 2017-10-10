@@ -177,11 +177,11 @@ Les packages peuvent écrire des logs qui seront remontés dans le hub Constella
 
 Exemple d’un message “Info” :
 
-<pre>http://localhost:8088/rest/constellation/PurgeStateObjects?SentinelName=MyVirtualSentinel&amp;PackageName=MyVirtualPackage&amp;AccessKey=MyAccessKey&amp;message=Hello World</pre>
+<pre>http://localhost:8088/rest/constellation/WriteLog?SentinelName=MyVirtualSentinel&amp;PackageName=MyVirtualPackage&amp;AccessKey=MyAccessKey&amp;message=Hello World</pre>
 
 Exemple pour produire un message d’erreur (Error) :
 
-<pre>http://localhost:8088/rest/constellation/PurgeStateObjects?SentinelName=MyVirtualSentinel&amp;PackageName=MyVirtualPackage&amp;AccessKey=MyAccessKey&amp;message=Il y  a une erreur ici&amp;level=Error</pre>
+<pre>http://localhost:8088/rest/constellation/WriteLog?SentinelName=MyVirtualSentinel&amp;PackageName=MyVirtualPackage&amp;AccessKey=MyAccessKey&amp;message=Il y  a une erreur ici&amp;level=Error</pre>
 
 <h3>Récupérer ses settings</h3>
 
@@ -334,7 +334,7 @@ Le principe est le même qu’avec les messages : il faut récupérer un ID d’
 <h5>S’abonner à des StateObjects</h5>
 
 <ul>
-    <li>Action : “SubscribeStateObjects” (GET)</li>
+    <li>Action : “SubscribeToStateObjects” (GET)</li>
     <li>Paramètres :
 <ul>
     <li><u>subscriptionId</u> (optionnel) : identifiant de l’abonnement si déjà connu</li>
@@ -350,13 +350,13 @@ En retour vous obtiendrez l’ID d’abonnement (un GUID).
 
 Par exemple pour s’abonner au SO “/intelcpu/load/0”, produit le package “HWMonitor” sur la sentinelle “MON-PC” :
 
-<pre>http://localhost:8088/rest/constellation/SubscribeStateObjects?SentinelName=Consumer&amp;PackageName=Demo&amp;AccessKey=MaCleDeTest123&amp;sentinel=MON-PC&amp;package=HWMonitor&amp;name=/intelcpu/load/0</pre>
+<pre>http://localhost:8088/rest/constellation/SubscribeToStateObjects?SentinelName=Consumer&amp;PackageName=Demo&amp;AccessKey=MaCleDeTest123&amp;sentinel=MON-PC&amp;package=HWMonitor&amp;name=/intelcpu/load/0</pre>
 
 <strong>ATTENTION</strong> : si vous souhaitez “ajouter” des SO à votre abonnement vous devez <u>impérativement</u> préciser votre ID d’abonnement récupéré lors du 1er appel autrement vous allez créer un nouvel abonnement.
 
 Par exemple pour “ajouter” le SO correspondant à la consommation RAM :
 
-<pre>http://localhost:8088/rest/constellation/SubscribeStateObjects?SentinelName=Consumer&amp;PackageName=Demo&amp;AccessKey=MaCleDeTest123&amp;sentinel=MON-PC&amp;package=HWMonitor&amp;name=/ram/load&amp;subscriptionId=&lt;subId&gt;</pre>
+<pre>http://localhost:8088/rest/constellation/SubscribeToStateObjects?SentinelName=Consumer&amp;PackageName=Demo&amp;AccessKey=MaCleDeTest123&amp;sentinel=MON-PC&amp;package=HWMonitor&amp;name=/ram/load&amp;subscriptionId=&lt;subId&gt;</pre>
 
 <h5>Relever les StateObjects mis à jour</h5>
 
