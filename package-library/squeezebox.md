@@ -12,7 +12,7 @@ post_modified: 2017-05-22 17:58:35
 ---
 Le package Squeezebox vous permet de contrôler vos Squeezebox via le Logitech Media Server (lecture, pause, suivant, contrôle du volume …).
 
-Cette documentation a été réalisé avec la version 1.1 du package Squeezebox ainsi que la version 2.0 du plugin Constellation pour Logitech Media Server.
+Cette documentation a été réalisé avec la version 1.2.1 du package Squeezebox ainsi que la version 2.0 du plugin Constellation pour Logitech Media Server.
 
 Le code source est disponible sur <a title="https://github.com/myconstellation/constellation-packages/tree/master/Squeezebox" href="https://github.com/myconstellation/constellation-packages/tree/master/Squeezebox">https://github.com/myconstellation/constellation-packages/tree/master/Squeezebox</a>
 <h3>Installation du package Squeezebox</h3>
@@ -44,6 +44,18 @@ Vous pouvez également déployer ce package manuellement dans la configuration d
 <td valign="bottom" width="10">String</td>
 <td valign="bottom" width="10">Obligatoire</td>
 <td valign="bottom" width="478">Adresse IP du LMS avec le port</td>
+</tr>
+<tr>
+<td valign="bottom" width="10">ServerUser</td>
+<td valign="bottom" width="10">String</td>
+<td valign="bottom" width="10">Facultatif</td>
+<td valign="bottom" width="478">Pseudo pour se connecter au LMS si défini</td>
+</tr>
+<tr>
+<td valign="bottom" width="10">ServerPassword</td>
+<td valign="bottom" width="10">String</td>
+<td valign="bottom" width="10">Facultatif</td>
+<td valign="bottom" width="478">Mot de passe pour se connecter  au LMS si défini</td>
 </tr>
 </tbody>
 </table>
