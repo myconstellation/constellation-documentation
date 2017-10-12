@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/connecter-un-arduino-ou-un-esp8266-constellation/
 published: true
-post_modified: 2017-09-08 00:05:26
+post_modified: 2017-10-12 15:08:59
 ---
 Vous pouvez connecter tout type d’objet ou système dans Constellation à partir du moment où vous disposez d’une connectivité IP pour réaliser des appels HTTP.
 <h3>Introduction</h3>
@@ -125,6 +125,26 @@ Encore une fois la variable est statique pour pouvoir l’utiliser n’importe o
 
 Si vous devez convertir votre chaîne de caractères en <em>const char *</em>, vous pouvez utiliser la fonction <em>c_str()</em> :
 <pre class="lang:cpp decode:true">const char* maChaine = strMaChaine.c_str();</pre>
+Vous pouvez également tester la présence d'un setting avec la méthode "containsKey" :
+<pre class="lang:c++ decode:true ">if(settings.containsKey("MySetting")) {  
+  // Do something with settings["MySetting"]  
+}</pre>
+Par exemple vous pouvez gérer les valeurs par défaut. Imaginez un code où la valeur d'un timeout est de 5 secondes par défaut mais vous vous laissez la possibilité de surcharger cette variable depuis les settings Constellation :
+<pre class="lang:default decode:true">// Default value
+int timeout = 5; // sec
+
+setup() {
+  // .....
+  JsonObject&amp; settings = constellation.getSettings();
+  if(settings.containsKey("Timeout")) {  
+    timeout = settings["Timeout"].as&lt;int&gt;();
+  }
+}
+
+void loop() {
+   // DO something with 'timeout'
+}</pre>
+Si le setting "Timeout" est défini dans les settings de votre package sur Constellation, la variable "timeout" sera affectée à votre valeur, autrement, si le setting n'existe pas, la valeur de cette variable sera de 5.
 <h3>Publier des StateObjects</h3>
 Pour produire et publier un StateObject dans votre Constellation vous devez invoquer la méthode “pushStateObject” :
 <pre class="lang:cpp decode:true">constellation.pushStateObject(name, value);</pre>
