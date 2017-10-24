@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/connectez-vos-pages-web-constellation/
 published: true
-post_modified: 2017-09-06 11:47:24
+post_modified: 2017-10-24 10:29:40
 ---
 <h3>Introduction</h3>
 Il existe actuellement deux librairies Constellation JavaScript :
@@ -37,16 +37,16 @@ Pour cela vous devez avoir déployé le package “HWMonitor” sur au moins une
 Les librairies JavaScripts sont accessibles sur : <a href="http://cdn.myconstellation.io/js/">http://cdn.myconstellation.io/js/</a> (en HTTP ou HTTPS).
 
 De ce fait, vous pouvez créer une simple pages HTML et ajoutez dans l’entête les balises suivantes :
-<pre class="lang:html5 decode:true">&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+<pre class="lang:html5 decode:true">&lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
 </pre>
 Si vous souhaitez connecter votre page à Constellation en utilisant le framework AngularJS :
-<pre class="lang:html5 decode:true">&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+<pre class="lang:html5 decode:true">&lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
 </pre>
 <h4>Par Nuget en utilisant Visual Studio</h4>
 Créez une application Web vide dans Visual Studio et ouvrez le gestionnaire de package NuGet.
