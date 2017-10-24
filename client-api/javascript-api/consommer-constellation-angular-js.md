@@ -8,17 +8,17 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-angular-js/
 published: true
-post_modified: 2017-09-06 11:59:55
+post_modified: 2017-10-24 10:33:19
 ---
 <h3>Préparer la page AngularJS</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Angular” et ses dépendances :
 <p align="center"><img src="https://developer.myconstellation.io/wp-content/uploads/2016/07/image.png" alt="image" /></p>
 Ou bien utiliser (ou copier en local) les scripts des CDN en ajoutant dans votre code HTML les balises suivantes :
-<pre class="lang:javascript decode:true">&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+<pre class="lang:javascript decode:true">&lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
 </pre>
 Dans votre code Javascript, vous devez créer un module Angular pour votre page que nous appelleront “MyDemoApp” et dans lequel nous injecterons le module “ngConstellation” :
 <pre class="lang:javascript decode:true">var myDemoApp = angular.module('MyDemoApp', ['ngConstellation']);</pre>
@@ -36,15 +36,15 @@ Et voilà votre squelette est prêt !
 Pour plus d’information sur AngularJS, je vous recommande la lecture de ce guide : <a title="https://docs.angularjs.org/misc/started" href="https://docs.angularjs.org/misc/started">https://docs.angularjs.org/misc/started</a>
 
 Pour résumer notre squelette page est donc :
-<pre class="lang:html5 decode:true crayon-selected">&lt;!DOCTYPE html&gt;
+<pre class="lang:html5 decode:true">&lt;!DOCTYPE html&gt;
 &lt;html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyDemoApp"&gt;
 &lt;head&gt;
     &lt;title&gt;Test API AngularJS&lt;/title&gt;
-	&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/ngConstellation-1.8.2.min.js"&gt;&lt;/script&gt;
     
     &lt;script&gt;
 		var myDemoApp = angular.module('MyDemoApp', ['ngConstellation']);
