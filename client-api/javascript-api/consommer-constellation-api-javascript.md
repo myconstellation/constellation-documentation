@@ -8,15 +8,15 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-api-javascript/
 published: true
-post_modified: 2017-09-06 11:54:57
+post_modified: 2017-10-24 10:30:52
 ---
 <h3>Connecter une page HTML avec l’API Javascript</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Javascript” et ses dépendances :
 <p align="center"><img src="https://developer.myconstellation.io/wp-content/uploads/2016/07/image.png" alt="image" /></p>
 Ou bien utiliser (ou copier en local) les scripts des CDN en ajoutant dans votre code HTML les balises suivantes :
-<pre class="lang:html5 decode:true">&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+<pre class="lang:html5 decode:true crayon-selected">&lt;script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="//cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.myconstellation.io/js/Constellation-1.8.2.min.js"&gt;&lt;/script&gt;
 </pre>
 Une fois les scripts ajoutés dans votre page vous devez initialiser le client Constellation en spécifiant l’URL de votre serveur Constellation, la clé d’accès et le “Friendly name” de votre page :
 <pre class="lang:javascript decode:true">var constellation = $.signalR.createConstellationConsumer("http://localhost:8088", "123456789", "Test API JS");</pre>
