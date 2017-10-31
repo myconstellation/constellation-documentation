@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-une-prise-connectee-avec-un-esp8266/
 published: true
-post_modified: 2017-10-31 12:29:46
+post_modified: 2017-10-31 12:31:51
 ---
 La prise connectée est un élément phare de la domotique de la maison. Il permet d'allumer ou d'éteindre un équipement branché dessus ou encore de connaitre sa consommation en énergie. Dans mon cas, j'avais besoin d'allumer ou d'éteindre les enceintes de mon média center automatiquement lorsque ce dernier était démarré.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/10/2016-08-08-16.32.30.jpg"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Prise connectée" src="https://developer.myconstellation.io/wp-content/uploads/2017/10/2016-08-08-16.32.30_thumb.jpg" alt="Prise connectée" width="404" height="304" border="0" /></a></p>
@@ -54,7 +54,7 @@ Pour combler le "trou" du bouton physique original, j'ai choisi de coller par l'
 La fonction de base de la prise est assez simple : couper le courant ou le laisser passer. Dans un premier temps, j'ai uploadé un sketch de base Constellation avec Arduino sur l'ESP01 à l'extérieur de la prise. Je l'ai ensuite branché dans la prise que j'ai enfiché dans le mur. Bazinga, le régulateur 3.3v fait son job, l'ESP boote, se connecte à mon réseau wifi et envoie un "hello world" dans la console Constellation. Pour découvrir comment connecter un ESP8266 à Constellation, <a href="https://developer.myconstellation.io/getting-started/connecter-un-arduino-ou-un-esp8266-constellation/">suivez ce guide</a>.
 
 Ensuite, j'ai utilisé la librairie Constellation <a href="https://developer.myconstellation.io/client-api/arduino-esp-api/recevoir-des-messages-et-exposer-des-methodes-messagecallback-sur-arduino-esp/">pour ajouter un MessageCallback</a> pour activer ou désactiver le GPIO de la prise, <a href="https://developer.myconstellation.io/client-api/arduino-esp-api/produire-des-stateobjects-depuis-arduino-esp/">couplé à un StateObject</a> pour maintenir l’état de la prise dans Constellation :
-<pre title="Liaison entre la prise et l'état de Kodi" class="lang:csharp decode:true">constellation.registerMessageCallback("Switch", MessageCallbackDescriptor().setDescription("Switch le statut du relais."),
+<pre class="lang:default decode:true crayon-selected" title="Exposition du MessageCallback">constellation.registerMessageCallback("Switch", MessageCallbackDescriptor().setDescription("Switch le statut du relais."),
   [](JsonObject &amp; json) {
     statutRelais = !statutRelais;
     digitalWrite(gpioRelais, statutRelais);
