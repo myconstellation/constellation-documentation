@@ -8,8 +8,10 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-une-prise-connectee-avec-un-esp8266/
 published: true
-post_modified: 2017-10-31 12:31:51
+post_modified: 2017-10-31 12:34:56
 ---
+<em>Par Lucas Dupuis</em>
+
 La prise connectée est un élément phare de la domotique de la maison. Il permet d'allumer ou d'éteindre un équipement branché dessus ou encore de connaitre sa consommation en énergie. Dans mon cas, j'avais besoin d'allumer ou d'éteindre les enceintes de mon média center automatiquement lorsque ce dernier était démarré.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/10/2016-08-08-16.32.30.jpg"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Prise connectée" src="https://developer.myconstellation.io/wp-content/uploads/2017/10/2016-08-08-16.32.30_thumb.jpg" alt="Prise connectée" width="404" height="304" border="0" /></a></p>
 <p align="left">Découvrons ensemble comment créer sa prise connectée avec un ESP8266.</p>
