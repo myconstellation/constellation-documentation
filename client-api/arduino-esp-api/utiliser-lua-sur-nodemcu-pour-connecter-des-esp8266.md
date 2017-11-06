@@ -31,14 +31,15 @@ Par exemple pour se connecter au Wifi :
 <pre class="lang:lua decode:true">print("Démarrage")
 wifi.setmode(wifi.STATION)
 print("set mode=STATION (mode="..wifi.getmode()..")")
-wifi.sta.config("MON RESEAU WIFI", "Ma clé Wifi")
- 
+wifi.sta.config{ssid="MON RESEAU WIFI", pwd="Ma clé Wifi"}
+
 tmr.alarm(0, 1000, 1, function()
    if wifi.sta.getip() == nil then
       print("Connecting to AP...")
    else
       print("Connected! IP: ",wifi.sta.getip())
       tmr.stop(0)
+   end
 end)</pre>
 
 On commence par définir le mode Wifi à Station (client) puis on se connecte en spécifiant le SSID et la clé Wifi. Ensuite on lance une tache qu’on exécute sur le timer « 0 » (vous pouvez aller de 0 à 6), à une seconde d’intervalle (1000ms) de façon répétitive afin de récupérer l’IP. Si la connexion n’est pas encore effective on affiche le message « Connecting » sinon on coupe le timer « 0 » et on affiche l’adresse IP de votre ESP.
