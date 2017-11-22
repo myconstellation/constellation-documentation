@@ -8,7 +8,7 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/connectez-vos-pages-web-constellation/
 published: true
-post_modified: 2017-10-24 10:29:40
+post_modified: 2017-11-22 14:31:36
 ---
 <h3>Introduction</h3>
 Il existe actuellement deux librairies Constellation JavaScript :
@@ -88,12 +88,12 @@ Ce StateObject se nomme “/intelcpu/0/load/0” et est produit par le package �
 Vous devez impérativement faire cet enregistrement lorsque vous êtes connecté, c’est à dire lorsque le handler “stateChanged” est invoqué avec l’état “Connected”.
 
 Le code final sera donc :
-<pre class="lang:javascript decode:true">constellation.connection.onConnectionStateChanged(function (change) {
+<pre class="lang:javascript decode:true crayon-selected">constellation.connection.stateChanged(function (change) {
     if (change.newState === $.signalR.connectionState.connected) {
         console.log("Je suis connecté");
         constellation.client.registerStateObjectLink("MON-PC", "HWMonitor", "/intelcpu/0/load/0", "*", function (so) {
-            console.log(stateobject);
-            $("#cpu").text(stateobject.Value.Value);
+            console.log(so);
+            $("#cpu").text(so.Value.Value);
         });
     }
 });
