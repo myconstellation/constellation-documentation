@@ -8,9 +8,9 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-11-23 20:11:39
+post_modified: 2017-11-23 20:11:57
 ---
-<h3>23/1/2017 : Update Console 1.8.3.17326</h3>
+<h3>23/11/2017 : Update Console 1.8.3.17326</h3>
 <ul>
  	<li>Console / MessageCallbacks Explorer : typage des paramètres Number (Int, Decimal, Float, etc..) et Boolean dans l'envoi de message depuis l'explorateur</li>
  	<li>Console / Package : bugfix de l'appel du 'RefreshSettings' doublé en cas de mise à jour des settings</li>
