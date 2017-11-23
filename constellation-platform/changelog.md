@@ -8,8 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-09-15 16:45:03
+post_modified: 2017-11-23 20:11:39
 ---
+<h3>23/1/2017 : Update Console 1.8.3.17326</h3>
+<ul>
+ 	<li>Console / MessageCallbacks Explorer : typage des paramètres Number (Int, Decimal, Float, etc..) et Boolean dans l'envoi de message depuis l'explorateur</li>
+ 	<li>Console / Package : bugfix de l'appel du 'RefreshSettings' doublé en cas de mise à jour des settings</li>
+</ul>
 <h3>15/09/2017 : Release 1.8.3 (1.8.3.17258)</h3>
 <ul>
  	<li>Common : Correction interne d'un bug fatal entraînant le crash du serveur au démarrage, des sentinelles et dans certain cas des packages (si le package invoque <a href="/client-api/net-package-api/envoyer-des-messages-invoquer-des-messagecallbacks/#Utiliser_les_Tasks_awaitable_pour_attendre_la_reponse_dune_saga">une saga avec une Task&lt;T&gt;</a>) sur les systèmes utilisant la version 5.2 (ou supérieure) du runtime Mono (inclus nativement depuis Debian / Raspbian 9). Ce bug est lié au PR Mono <a href="https://github.com/mono/mono/pull/4404">#4404</a> publié depuis Mono 5.2.0.179 (remplacement du Microsoft.CSharp par l'implémentation du CoreFX)</li>
