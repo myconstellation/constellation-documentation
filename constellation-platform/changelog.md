@@ -8,8 +8,21 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-11-23 20:11:57
+post_modified: 2017-12-13 17:23:59
 ---
+<h3>13/12/2017 : Release 1.8.3.17346</h3>
+<ul>
+ 	<li>Server / SentinelHub : ajout des méthodes GetServerVersion &amp; ReportPackagesUsage (pour le report de plusieurs packages en même temps) sur le hub des sentinelles</li>
+ 	<li>Server &amp; Sentinel : ajout d'un CancellationToken pour la fermeture des taches en background</li>
+ 	<li>Sentinel / ProcessMonitor : report de la consommation CPU des packages sous Mono/Unix via "/proc/stat" (l'implémentation Mono du Process.TotalProcessorTime n'est correcte)</li>
+ 	<li>Sentinel / DeployPackage : support des sous-dossiers dans les packages (zip) non formatés au format standard Unix</li>
+ 	<li>Sentinel / ReportPackageUsage : correction d'une fuite mémoire sur Mono pour ARM (ex: Raspberry) dans le cas où la sentinelle est sur le même système que le serveur</li>
+ 	<li>Sentinel / ReportPackageUsage : interrogation du n° de version du serveur à la connexion de la sentinelle et activation de la nouvelle méthode de report des usages de package si serveur compatible (&gt;= 1.8.3.17346)</li>
+ 	<li>Sentinel / ReportPackageUsage : intervalle de temps pour le report des PackageUsages configurable (clé ReportPackageUsageInterval)</li>
+ 	<li>Sentinel / ReportPackagesUsage : nouvelle méthode permettant le report de plusieurs packages en même temps (plus performant)</li>
+ 	<li>Sentinel / Reporting : Ajout de mécanisme de contrôle pour le report concurrent des PackageUsage et PackageState</li>
+ 	<li>Sentinel / Registering: vérification et ajout d'un timeout sur la Task d'enregistrement de la sentinelle dans la Constellation (RegisterSentinel)</li>
+</ul>
 <h3>23/11/2017 : Update Console 1.8.3.17326</h3>
 <ul>
  	<li>Console / MessageCallbacks Explorer : typage des paramètres Number (Int, Decimal, Float, etc..) et Boolean dans l'envoi de message depuis l'explorateur</li>
