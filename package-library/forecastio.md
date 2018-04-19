@@ -1,6 +1,6 @@
 ---
 ID: 3279
-post_title: 'ForecastIO : les pr&eacute;visions m&eacute;t&eacute;o dans Constellation'
+post_title: 'ForecastIO : les prévisions météo dans Constellation'
 author: Sebastien Warin
 post_date: 2016-10-21 11:37:04
 post_excerpt: ""
@@ -8,28 +8,46 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/forecastio/
 published: true
-post_modified: 2016-12-21 17:54:25
+publish_post_category:
+  - "7"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 11:35:24
 ---
 Le package ForecastIO vous permet de connaitre les conditions météorologique actuelles et prévisions jusqu’à 8 jours.
+
 <p align="center"><a href="http://www.forecast.io"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-84.png" alt="image" width="350" height="98" border="0" /></a></p>
+
 <p style="text-align: left;" align="center">Le code source de ce package est disponible sur : <a href="https://github.com/myconstellation/constellation-packages/tree/master/ForecastIO">https://github.com/myconstellation/constellation-packages/tree/master/ForecastIO</a></p>
 
 <h3>Installation</h3>
+
 <h4>Prérequis : créer un compte développeur sur Dark Sky</h4>
+
 Pour pouvoir utiliser le service Forecast.io vous devez créer un compte développeur Dark Sky sur : <a title="https://darksky.net/dev/" href="https://darksky.net/dev/">https://darksky.net/dev/</a>
 
 Vous disposez de 1.000 appels au service par jour gratuitement.
+
 <p align="center"><a href="https://darksky.net/dev/"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-67.png" alt="image" width="350" height="244" border="0" /></a></p>
+
 Une fois inscrit, copiez la clé API que vous devrez rentrer dans la configuration du package Constellation.
+
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-68.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-64.png" alt="image" width="350" height="244" border="0" /></a></p>
 
 <h4>Installation du package Constellation</h4>
+
 Depuis le “Online Package Repository” de votre Console Constellation, déployez le package ForecastIO :
+
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-63.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-60.png" alt="image" width="350" height="213" border="0" /></a></p>
+
 Une fois le package télécharger votre repository local, sélectionnez la sentinelle sur laquelle déployer le package.
 
 Pour finir, sur la page de Settings, vous devez obligatoirement définir la configuration au format XML :
+
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-64.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-61.png" alt="image" width="350" height="286" border="0" /></a></p>
+
 <p align="left">Le XML de configuration du package a la structure suivante :</p>
 
 <pre class="lang:html5 decode:true">&lt;forecastIOConfigurationSection xmlns="urn:ForecastIO" apiKey="xxxxxxxxxxxxxxxxx" refreshInterval="00:30:00" language="en"&gt;
@@ -37,11 +55,13 @@ Pour finir, sur la page de Settings, vous devez obligatoirement définir la conf
     &lt;station name="Paris" longitude="2.35" latitude="48.853" /&gt;
   &lt;/stations&gt;
 &lt;/forecastIOConfigurationSection&gt;</pre>
+
 Sur la balise racine, vous devez obligatoirement spécifier dans l’attribut “apiKey” votre clé d’API obtenue sur le portail développeur Dark Sky. Vous pouvez également modifier l’intervalle de rafraichissement des prévisions (par défaut 30 minutes), la langue des commentaires (par défaut en anglais) ainsi que les unités (en rajoutant l'attribut "unit").
 
 Dans la listes “&lt;stations&gt;” vous pouvez configurer autant de stations que vous souhaitez. Chaque station est définie par un nom et une position GPS (Latitude et Longitude).
 
 Par exemple, pour maintenir à jour dans vos StateObjects Constellation, la météo (en Francais),  pour Paris, Lille et Londres toutes les 10 minutes:
+
 <pre class="lang:html5 decode:true">&lt;forecastIOConfigurationSection xmlns="urn:ForecastIO" apiKey="xxxxxxxxxxxxxxxxx" refreshInterval="00:10:00" language="fr"&gt;
   &lt;stations&gt;
     &lt;station name="Paris" longitude="2.35" latitude="48.853" /&gt;
@@ -49,7 +69,9 @@ Par exemple, pour maintenir à jour dans vos StateObjects Constellation, la mét
     &lt;station name="Londre" longitude="-0.14" latitude="51.557" /&gt;
   &lt;/stations&gt;
 &lt;/forecastIOConfigurationSection&gt;</pre>
+
 Bien entendu vos  pouvez également déployer ce package manuellement dans la configuration de votre Constellation :
+
 <pre class="lang:html5 decode:true">&lt;package name="ForecastIO"&gt;
   &lt;settings&gt;
     &lt;setting key="forecastIOConfigurationSection"&gt;
@@ -65,8 +87,11 @@ Bien entendu vos  pouvez également déployer ce package manuellement dans la c
     &lt;/setting&gt;
   &lt;/settings&gt;
 &lt;/package&gt;</pre>
+
 <h3>Détails du package</h3>
+
 <h4>Les Settings</h4>
+
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -83,8 +108,11 @@ Bien entendu vos  pouvez également déployer ce package manuellement dans la c
 </tr>
 </tbody>
 </table>
+
 <h4>Les StateObjects</h4>
+
 Vous retrouverez autant de StateObjects que de stations spécifiées dans la configuration du package. Ces StateObjects sont mis à jour pour l’intervalle défini dans la configuration (toutes les 30 minutes par défaut).
+
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -99,10 +127,13 @@ Vous retrouverez autant de StateObjects que de stations spécifiées dans la con
 </tr>
 </tbody>
 </table>
+
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-65.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-62.png" alt="image" width="350" height="112" border="0" /></a></p>
 
 <h4 align="left">Les MessageCallbacks</h4>
+
 Le package expose 2 MessageCallbacks :
+
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -117,9 +148,12 @@ Le package expose 2 MessageCallbacks :
 </tr>
 </tbody>
 </table>
+
 <h3 align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-66.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-63.png" alt="image" width="350" height="115" border="0" /></a></h3>
+
 <h3 align="left">Quelques exemples</h3>
+
 <ul>
- 	<li>Afficher la météo dans un Dashboard HTML</li>
- 	<li>Envoyer une notification depuis un package C# en cas de pluie dans l’heure</li>
+    <li>Afficher la météo dans un Dashboard HTML</li>
+    <li>Envoyer une notification depuis un package C# en cas de pluie dans l’heure</li>
 </ul>
