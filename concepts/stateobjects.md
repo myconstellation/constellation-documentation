@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/stateobjects/
 published: true
-post_modified: 2017-09-26 16:22:15
+publish_post_category:
+  - "12"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:18:44
 ---
 Les StateObjects sont des objets de données produits et publiés par des packages qu’ils soient “réels” ou “virtuels” d'une Constellation.
 
