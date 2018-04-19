@@ -1,6 +1,6 @@
 ---
 ID: 4924
-post_title: 'Squeezebox : le multiroom connect&eacute;e dans Constellation'
+post_title: 'Squeezebox : le multiroom connecté dans Constellation'
 author: Sebastien Warin
 post_date: 2017-05-21 10:36:44
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/squeezebox/
 published: true
-post_modified: 2017-05-22 17:58:35
+post_modified: 2018-04-19 11:22:04
+publish_post_category:
+  - "7"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
 ---
 Le package Squeezebox vous permet de contrôler vos Squeezebox via le Logitech Media Server (lecture, pause, suivant, contrôle du volume …).
 
@@ -55,7 +61,7 @@ Vous pouvez également déployer ce package manuellement dans la configuration d
 <td valign="bottom" width="10">ServerPassword</td>
 <td valign="bottom" width="10">String</td>
 <td valign="bottom" width="10">Facultatif</td>
-<td valign="bottom" width="478">Mot de passe pour se connecter  au LMS si défini</td>
+<td valign="bottom" width="478">Mot de passe pour se connecter au LMS si défini</td>
 </tr>
 </tbody>
 </table>
