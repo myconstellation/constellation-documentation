@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/installer-constellation/
 published: true
-post_modified: 2017-05-04 01:25:54
+publish_post_category:
+  - "19"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 10:14:04
 ---
 Après avoir <a href="/plateforme/">introduit Constellation</a>, découvrons comment installer la plateforme sur vos ordinateurs ou serveurs.
 <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hD8Upyb2jXo" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
