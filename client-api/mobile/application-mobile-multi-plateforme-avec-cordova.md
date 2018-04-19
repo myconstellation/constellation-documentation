@@ -1,6 +1,9 @@
 ---
 ID: 2335
-post_title: 'Cr&eacute;er une application mobile multi-plateforme connectée à Constellation avec Cordova'
+post_title: >
+  Créer une application mobile
+  multi-plateforme connectée à
+  Constellation avec Cordova
 author: Sebastien Warin
 post_date: 2016-08-19 09:28:47
 post_excerpt: ""
@@ -8,7 +11,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/mobile/application-mobile-multi-plateforme-avec-cordova/
 published: true
-post_modified: 2017-05-04 16:37:19
+publish_post_category:
+  - "16"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:41:07
 ---
 La plateforme <a href="http://cordova.apache.org/">Apache Cordova</a> (anciennement PhoneGap) permet de créer des applications mobiles (Android, Windows Phone, iPhone, Blackberry, …) en utilisant les technologies Web (HTML, JS, CSS).
 <p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="cordova_logo_normal_dark" src="https://developer.myconstellation.io/wp-content/uploads/2016/09/cordova_logo_normal_dark.png" alt="cordova_logo_normal_dark" width="240" height="71" border="0" /></p>
