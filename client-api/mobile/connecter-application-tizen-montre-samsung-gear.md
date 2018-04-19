@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/mobile/connecter-application-tizen-montre-samsung-gear/
 published: true
-post_modified: 2017-05-13 10:55:03
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:15:03
 ---
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-3.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-3.png" alt="image" width="117" height="145" border="0" /></a></p>
 
