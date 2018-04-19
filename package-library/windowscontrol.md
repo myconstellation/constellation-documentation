@@ -1,6 +1,6 @@
 ---
 ID: 3583
-post_title: 'WindowsControl : contr&ocirc;lez vos ordinateurs Windows depuis Constellation'
+post_title: 'WindowsControl : contrôlez vos ordinateurs Windows depuis Constellation'
 author: Sebastien Warin
 post_date: 2016-10-28 10:42:19
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/windowscontrol/
 published: true
-post_modified: 2017-04-29 01:56:15
+publish_post_category:
+  - "7"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 11:24:52
 ---
 Le package WindowsControl vous permet de contrôler l’état de vos ordinateurs Windows (mise en veille, hibernation, arrêt/redémarrage, verrouillage de la session, contrôle du volume ou de la luminosité …).
 
