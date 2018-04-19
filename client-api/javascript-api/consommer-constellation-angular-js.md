@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/consommer-constellation-angular-js/
 published: true
-post_modified: 2017-10-24 10:33:19
+publish_post_category:
+  - "16"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:40:01
 ---
 <h3>Préparer la page AngularJS</h3>
 Vous pouvez soit utiliser le gestionnaire de package Nuget depuis Visual Studio pour installer la dernière version du package “Constellation.Angular” et ses dépendances :
