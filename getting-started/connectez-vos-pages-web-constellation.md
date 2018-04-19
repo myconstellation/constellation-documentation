@@ -1,6 +1,6 @@
 ---
 ID: 2114
-post_title: 'Connectez vos pages Web &agrave; Constellation'
+post_title: Connectez vos pages Web à Constellation
 author: Sebastien Warin
 post_date: 2016-07-06 15:22:29
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/connectez-vos-pages-web-constellation/
 published: true
-post_modified: 2017-11-22 14:31:36
+publish_post_category:
+  - "16"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:39:02
 ---
 <h3>Introduction</h3>
 Il existe actuellement deux librairies Constellation JavaScript :
