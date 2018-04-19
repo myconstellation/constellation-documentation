@@ -1,6 +1,8 @@
 ---
 ID: 4819
-post_title: 'Cr&eacute;er un capteur de luminosit&eacute; dans une prise 220v avec un ESP8266'
+post_title: >
+  Créer un capteur de luminosité dans
+  une prise 220v avec un ESP8266
 author: Sebastien Warin
 post_date: 2017-05-13 15:35:14
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-capteur-de-luminosite-dans-une-prise-220v/
 published: true
-post_modified: 2017-05-13 15:41:17
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:08:42
 ---
 Ce tutoriel est sur le principe identique à celui-ci : <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/">Créer un capteur de température, humidité et luminosité connecté</a> sauf que nous allons utiliser un ESP-01 beaucoup plus petit et moins cher qu'un D1 Mini Pro.
 
