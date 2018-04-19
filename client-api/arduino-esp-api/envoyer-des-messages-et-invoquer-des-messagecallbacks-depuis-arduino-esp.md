@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/arduino-esp-api/envoyer-des-messages-et-invoquer-des-messagecallbacks-depuis-arduino-esp/
 published: true
-post_modified: 2017-09-06 11:32:55
+publish_post_category:
+  - "18"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:48:41
 ---
 <h3>Envoyer des messages</h3>
 Pour envoyer des <a href="/concepts/messaging-message-scope-messagecallback-saga/">messages et invoquer des méthodes (MessageCallbacks)</a> d’autres packages (ou consommateurs, pages Web, apps mobile, etc… ), vous pouvez utiliser la méthode “sendMessage” :
