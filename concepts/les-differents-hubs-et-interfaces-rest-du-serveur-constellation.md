@@ -1,6 +1,8 @@
 ---
 ID: 2279
-post_title: 'Les diff&eacute;rents hubs et interfaces REST du serveur Constellation'
+post_title: >
+  Les différents hubs et interfaces REST
+  du serveur Constellation
 author: Sebastien Warin
 post_date: 2016-08-12 15:19:15
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/les-differents-hubs-et-interfaces-rest-du-serveur-constellation/
 published: true
-post_modified: 2017-05-11 16:53:34
+publish_post_category:
+  - "12"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:19:51
 ---
 Le serveur Constellation est accessible en HTTP ou <a href="/constellation-platform/constellation-server/configuration-ssl/">HTTPS</a> sur <a href="/constellation-platform/constellation-server/fichier-de-configuration/#Section_listenUris">une ou plusieurs URIs</a>.
 
@@ -19,22 +27,18 @@ Les hubs Constellation sont basés sur la technologie SignalR permettant d'expos
 Les interfaces HTTP/REST sont en fait des contrôleurs WebAPI exposant des méthodes en HTTP/REST. Les interfaces HTTP/REST permettent d’exposer des fonctionnalités de Constellation de manière très simple pour les devices ou frameworks ne pouvant supporter SignalR.
 
 Il existe 4 hubs :
-
 <ul>
-    <li>Constellation</li>
-    <li>Consumer</li>
-    <li>Controller</li>
-    <li>Sentinel</li>
+ 	<li>Constellation</li>
+ 	<li>Consumer</li>
+ 	<li>Controller</li>
+ 	<li>Sentinel</li>
 </ul>
-
 Ainsi que 3 interfaces HTTP/REST :
-
 <ul>
-    <li>Constellation</li>
-    <li>Consumer</li>
-    <li>Management</li>
+ 	<li>Constellation</li>
+ 	<li>Consumer</li>
+ 	<li>Management</li>
 </ul>
-
 Le hub et l’interface HTTP “Constellation” sont utilisés par les packages Constellation (réels ou virtuels). Ils exposent des méthodes pour écrire des logs, pour récupérer les settings, pour publier ou interroger des StateObjects, envoyer ou recevoir des messages, etc…
 
 Le hub et l’interface HTTP “Consumer” sont utilisés par les “consommateurs”. Par exemple une page Web est un consommateur, c’est à dire qu’elle se connecte à Constellation pour interroger des StateObjects ou envoyer/recevoir des messages mais elle n’est pas un package (son cycle de vie est lié au navigateur du client). Un “consommateur” ne peut pas produire des logs, avoir de settings ou encore publier des StateObjects.
