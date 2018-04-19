@@ -11,7 +11,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/connecter-volets-constellation-arduino-raspberry/
 published: true
-post_modified: 2017-05-11 11:24:39
+publish_post_category:
+  - "11"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:03:49
 ---
 <em>Ecrit par Lucas Dupuis en Juin 2015.</em>
 
