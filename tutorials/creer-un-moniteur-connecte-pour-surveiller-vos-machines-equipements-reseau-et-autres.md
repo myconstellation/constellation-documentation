@@ -1,6 +1,9 @@
 ---
 ID: 4616
-post_title: 'Cr&eacute;er un moniteur connect&eacute; pour surveiller vos machines, &eacute;quipements r&eacute;seau et autres capteurs'
+post_title: >
+  Créer un moniteur connecté pour
+  surveiller vos machines, équipements
+  réseau et autres capteurs
 author: Sebastien Warin
 post_date: 2017-05-10 17:33:57
 post_excerpt: ""
@@ -8,7 +11,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-moniteur-connecte-pour-surveiller-vos-machines-equipements-reseau-et-autres/
 published: true
-post_modified: 2017-05-10 17:33:57
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:13:20
 ---
 Créons dans ce tutoriel un petit moniteur pour afficher en temps réel des StateObjects de votre Constellation sur un écran OLED comme par exemple la consommation CPU d’une de vos machines Windows récupérée grâce au package <a href="/package-library/hwmonitor/">HWMonitor</a>.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-61.png"><img class="alignnone" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Monitor connecté" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-61.png" alt="Monitor connecté" width="454" height="295" border="0" /></a></p>
