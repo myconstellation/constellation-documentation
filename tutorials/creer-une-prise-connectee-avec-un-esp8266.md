@@ -1,6 +1,8 @@
 ---
 ID: 5668
-post_title: 'Cr&eacute;er une prise connect&eacute;e avec un ESP8266'
+post_title: >
+  Créer une prise connectée avec un
+  ESP8266
 author: Lucas
 post_date: 2017-10-31 12:29:46
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-une-prise-connectee-avec-un-esp8266/
 published: true
-post_modified: 2017-10-31 12:34:56
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:04:59
 ---
 <em>Par Lucas Dupuis</em>
 
