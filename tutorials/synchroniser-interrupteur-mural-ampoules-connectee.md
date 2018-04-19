@@ -1,6 +1,6 @@
 ---
 ID: 4853
-post_title: 'Synchroniser un interrupteur mural avec des ampoules connect&eacute;es et contr&ocirc;ler l&rsquo;ambiance lumineuse de votre pi&egrave;ce'
+post_title: 'Synchroniser un interrupteur mural avec des ampoules connectées et contrôler l&rsquo;ambiance lumineuse de votre pièce'
 author: Sebastien Warin
 post_date: 2017-05-16 01:12:13
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/synchroniser-interrupteur-mural-ampoules-connectee/
 published: true
-post_modified: 2017-05-16 01:12:13
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:06:39
 ---
 Dans cet article nous allons découvrir comment contrôler l'ambiance lumineuse d'une pièce équipée d'ampoules connectées avec un simple interrupteur mural.
 
