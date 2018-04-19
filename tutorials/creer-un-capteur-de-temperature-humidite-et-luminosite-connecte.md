@@ -1,6 +1,8 @@
 ---
 ID: 4588
-post_title: 'Cr&eacute;er un capteur de temp&eacute;rature, humidit&eacute; et luminosit&eacute; connect&eacute;'
+post_title: >
+  Créer un capteur de température,
+  humidité et luminosité connecté
 author: Sebastien Warin
 post_date: 2017-05-10 17:55:52
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/
 published: true
-post_modified: 2017-05-10 17:55:52
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:12:07
 ---
 Dans ce tutoriel créons un capteur de température, d’humidité et de luminosité connecté avec une page Web de visualisation des données en temps réel.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-52.png"><img class="" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Capteur connecté" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-52.png" alt="Capteur connecté" width="399" height="248" border="0" /></a><a href="https://developer.myconstellation.io/wp-content/uploads/2017/05/image-55.png"><img class="" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/image_thumb-55.png" alt="image" width="271" height="248" border="0" /></a></p>
