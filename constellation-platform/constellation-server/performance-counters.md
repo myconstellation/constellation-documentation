@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/constellation-server/performance-counters/
 published: true
-post_modified: 2017-05-03 15:19:06
+publish_post_category:
+  - "19"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 10:16:08
 ---
 Sur un environnement Windows le serveur Constellation peut publier des compteurs de performance afin de suivre son activité en temps réel.
 
