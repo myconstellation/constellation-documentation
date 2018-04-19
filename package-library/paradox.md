@@ -8,6 +8,12 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/paradox/
 published: true
-post_modified: 2017-05-21 10:38:56
+publish_post_category:
+  - "7"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 11:21:12
 ---
 Documentation en cours de rédaction ...
