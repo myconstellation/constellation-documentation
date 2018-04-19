@@ -1,6 +1,8 @@
 ---
 ID: 4670
-post_title: 'Faire parler son Nabaztag en envoyant des SMS gr&acirc;ce &agrave; la Constellation'
+post_title: >
+  Faire parler son Nabaztag en envoyant
+  des SMS grâce à la Constellation
 author: Laurent Ellerbach
 post_date: 2015-06-09 11:18:31
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/faire-parler-son-nabaztag-en-envoyant-des-sms/
 published: true
-post_modified: 2017-05-11 11:25:54
+publish_post_category:
+  - "11"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:01:43
 ---
 <em>Écrit par Laurent Ellerbach en Juin 2015</em>
 
