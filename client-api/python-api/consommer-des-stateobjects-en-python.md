@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/python-api/consommer-des-stateobjects-en-python/
 published: true
-post_modified: 2017-07-01 08:52:54
+publish_post_category:
+  - "17"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:37:28
 ---
 Pour consommer des StateObjects vous pouvez simplement déclarer une méthode acceptant en paramètre un StateObject et rajouter sur cette méthode le décorateur “<em>Constellation.StateObjectLink</em>” en spécifiant le lien vers le ou les StateObjects.
 
