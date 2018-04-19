@@ -1,6 +1,6 @@
 ---
 ID: 2141
-post_title: 'Sentinelles et Packages &quot;virtuels&quot;'
+post_title: Sentinelles et Packages « virtuels »
 author: Sebastien Warin
 post_date: 2016-08-09 13:29:33
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/sentinels-packages-virtuels/
 published: true
-post_modified: 2017-05-11 16:21:07
+publish_post_category:
+  - "12"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:17:13
 ---
 Constellation met en œuvre des sentinelles (agent de déploiement) permettant de déployer des packages assurant ainsi les taches de supervision et d’administration, c'est ce que l'on appelle l'Orchestration.
 
@@ -29,13 +35,11 @@ Vous allez déclarer dans votre Constellation une sentinelle “virtuelle” no
 Dans votre microprogramme Arduino/ESP, vous allez identifier votre Arduino comme étant la sentinelle “CapteurSalon” exécutant le package “Temperature”.
 
 Vous serez alors connecté à Constellation et votre package “virtuel” pourra exploiter les différentes fonctionnalités de la Constellation :
-
 <ul>
-    <li>Récupération des settings définis sur le serveur</li>
-    <li>Envoi des logs</li>
-    <li>Production de StateObjects</li>
-    <li>Exploitation des StateObjects de la Constellation</li>
-    <li>Echange de messages pour l’invocation de méthode (les MessageCallbacks)</li>
+ 	<li>Récupération des settings définis sur le serveur</li>
+ 	<li>Envoi des logs</li>
+ 	<li>Production de StateObjects</li>
+ 	<li>Exploitation des StateObjects de la Constellation</li>
+ 	<li>Echange de messages pour l’invocation de méthode (les MessageCallbacks)</li>
 </ul>
-
 D'un point vue Constellation, il s'agit d'un véritable package. Le package se nomme "Temperature" et est exécuté par la sentinelle "CapteurSalon". Il s'agit en tout point d'un véritable package à la différence qu'il n'y pas la partie “orchestration”, c’est à dire qu’on ne pourra pas l’arrêter/démarrer à distance ce package ou encore déployer de nouvelles versions du package depuis Constellation.
