@@ -1,6 +1,8 @@
 ---
 ID: 1737
-post_title: 'Cr&eacute;ez votre premier package Constellation en Python'
+post_title: >
+  Créez votre premier package
+  Constellation en Python
 author: Sebastien Warin
 post_date: 2016-04-01 09:28:19
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/creez-votre-premier-package-constellation-en-python/
 published: true
-post_modified: 2017-09-07 23:58:44
+publish_post_category:
+  - "17"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:35:15
 ---
 Vous pouvez développer des packages Constellation avec le langage Python. Cela est très utile pour créer des packages à destination de vos sentinelles Linux comme vos Raspberry Pi où vous pourrez profiter des différentes libraires pour l’accès aux GPIO et autres ressources de ce SoC.
 
