@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/connectez-votre-voiture-tesla-dans-constellation/
 published: true
-post_modified: 2017-05-13 10:52:37
+publish_post_category:
+  - "11"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:00:20
 ---
 La plateforme Constellation permet l’intégration d’une multitude de périphériques ou de services de façon aisée et ce, peu importe la technologie et les langages utilisés.
 
