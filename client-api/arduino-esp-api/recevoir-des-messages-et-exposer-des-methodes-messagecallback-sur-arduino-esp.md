@@ -1,6 +1,6 @@
 ---
 ID: 2459
-post_title: 'MessageCallback : exposer des m&eacute;thodes et recevoir des messages sur un Arduino/ESP'
+post_title: 'MessageCallback : exposer des méthodes et recevoir des messages sur un Arduino/ESP'
 author: Sebastien Warin
 post_date: 2016-08-23 14:19:35
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/arduino-esp-api/recevoir-des-messages-et-exposer-des-methodes-messagecallback-sur-arduino-esp/
 published: true
-post_modified: 2017-09-06 11:35:04
+publish_post_category:
+  - "18"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:49:08
 ---
 Pour exposer des méthodes de votre Arduino/ESP dans la Constellation, vous pouvez enregistrer et par la même occasion déclarer auprès de Constellation des MessageCallbacks avec la méthode <em>registerMessageCallback</em>.
 <h3>Enregistrer un MessageCallback</h3>
