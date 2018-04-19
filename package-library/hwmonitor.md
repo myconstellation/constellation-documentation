@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/hwmonitor/
 published: true
-post_modified: 2017-04-29 14:10:26
+publish_post_category:
+  - "7"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 11:24:16
 ---
 Le package HWMonitor vous permet de remonter dans les StateObjects Constellation tous les capteurs hardware sur une machine Windows (consommation CPU, RAM, disques et réseau, températures du CPU, du chassis et des disques, etc…).
 <p align="left">Le code source de ce package est en ligne sur : <a href="https://github.com/myconstellation/constellation-packages/tree/master/HWMonitor">https://github.com/myconstellation/constellation-packages/tree/master/HWMonitor</a></p>
