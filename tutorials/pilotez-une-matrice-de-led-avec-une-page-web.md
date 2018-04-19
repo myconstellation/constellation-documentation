@@ -1,6 +1,8 @@
 ---
 ID: 4532
-post_title: 'Pilotez une matrice de LED avec une page Web en temps r&eacute;el'
+post_title: >
+  Pilotez une matrice de LED avec une page
+  Web en temps réel
 author: Sebastien Warin
 post_date: 2017-05-09 14:48:57
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/pilotez-une-matrice-de-led-avec-une-page-web/
 published: true
-post_modified: 2017-05-10 11:33:23
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:09:59
 ---
 Découvrons dans ce tutoriel comment piloter en temps réel une matrice de LED bicolore depuis une page Web en quelque ligne.
 <p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="ESP Matrix Controller" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/ESPMatrix2.gif" alt="ESP Matrix Controller" width="400" height="225" border="0" /></p>
