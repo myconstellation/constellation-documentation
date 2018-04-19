@@ -1,6 +1,6 @@
 ---
 ID: 3574
-post_title: 'Xbmc : int&eacute;grez vos media-centers XBMC/Kodi dans Constellation'
+post_title: 'Xbmc : intégrez vos media-centers XBMC/Kodi dans Constellation'
 author: Sebastien Warin
 post_date: 2016-10-28 10:28:12
 post_excerpt: ""
@@ -11,47 +11,48 @@ published: true
 publish_post_category:
   - "7"
 publish_to_discourse:
-  - "1"
-update_discourse_topic:
   - "0"
-post_modified: 2018-04-19 11:25:12
+update_discourse_topic:
+  - "1"
+discourse_post_id:
+  - "1475"
+discourse_topic_id:
+  - "965"
+discourse_permalink:
+  - >
+    https://forum.myconstellation.io/t/xbmc-int-eacute-grez-vos-media-centers-xbmc-kodi-dans-constellation/965
+discourse_comments_count:
+  - "0"
+discourse_comments_raw:
+  - '{"id":965,"posts_count":1,"filtered_posts_count":1,"posts":[],"participants":[{"id":3,"username":"admin","avatar_template":"https://forum.myconstellation.io/user_avatar/forum.myconstellation.io/admin/{size}/11_1.png"}]}'
+discourse_last_sync:
+  - "1524129932"
+wpdc_sync_post_comments:
+  - "0"
+post_modified: 2018-04-19 11:25:30
 ---
 Le package XBMC/Kodi vous permet de connecter des hôtes XBMC/Kodi dans Constellation.
-
 <p align="center"><a href="https://kodi.tv"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-156.png" alt="image" width="354" height="186" border="0" /></a></p>
-
 <p style="text-align: left;" align="center">Le code source de ce package est disponible sur : <a href="https://github.com/myconstellation/constellation-packages/tree/master/xbmc">https://github.com/myconstellation/constellation-packages/tree/master/xbmc</a></p>
 
 <h3>Installation</h3>
-
 <h4>Prérequis : configuration de Kodi</h4>
-
 Avant d’installer le package vous devez configurer votre media-center Kodi. Pour cela, rendez-vous dans les paramètres (System &gt; Settings) puis entrer dans l’onglet “Services”.
 
 Sur la page “Serveur Web” vous devez activer le contrôle de Kodi par HTTP et définir un port (ex: 80) et optionnellement un nom d’utilisateur et un mot de passe.
-
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-157.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-141.png" alt="image" width="350" height="192" border="0" /></a></p>
-
 <p align="left">Sur la page “Contrôle à distance”, cocher la case permettant d’autoriser une application externe à contrôler votre media-center :</p>
-
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-158.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-142.png" alt="image" width="354" height="196" border="0" /></a></p>
 
 <h4>Installation du package Constellation</h4>
-
 Depuis le “Online Package Repository” de votre Console Constellation, déployez le package Xbmc:
-
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-159.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-143.png" alt="image" width="350" height="214" border="0" /></a></p>
-
 Une fois le package télécharger votre repository local, sélectionnez la sentinelle sur laquelle déployer le package.
 
 Pour finir sur la page de Settings vous devez obligatoirement spécifier la liste des hôtes XBMC/Kodi à connecter dans Constellation :
-
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-160.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-144.png" alt="image" width="350" height="283" border="0" /></a></p>
-
 <p align="left">Le schéma XML de ce paramètre est relativement simple. Vous devez simplement ajouter des balises “<em>&lt;xbmcHost&gt;</em>” dans la section ”&lt;hosts&gt;” pour chaque hôte Kodi que vous voulez connecter dans Constellation.</p>
-
 <p align="left">Pour chaque “<em>&lt;xbmcHost&gt;</em>” vous devez obligatoirement définir les attributs “Name” (le nom unique de votre media-center qui servira d’identifiant dans Constellation), “host” l’IP ou DNS de votre Kodi et “port”, le n° du prot TCP du serveur Web de Kodi (configuré ci-dessus). Vous pouvez également spécifier un “login” et “password”.</p>
-
 <p align="left">Vous pouvez également déployer ce package manuellement dans la configuration de votre Constellation :</p>
 
 <pre class="lang:html5 decode:true">&lt;package name="Xbmc"&gt;
@@ -68,11 +69,8 @@ Pour finir sur la page de Settings vous devez obligatoirement spécifier la list
     &lt;/setting&gt;
   &lt;/settings&gt;
 &lt;/package&gt;</pre>
-
 <h3>Détails du package</h3>
-
 <h4>Les Settings</h4>
-
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -89,11 +87,8 @@ Pour finir sur la page de Settings vous devez obligatoirement spécifier la list
 </tr>
 </tbody>
 </table>
-
 <h4>Les StateObjects</h4>
-
 Vous retrouverez autant de StateObjects que d’hôtes XBMC/Kodi enregistrés :
-
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -108,11 +103,8 @@ Vous retrouverez autant de StateObjects que d’hôtes XBMC/Kodi enregistrés :
 </tr>
 </tbody>
 </table>
-
 <h4 align="left">Les MessageCallbacks</h4>
-
 Le package expose 10 MessageCallbacks :
-
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -172,15 +164,13 @@ Le package expose 10 MessageCallbacks :
 </tr>
 </tbody>
 </table>
-
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-161.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-145.png" alt="image" width="350" height="497" border="0" /></a></p>
 
 <h3 align="left">Quelques exemples</h3>
-
 <ul>
-    <li>Afficher et contrôler le média en cours de lecture sur une page Web ou une application mobile multi-plateforme</li>
-    <li>Contrôler le media-center Kodi avec un Arduino-ESP et une simple télécommande infrarouge</li>
-    <li>Contrôler les lumières Hue automatiquement d’un film</li>
-    <li>Afficher des notifications sur le média-center  plutôt que sur le smartphone lorsque l’on regarde un film</li>
-    <li>Contrôler le “Play/Pause” à partir d’un bouton poussoir piloté par un .NET Gadgeteer</li>
+ 	<li>Afficher et contrôler le média en cours de lecture sur une page Web ou une application mobile multi-plateforme</li>
+ 	<li>Contrôler le media-center Kodi avec un Arduino-ESP et une simple télécommande infrarouge</li>
+ 	<li>Contrôler les lumières Hue automatiquement d’un film</li>
+ 	<li>Afficher des notifications sur le média-center  plutôt que sur le smartphone lorsque l’on regarde un film</li>
+ 	<li>Contrôler le “Play/Pause” à partir d’un bouton poussoir piloté par un .NET Gadgeteer</li>
 </ul>
