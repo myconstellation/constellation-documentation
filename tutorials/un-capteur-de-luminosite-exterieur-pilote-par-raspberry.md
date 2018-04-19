@@ -1,6 +1,9 @@
 ---
 ID: 4730
-post_title: 'Un capteur de luminosit&eacute; ext&eacute;rieur pilot&eacute; par un Raspberry avec un package Python'
+post_title: >
+  Un capteur de luminosité extérieur
+  piloté par un Raspberry avec un package
+  Python
 author: Sebastien Warin
 post_date: 2017-05-13 14:46:15
 post_excerpt: ""
@@ -8,7 +11,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/un-capteur-de-luminosite-exterieur-pilote-par-raspberry/
 published: true
-post_modified: 2017-05-13 14:54:00
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:09:28
 ---
 Dans un précédent tutoriel, nous avons découvert comment créer un <a href="/tutorials/creer-un-capteur-de-temperature-humidite-et-luminosite-connecte/">capteur de luminosité avec un ESP8266</a> connecté par Wifi. Ici je vous propose de créer un capteur extérieur piloté par un Raspberry Pi.
 
