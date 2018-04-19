@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/constellation-server/constellation-raspberry-pi/
 published: true
-post_modified: 2017-05-04 12:33:23
+publish_post_category:
+  - "19"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 10:12:32
 ---
 Le <b>Raspberry Pi</b> est un nano-ordinateur monocarte à <a href="https://fr.wikipedia.org/wiki/Architecture_ARM">processeur ARM</a> conçu par le créateur de jeux vidéo <a href="https://fr.wikipedia.org/wiki/David_Braben">David Braben</a>. La première version est sortie en 2012 et depuis il y a eu beaucoup d’évolutions.
 
