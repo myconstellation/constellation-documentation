@@ -1,6 +1,6 @@
 ---
 ID: 3476
-post_title: 'Ratp : connaitre les horaires et l&rsquo;&eacute;tat du trafic RATP'
+post_title: 'Ratp : connaitre les horaires et l&rsquo;état du trafic RATP'
 author: Sebastien Warin
 post_date: 2016-10-26 08:54:50
 post_excerpt: ""
@@ -11,43 +11,45 @@ published: true
 publish_post_category:
   - "7"
 publish_to_discourse:
-  - "1"
+  - "0"
 update_discourse_topic:
   - "0"
-post_modified: 2018-04-19 11:31:13
+discourse_post_id:
+  - "1486"
+discourse_topic_id:
+  - "971"
+discourse_permalink:
+  - >
+    https://forum.myconstellation.io/t/ratp-connaitre-les-horaires-et-l-eacute-tat-du-trafic-ratp/971
+discourse_comments_count:
+  - "0"
+discourse_comments_raw:
+  - '{"id":971,"posts_count":1,"filtered_posts_count":1,"posts":[],"participants":[{"id":3,"username":"admin","avatar_template":"https://forum.myconstellation.io/user_avatar/forum.myconstellation.io/admin/{size}/11_1.png"}]}'
+discourse_last_sync:
+  - "1524130291"
+wpdc_sync_post_comments:
+  - "0"
+post_modified: 2018-04-19 11:31:30
 ---
 Le package Rapt vous permet de connaitre l'état du trafic RAPT et les horaires.
-
 <p style="text-align: center;"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/ratp.png"><img class="alignnone size-full wp-image-3478" style="background-image: none; padding-top: 0px; padding-left: 0px; padding-right: 0px; border: 0px;" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/ratp.png" alt="ratp" width="85" height="85" border="0" /></a></p>
-
 Le code source est disponible sur : <a title="https://github.com/myconstellation/constellation-packages/tree/master/Ratp" href="https://github.com/myconstellation/constellation-packages/tree/master/Ratp">https://github.com/myconstellation/constellation-packages/tree/master/Ratp</a>
-
 <h3>Installation</h3>
-
 Depuis le “Online Package Repository” de votre Console Constellation, déployez le package Rapt :
 
 <a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-125.png"><img style="background-image: none; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; margin-right: auto; border-width: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-115.png" alt="image" width="350" height="213" border="0" /></a>
 
 Une fois le package télécharger votre repository local, sélectionnez la sentinelle sur laquelle déployer le package.
-
 <p align="left">Vous pouvez également déployer ce package manuellement dans la configuration de votre Constellation :</p>
 
 <pre class="lang:html5 decode:true">&lt;package name="Rapt" /&gt;</pre>
-
 <h3>Détails du package</h3>
-
 <h4>Les Settings</h4>
-
 Ce package ne comporte aucun setting.
-
 <h4>Les StateObjects</h4>
-
 Ce package ne publie aucun StateObject
-
 <h4 align="left">Les MessageCallbacks</h4>
-
 Le package expose 2 MessageCallbacks :
-
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
@@ -72,11 +74,8 @@ Le package expose 2 MessageCallbacks :
 </tr>
 </tbody>
 </table>
-
 <h3 align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/10/image-127.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://developer.myconstellation.io/wp-content/uploads/2016/10/image_thumb-117.png" alt="image" width="350" height="219" border="0" /></a></h3>
-
 <h3 align="left">Quelques exemples</h3>
-
 <ul>
-    <li>Afficher les prochains trains d'une ligne sur une application mobile Ionic</li>
+ 	<li>Afficher les prochains trains d'une ligne sur une application mobile Ionic</li>
 </ul>
