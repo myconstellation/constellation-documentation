@@ -1,6 +1,6 @@
 ---
 ID: 5474
-post_title: 'S-Fit : Concevez un miroir connect&eacute; orient&eacute; fitness'
+post_title: 'S-Fit : Concevez un miroir connecté orienté fitness'
 author: Sebastien Warin
 post_date: 2017-09-27 12:05:42
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/showcases/s-fit-concevez-un-miroir-connecte-oriente-fitness/
 published: true
-post_modified: 2017-09-27 12:05:42
+publish_post_category:
+  - "11"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 06:57:43
 ---
 <i>C’est l’été, la saison des maillots de bains, il est grand temps de se prendre en main et de se sculpter un corps de rêve. Pourquoi ne pas utiliser une des nombreuses solutions de tracker d’activités présentes sur le marché ? Ce n’est pas assez drôle pour des makers, nous avons donc décidé de créer notre propre solution fitness axée autour d’un miroir connecté !</i>
 <p style="text-align: center;"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/09/fig1.png"><img title="Résultat final du miroir connecté à Constellation" src="https://developer.myconstellation.io/wp-content/uploads/2017/09/fig1_thumb.png" alt="Résultat final du miroir connecté à Constellation" width="300" height="381" border="0" /></a></p>
