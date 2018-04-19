@@ -1,6 +1,8 @@
 ---
 ID: 5341
-post_title: 'Cr&eacute;er, tester et d&eacute;ployer des packages Python en ligne de commande'
+post_title: >
+  Créer, tester et déployer des packages
+  Python en ligne de commande
 author: Sebastien Warin
 post_date: 2017-09-07 23:50:15
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/python-api/developper-avec-le-package-tools-cli/
 published: true
-post_modified: 2017-09-08 00:11:24
+publish_post_category:
+  - "17"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:34:48
 ---
 Vous pouvez <a href="https://developer.myconstellation.io/getting-started/creez-votre-premier-package-constellation-en-python/">créer des packages Constellation Python avec Visual Studio</a> ou alors sans IDE avec l'outil en ligne de commande nommé <em><strong>"Constellation Package Tools CLI".</strong></em>
 
