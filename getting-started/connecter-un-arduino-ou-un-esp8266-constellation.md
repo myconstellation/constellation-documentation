@@ -1,6 +1,8 @@
 ---
 ID: 2342
-post_title: 'Connecter un Arduino ou un ESP8266 &agrave; Constellation'
+post_title: >
+  Connecter un Arduino ou un ESP8266 à
+  Constellation
 author: Sebastien Warin
 post_date: 2016-08-19 10:22:50
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/getting-started/connecter-un-arduino-ou-un-esp8266-constellation/
 published: true
-post_modified: 2017-10-12 15:08:59
+publish_post_category:
+  - "18"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:47:54
 ---
 Vous pouvez connecter tout type d’objet ou système dans Constellation à partir du moment où vous disposez d’une connectivité IP pour réaliser des appels HTTP.
 <h3>Introduction</h3>
