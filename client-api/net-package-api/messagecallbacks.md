@@ -1,6 +1,6 @@
 ---
 ID: 1343
-post_title: 'MessageCallbacks : exposez vos m&eacute;thodes'
+post_title: 'MessageCallbacks : exposez vos méthodes'
 author: Sebastien Warin
 post_date: 2016-03-16 15:14:25
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/net-package-api/messagecallbacks/
 published: true
-post_modified: 2017-05-07 14:06:35
+publish_post_category:
+  - "14"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:54:25
 ---
 Avant de tout, il est recommandé de lire <a href="/concepts/messaging-message-scope-messagecallback-saga/">cet article d’introduction aux concepts de Message, Scope, MessageCallback &amp; Saga</a> dans Constellation pour bien comprendre le principe des MessageCallbacks.
 <h3>Exposer des méthodes</h3>
@@ -174,7 +180,6 @@ public class UserInfo
 }</pre>
 Si vous redéployez le package, vous observerez que l'ensemble des MessageCallbacks et des paramètres sont décrits par vos commentaires XML :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/03/image-124.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="MessageCallback documenté" src="https://developer.myconstellation.io/wp-content/uploads/2016/03/image_thumb-101.png" alt="MessageCallback documenté" width="424" height="128" border="0" /></a></p>
-<p align="left"></p>
 
 <h3>S’abonner et recevoir les messages d’un groupe</h3>
 Comme <a href="/concepts/messaging-message-scope-messagecallback-saga/">vous le savez</a>, il existe plusieurs type de scope pour recevoir un message. Par défaut votre package recevra les messages adressés au scope “All” et “Other” (si il n’est pas l’émetteur du message) mais aussi et surtout ceux destinés au scope de sa sentinelle et/ou de son package.
