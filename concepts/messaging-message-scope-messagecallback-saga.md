@@ -1,6 +1,6 @@
 ---
 ID: 1349
-post_title: 'Messaging : Message, Scope, MessageCallback &amp; Saga'
+post_title: 'Messaging : Message, Scope, MessageCallback et Saga'
 author: Sebastien Warin
 post_date: 2016-03-16 15:40:29
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/messaging-message-scope-messagecallback-saga/
 published: true
-post_modified: 2017-05-11 16:36:58
+publish_post_category:
+  - "12"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:17:43
 ---
 Tous systèmes connectés dans Constellation (les packages réels ou virtuels et les consommateurs) peuvent tous envoyer ou recevoir des messages (sauf si des autorisations restreignent cela).
 <h3>Message &amp; Scope</h3>
