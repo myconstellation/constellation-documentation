@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/concepts/architecture-constellation-et-les-differents-acteurs/
 published: true
-post_modified: 2017-10-19 10:54:11
+publish_post_category:
+  - "12"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:16:25
 ---
 Une Constellation est constituée des éléments suivants :
 <ul>
