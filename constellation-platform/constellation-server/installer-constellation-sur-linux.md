@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/constellation-server/installer-constellation-sur-linux/
 published: true
-post_modified: 2017-05-04 01:19:07
+publish_post_category:
+  - "19"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 10:14:28
 ---
 Dans cet article nous allons découvrir comment installer Constellation sur un système Linux/Debian et ses dérivés (Raspbian, Ubuntu, etc..).
 
