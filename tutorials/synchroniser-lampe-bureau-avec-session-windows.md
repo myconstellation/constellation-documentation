@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/synchroniser-lampe-bureau-avec-session-windows/
 published: true
-post_modified: 2017-05-14 14:37:57
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:08:00
 ---
 L'un des avantages de Constellation est qu'il est très facile de faire "parler" des objets/systèmes entre eux. Dans ce tutoriel, nous allons lier notre lampe du bureau à notre session Windows.
 
