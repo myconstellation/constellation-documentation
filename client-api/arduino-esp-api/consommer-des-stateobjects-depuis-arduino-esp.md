@@ -10,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/arduino-esp-api/consommer-des-stateobjects-depuis-arduino-esp/
 published: true
-post_modified: 2017-09-06 11:37:27
+publish_post_category:
+  - "18"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:49:37
 ---
 <h3>Interroger des StateObjects à un instant T</h3>
 Pour récupérer un ou plusieurs StateObject (à un instant T), vous pouvez utiliser la méthode “requestStateObjects” :
