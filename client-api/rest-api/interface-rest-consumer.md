@@ -1,6 +1,6 @@
 ---
 ID: 2284
-post_title: 'L&rsquo;interface REST &ldquo;Consumer&rdquo;'
+post_title: 'L&rsquo;interface REST « Consumer »'
 author: Sebastien Warin
 post_date: 2016-08-12 15:44:31
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/rest-api/interface-rest-consumer/
 published: true
-post_modified: 2017-07-29 08:43:19
+publish_post_category:
+  - "15"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:27:28
 ---
 L’interface REST “Consumer” permet à tout système, script, objet ou programme de “consommer” des éléments dans une Constellation sans devoir être déclaré comme un package.
 
