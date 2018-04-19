@@ -1,6 +1,9 @@
 ---
 ID: 4888
-post_title: 'Connecter un vid&eacute;o projecteur standard &agrave; Constellation et synchroniser les volets'
+post_title: >
+  Connecter un vidéo projecteur standard
+  à Constellation et synchroniser les
+  volets
 author: Lucas
 post_date: 2017-05-16 12:23:36
 post_excerpt: ""
@@ -8,7 +11,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/connecter-un-video-projecteur-dans-constellation/
 published: true
-post_modified: 2017-05-16 12:23:36
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:05:48
 ---
 <em>Par Lucas Dupuis</em>
 
