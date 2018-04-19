@@ -1,6 +1,6 @@
 ---
 ID: 4549
-post_title: 'Un potentiomètre connect&eacute; pour contr&ocirc;ler le volume de votre PC, la luminosit&eacute; de l&rsquo;&eacute;cran et bien plus encore'
+post_title: 'Un potentiomètre connecté pour contrôler le volume de votre PC, la luminosité de l&rsquo;écran et bien plus encore'
 author: Sebastien Warin
 post_date: 2017-05-10 11:15:44
 post_excerpt: ""
@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/tutorials/potentiometre-connecte-pour-controler-le-volume-ou-la-luminosite/
 published: true
-post_modified: 2017-05-10 11:32:15
+publish_post_category:
+  - "10"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 07:11:15
 ---
 Dans ce tutoriel nous allons créer un encodeur rotatif connecté pour piloter tout type de chose comme le volume ou la luminosité de vos ordinateurs Windows par exemple grâce au package <a href="/package-library/windowscontrol/">WindowsControl</a>.
 <p align="center"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Volume2" src="https://developer.myconstellation.io/wp-content/uploads/2017/05/Volume2.gif" alt="Volume2" width="400" height="225" border="0" /></p>
