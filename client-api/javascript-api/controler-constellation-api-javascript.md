@@ -1,6 +1,8 @@
 ---
 ID: 2329
-post_title: 'Contr&ocirc;ler votre Constellation en Javascript'
+post_title: >
+  Contrôler votre Constellation en
+  Javascript
 author: Sebastien Warin
 post_date: 2016-08-18 15:48:37
 post_excerpt: ""
@@ -8,7 +10,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/client-api/javascript-api/controler-constellation-api-javascript/
 published: true
-post_modified: 2017-10-24 10:34:46
+publish_post_category:
+  - "16"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 09:40:29
 ---
 Le <a href="/concepts/les-diffrents-types-de-hub-et-interfaces-rest-du-serveur-constellation/">hub de contrôle</a> expose des méthodes pour contrôler la Constellation comme arrêter/démarrer des packages, s’abonner et récupérer en temps réel les logs des packages de la Constellation, propager les changements de configuration dans la Constellation, suivre les états et la consommation de ressource des packages, etc…
 
