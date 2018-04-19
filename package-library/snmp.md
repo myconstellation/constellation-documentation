@@ -8,7 +8,13 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/package-library/snmp/
 published: true
-post_modified: 2017-05-25 10:35:30
+publish_post_category:
+  - "7"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-19 11:21:34
 ---
 Le package SNMP vous permet de collecter différentes informations sur vos ressources informatique (switchs, routeurs, serveurs, imprimantes, etc...) en utilisant le <b>Simple Network Management Protocol</b> (SNMP).
 
