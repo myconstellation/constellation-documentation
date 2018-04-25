@@ -23,26 +23,21 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/996
-post_modified: 2018-04-25 14:20:17
+post_modified: 2018-04-25 14:45:57
 ---
 Pour sécuriser votre Constellation vous devez utilise le protocole HTTPS afin de chiffrer toutes les communications en SSL.
 
 <img class="alignnone size-full wp-image-3796 aligncenter" src="https://developer.myconstellation.io/wp-content/uploads/2016/08/ssl.jpg" alt="" width="253" height="189" />
 
-Si votre serveur est installé sur un serveur Windows vous pouvez consulter ces deux articles :
-<ul>
- 	<li><a href="/constellation-platform/constellation-server/exposer-constellation-derrire-un-serveur-web-reverse-proxy/">Reverse Proxy : exposer Constellation derrière IIS</a></li>
- 	<li><a href="/constellation-platform/constellation-server/configuration-ssl/">Configuration du serveur Constellation en SSL</a></li>
-</ul>
-Dans cet article nous allons voir comment réaliser cela sur Linux/Unix, dans notre exemple un système Ubuntu.
+Si vous avez un serveur Windows, vous pouvez également <a href="/constellation-platform/constellation-server/exposer-constellation-derrire-un-serveur-web-reverse-proxy/">utiliser IIS pour configurer un reverse proxy</a> vers Constellation.
 
-Pour ce faire nous allons exposer le serveur Constellation derrière un serveur Nginx protégé avec un certificat SSL Let’s Encrypt.
+Dans cet article nous allons découvrir comment exposer le serveur Constellation derrière un serveur Nginx protégé avec un certificat SSL Let’s Encrypt.
 <h3>Prérequis : avoir une Constellation exposée publiquement avec un nom DNS</h3>
-Avant de démarrer vous devez avoir installé le serveur Constellation sur votre serveur Linux, typiquement un Debian ou Ubuntu.
+Avant de démarrer vous devez avoir un serveur Constellation opérationel.
 
-Cela se résume à lancer la commande ci-dessous et à suivre l'assistant :
+Si vous installez Constellation sur un Linux, cela se résume à lancer la commande ci-dessous et à suivre l'assistant :
 <pre title="WPI Pour Linux" class="lang:shell decode:true">wget -O install.sh https://developer.myconstellation.io/download/installers/install-linux.sh &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh</pre>
-Pour plus d’information, veuillez suivre le guide : <a href="/constellation-platform/constellation-server/installer-constellation-sur-linux/">Installer Constellation sur Linux</a>
+Pour plus d’information, veuillez suivre le guide : <a href="/constellation-platform/constellation-server/installer-constellation-sur-linux/">Installer Constellation sur Linux.</a>
 
 On considéra à ce stade que votre serveur Constellation est démarré et opérationnel. Vous pouvez lancer la commande suivante pour vérifier le statut des services Constellation :
 <pre class="lang:default decode:true" title="Statut des services">sudo supervisorctl status</pre>
@@ -50,7 +45,15 @@ Vous devriez voir le “<em>constellation-server</em>” avec le statut “RUNNI
 <pre class="lang:default decode:true" title="Statut des services">sebastien@ubuntu:~$ sudo supervisorctl status
 constellation-sentinel           RUNNING   pid 1194, uptime 1 day, 17:36:48
 constellation-server             RUNNING   pid 2888, uptime 1 day, 15:06:41</pre>
-Pour finir, si vous souhaitez activer le HTTPS et donc ajouter un certificat SSL, vous devez nécessairement avoir un nom DNS qui pointe vers l’adresse IP (public) de votre Constellation.
+Vous pouvez également installer Constellation sur un système Windows (voir <a href="/getting-started/installer-constellation/">le guide</a>).
+
+En effet, le reverse proxy (ici Ngnix) qui sera installé sur un système Linux peut exposer un service tel que Constellation quelque soit le serveur sur lequel il est déployé. Le reverse proxy n'est pas nécessairement sur la même machine sur le ou les services à exposer.
+
+Il est donc possible d'installer un serveur Linux avec Nginx pour exposer en SSL un serveur Constellation sur un système Windows de la même manière que nous pouvons installer un serveur <a href="/constellation-platform/constellation-server/exposer-constellation-derrire-un-serveur-web-reverse-proxy/">Windows avec IIS</a> pour exposer en SSL un serveur Constellation sur un système Linux !
+
+Dans ce guide nous avons installer le serveur Constellation et le reverse proxy Nginx sur le même serveur, sous Linux Ubuntu 16.
+
+Si vous souhaitez activer le HTTPS et donc ajouter un certificat SSL, vous devez nécessairement avoir un nom DNS qui pointe vers l’adresse IP (public) de votre serveur de reverse proxy.
 
 Plusieurs options s'offre à vous :
 <ul>
@@ -64,13 +67,15 @@ Plusieurs options s'offre à vous :
 </ul>
 </li>
 </ul>
-Dans le cas présent, j’ai crée l’entrée DNS “demo.internal.myconstellation.io” qui pointe vers l’adresse IP public du serveur Constellation installé sur un Ubuntu.
+Dans le cas présent, j’ai crée l’entrée DNS “demo.internal.myconstellation.io” qui pointe vers l’adresse IP public du serveur Constellation installé sur un Ubuntu (le DNS doit pointer votre le serveur où sera installé le reverse proxy dans la mesure où tout passera par lui. Etant donné que le reverse proxy sera sur le même serveur que le service Constellation on peut dire que le DNS pointe vers le serveur Constellation).
 
-Bien évidement, si votre serveur Constellation est installé dernière un routeur avec du NAT (typiquement sur un réseau local derrière une box Internet) vous devez configurer la redirection de port sur votre routeur/box internet.
+Bien évidement, si votre serveur est installé dernière un routeur avec du NAT (typiquement sur un réseau local derrière une box Internet) vous devez configurer la redirection de port sur votre routeur/box internet.
+
+Encore une fois, on part du principe que le serveur de R.P et Constellaiton sont sur le même serveur, donc la même IP interne.
 
 Dans un premier temps redirigez seulement le port 8088 en tcp sur l’IP interne de votre serveur Constellation. A noter que nous supprimerons cette redirection une fois le reverse proxy installé.
 
-Pour résumer et avant de démarrer, vous devez avoir votre serveur Constellation démarré répondant sur l’URL : <a href="http://&lt;mon_nom_dns&gt;:8088">http://&lt;mon_nom_dns&gt;:8088</a>
+Donc pour résumer et avant de démarrer, vous devez avoir votre serveur Constellation démarré répondant sur l’URL : <a href="http://&lt;mon_nom_dns&gt;:8088">http://&lt;mon_nom_dns&gt;:8088</a>
 
 Dans mon cas : <a href="http://demo.internal.myconstellation.io:8088">http://demo.internal.myconstellation.io:8088</a> :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/04/image-1.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Serveur Constellation sur un nom DNS" src="https://developer.myconstellation.io/wp-content/uploads/2018/04/image_thumb.png" alt="Serveur Constellation sur un nom DNS" width="484" height="291" border="0" /></a></p>
@@ -112,6 +117,8 @@ Vous devez modifier le paramètre “<em>server_name</em>” avec le nom DNS de 
 
 Il est important de bien reprendre les mêmes options, notamment le “<em>proxy_buffering</em>” pour permettre les “<em>server-Sent events</em>” vers le serveur Constellation.
 
+Dans le cas présent Nginx va "proxifer" les requêtes vers <em>http://localhost:8088</em>, c'est à dire au service Constellation (port 8088) installé sur le même serveur (localhost).
+
 Tapez ensuite sur la combinaison de touches “Ctrl+X” pour quitter en prenant suivant d’enregistrer le fichier. Puis, pour activer cette configuration, créez le lien symbolique suivant :
 <pre title="Activation de la configuration" class="lang:shell decode:true">sudo ln -s /etc/nginx/sites-available/constellation  /etc/nginx/sites-enabled/constellation</pre>
 Et pour finir recharger Nginx pour prendre en compte notre configuration fraîchement créée :
@@ -123,8 +130,6 @@ Rendez-vous donc sur l’adresse http://&lt;votre_nom_dns&gt; (sans spécifier l
 <p align="left">Ce n’est donc plus Constellation qui répond mais notre serveur Nginx qui lui même communique avec le serveur Constellation local.</p>
 <p align="left">Donc pour résumer, sur le port 80 c'est le serveur Nginx qui répond en transférant au serveur Constellation sur le port 8088.</p>
 <span style="text-decoration: underline;">Note</span> : si vous êtes dernière un routeur avec du NAT, n’oubliez pas d’ajouter la redirection du port 80 vers votre serveur Constellation interne. Par la même occasion vous pouvez supprimer la redirection du port 8088, ainsi tout passera nécessairement par Nginx.
-
-<span style="text-decoration: underline;">Note 2</span> : ici le reverse proxy Nginx est installé sur la même machine que le serveur Constellation mais il est aussi envisageable de dissocier les deux dans le cas d'une architecture robuste : un serveur frontend avec Nginx et un (ou plusieurs) serveur Constellation.
 <h3>Activer le HTTPS avec des certificats SSL Let’s Encrypt</h3>
 Maintenant que votre service Constellation est exposé dernière le serveur Nginx vous allez pouvoir configurer différentes choses sur Nginx comme par exemple des restrictions d'accès , l’authentification, des limites (throttling) et bien d’autre chose. Dans le cas présent on va s’intéresser au support du SSL.
 
