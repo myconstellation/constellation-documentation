@@ -13,10 +13,17 @@ published: true
 publish_post_category:
   - "17"
 publish_to_discourse:
-  - "1"
-update_discourse_topic:
   - "0"
-post_modified: 2018-04-19 09:35:15
+update_discourse_topic:
+  - "1"
+discourse_post_id:
+  - "1377"
+discourse_topic_id:
+  - "897"
+discourse_permalink:
+  - >
+    https://forum.myconstellation.io/t/creez-votre-premier-package-constellation-en-python/897
+post_modified: 2018-04-25 17:06:06
 ---
 Vous pouvez développer des packages Constellation avec le langage Python. Cela est très utile pour créer des packages à destination de vos sentinelles Linux comme vos Raspberry Pi où vous pourrez profiter des différentes libraires pour l’accès aux GPIO et autres ressources de ce SoC.
 
@@ -177,12 +184,27 @@ Constellation.WriteInfo("IsConnected = %s | IsStandAlone = %s " % (Constellation
 Constellation.PushStateObject("MyNumber", 123)
 Constellation.PushStateObject("MyDecimal", 123.12)
 Constellation.PushStateObject("MyBoolean", True)</pre>
-<p align="left">Vous pouvez également avoir des objets complexes :</p>
+<p align="left">Vous pouvez publier des StateObjects dont la valeur est un objet complexe :</p>
 
-<pre lang="lang:python decode:true">Constellation.PushStateObject("Demo", { "UneString": "DemoPython", "UnNombre": 123 })</pre>
-<p align="left">Enfin, vous pouvez également spécifier un type, un dictionnaire de méta-données ou encore une durée de vie sur vos StateObjects :</p>
+<pre lang="lang:python decode:true" class="">Constellation.PushStateObject("Demo", { "UneString": "DemoPython", "UnNombre": 123 })</pre>
+<p align="left">Dans l'exemple ce-dessus, le StateObject "Demo" est un objet contenant deux propriétés : "UneString" et "UnNombre".</p>
+<p align="left">Lorsqu'il s'agit de type complexe, il est vivement conseiller de décrire le type du StateObject à Constellation.</p>
+<p align="left">Pour cela au démarrage de votre package (méthode Start), enregistrer vos différents types de StateObjects avec la méthode "DescribeStateObjectType".</p>
+<p align="left">Par exemple :</p>
 
-<pre lang="lang:python decode:true">Constellation.PushStateObject("Demo", { "UneString": "DemoPython", "UnNombre": 123 }, type = "MonTypeDemo", metadatas = { "DeviceId": "RPi", "SerialNumber":"123" }, lifetime = 300)</pre>
+<pre class="lang:python decode:true" title="Description d'un type de StateObject">Constellation.DescribeStateObjectType("MyStateObject", "StateObject à deux propriétés de démonstration", [
+    { 'Name':'UneString', 'Type':'string', 'Description': 'Une chaine de caractère tout simplement' },        
+    { 'Name':'UnNombre', 'Type':'int', 'Description': 'Un nombre entier' }
+])</pre>
+Pour chaque type on spécifiera son nom, la description du type et la liste des propriétés du type complexe. Sachant que pour chaque propriété nous avons un nom, un type et une description.
+
+Le type d'une propriété peut faire référence à un autre type complexe que vous avez enregistré.
+
+Pour finir il faudra déclarer le package descriptor après avoir décrit tous vos types :
+<pre class="lang:python decode:true" title="Déclaration du package descriptor">Constellation.DeclarePackageDescriptor()</pre>
+<p align="left">Autrement pour chaque publication de StateObject, vous pouvez spécifier le type (simple ou complexe que vous aurez enregistré ci-dessus), un dictionnaire de méta-données ou encore une durée de vie (en seconde)  :</p>
+
+<pre lang="lang:python decode:true" class="">Constellation.PushStateObject("Demo", { "UneString": "DemoPython", "UnNombre": 123 }, type = "MyStateObject", metadatas = { "DeviceId": "RPi", "SerialNumber":"123" }, lifetime = 300)</pre>
 <h4 align="left">Tester son package dans Visual Studio</h4>
 <p align="left">Laissons le code de démo du script “Demo.py” créé par le Template du projet tel quel :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/04/image-8.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Demo Python" src="https://developer.myconstellation.io/wp-content/uploads/2016/04/image_thumb-8.png" alt="Demo Python" width="420" height="130" border="0" /></a></p>
