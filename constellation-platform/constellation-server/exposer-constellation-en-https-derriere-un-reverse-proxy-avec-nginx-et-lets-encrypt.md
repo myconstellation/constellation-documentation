@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/996
-post_modified: 2018-04-25 14:45:57
+post_modified: 2018-04-25 14:47:31
 ---
 Pour sécuriser votre Constellation vous devez utilise le protocole HTTPS afin de chiffrer toutes les communications en SSL.
 
@@ -71,7 +71,7 @@ Dans le cas présent, j’ai crée l’entrée DNS “demo.internal.myconstellat
 
 Bien évidement, si votre serveur est installé dernière un routeur avec du NAT (typiquement sur un réseau local derrière une box Internet) vous devez configurer la redirection de port sur votre routeur/box internet.
 
-Encore une fois, on part du principe que le serveur de R.P et Constellaiton sont sur le même serveur, donc la même IP interne.
+Encore une fois, on part du principe que le serveur de R.P et Constellation sont sur le même serveur, donc la même IP interne.
 
 Dans un premier temps redirigez seulement le port 8088 en tcp sur l’IP interne de votre serveur Constellation. A noter que nous supprimerons cette redirection une fois le reverse proxy installé.
 
