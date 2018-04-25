@@ -8,8 +8,28 @@ layout: post
 permalink: >
   https://developer.myconstellation.io/constellation-platform/changelog/
 published: true
-post_modified: 2017-12-13 17:23:59
+publish_post_category:
+  - "9"
+publish_to_discourse:
+  - "1"
+update_discourse_topic:
+  - "0"
+post_modified: 2018-04-25 17:46:02
 ---
+<h3>25/04/2018 : Update SDK 1.8.3.17334</h3>
+<ul>
+ 	<li>Mise à jour du template Python</li>
+ 	<li>Mise à jour des templates de projet avec le package PythonProxy 1.8.3.17332</li>
+</ul>
+<h3>10/04/2018 : Release 1.8.4.18100 [BETA]</h3>
+<ul>
+ 	<li>Server : Mise à jour des dépendances vers .NET 4.6.2, SignalR 2.2.3, OWIN 4.0, JSON.net 11.0.2 et NLog 4.5.1</li>
+ 	<li>Sentinel : Mise à jour des dépendances vers SignalR 2.2.3, JSON.net 11.0.2 et NLog 4.5.1</li>
+ 	<li>Console : affichage du type de licence dans la sidebar</li>
+ 	<li>Console / StateObject Explorer : désabonnement et réinitialisation du timer d'expiration des StateObject si la modal de détail est "dismiss"</li>
+ 	<li>Console / Configuration Manager : ajout d'un bouton pour télécharger en local la configuration courante du serveur</li>
+ 	<li>Console / Configuration Manager : bugfix sur le bouton "switch theme"</li>
+</ul>
 <h3>13/12/2017 : Release 1.8.3.17346</h3>
 <ul>
  	<li>Server / SentinelHub : ajout des méthodes GetServerVersion &amp; ReportPackagesUsage (pour le report de plusieurs packages en même temps) sur le hub des sentinelles</li>
