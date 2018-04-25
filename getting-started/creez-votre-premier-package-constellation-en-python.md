@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/creez-votre-premier-package-constellation-en-python/897
-post_modified: 2018-04-25 17:06:06
+post_modified: 2018-04-25 17:08:15
 ---
 Vous pouvez développer des packages Constellation avec le langage Python. Cela est très utile pour créer des packages à destination de vos sentinelles Linux comme vos Raspberry Pi où vous pourrez profiter des différentes libraires pour l’accès aux GPIO et autres ressources de ce SoC.
 
@@ -189,20 +189,20 @@ Constellation.PushStateObject("MyBoolean", True)</pre>
 <pre lang="lang:python decode:true" class="">Constellation.PushStateObject("Demo", { "UneString": "DemoPython", "UnNombre": 123 })</pre>
 <p align="left">Dans l'exemple ce-dessus, le StateObject "Demo" est un objet contenant deux propriétés : "UneString" et "UnNombre".</p>
 <p align="left">Lorsqu'il s'agit de type complexe, il est vivement conseiller de décrire le type du StateObject à Constellation.</p>
-<p align="left">Pour cela au démarrage de votre package (méthode Start), enregistrer vos différents types de StateObjects avec la méthode "DescribeStateObjectType".</p>
+<p align="left">Pour cela au démarrage de votre package (méthode Start), enregistrez vos différents types de StateObjects avec la méthode "DescribeStateObjectType".</p>
 <p align="left">Par exemple :</p>
 
 <pre class="lang:python decode:true" title="Description d'un type de StateObject">Constellation.DescribeStateObjectType("MyStateObject", "StateObject à deux propriétés de démonstration", [
     { 'Name':'UneString', 'Type':'string', 'Description': 'Une chaine de caractère tout simplement' },        
     { 'Name':'UnNombre', 'Type':'int', 'Description': 'Un nombre entier' }
 ])</pre>
-Pour chaque type on spécifiera son nom, la description du type et la liste des propriétés du type complexe. Sachant que pour chaque propriété nous avons un nom, un type et une description.
+Pour chaque type on spécifiera un nom, une description du type et la liste ses propriétés. Sachant que pour chaque propriété nous avons un nom, un type et une description.
 
-Le type d'une propriété peut faire référence à un autre type complexe que vous avez enregistré.
+Le type d'une propriété peut faire elle-même référence à un autre type complexe que vous avez enregistré.
 
 Pour finir il faudra déclarer le package descriptor après avoir décrit tous vos types :
 <pre class="lang:python decode:true" title="Déclaration du package descriptor">Constellation.DeclarePackageDescriptor()</pre>
-<p align="left">Autrement pour chaque publication de StateObject, vous pouvez spécifier le type (simple ou complexe que vous aurez enregistré ci-dessus), un dictionnaire de méta-données ou encore une durée de vie (en seconde)  :</p>
+<p align="left">Enfin, pour chaque publication de StateObject, vous pouvez spécifier le type (simple ou complexe que vous aurez enregistré ci-dessus), un dictionnaire de méta-données ou encore une durée de vie (en seconde)  :</p>
 
 <pre lang="lang:python decode:true" class="">Constellation.PushStateObject("Demo", { "UneString": "DemoPython", "UnNombre": 123 }, type = "MyStateObject", metadatas = { "DeviceId": "RPi", "SerialNumber":"123" }, lifetime = 300)</pre>
 <h4 align="left">Tester son package dans Visual Studio</h4>
