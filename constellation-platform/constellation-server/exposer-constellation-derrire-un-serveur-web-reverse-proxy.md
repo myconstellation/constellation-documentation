@@ -24,7 +24,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/reverse-proxy-exposer-constellation-derriere-un-serveur-web/942
-post_modified: 2018-04-25 14:58:09
+post_modified: 2018-04-25 15:00:07
 ---
 Pour assurer un maximum de sécurité et ajouter des fonctionnalités (SSL, authentification basic/windows/ssl, filtrage, ou autre) vous  pouvez exposer votre serveur Constellation derrière un serveur proxy (reverse-proxy) tel que IIS, Apache, <a href="/constellation-platform/constellation-server/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/">nginx</a> ou autre.
 
@@ -60,5 +60,7 @@ Créez le fichier “web.config” dans le répertoire de votre site Web créé 
     &lt;/system.webServer&gt;
 &lt;/configuration&gt;</pre>
 Dans cet exemple toutes requêtes qui commence par “constellation/” seront “rewritées” vers le serveur local “myprivateserver.mynetwork.lan:8888”.
-<h3>Etape 4 : activer le HTTPS avec des certificats SSL Let's Encrypt</h3>
-Téléchargez et installez <a href="https://certifytheweb.com/">Certify SSL Manager</a>. Vous pourrez alors ajouter un certificat SSL en quelques clics à votre site IIS avec gestion automatique du renouvellement.
+<h3>Etape 4 : activer le HTTPS</h3>
+Vous pouvez depuis le gestionnaire IIS ajouter des certificat SSL pour activer le HTTPS sur votre site IIS et donc exposer votre Constellation dans un canal sécurisé.
+
+Pour utiliser des certificats SSL Let's Encrypt, téléchargez et installez <a href="https://certifytheweb.com/">Certify SSL Manager</a>. Vous pourrez alors ajouter un certificat SSL en quelques clics à votre site IIS avec gestion automatique du renouvellement.
