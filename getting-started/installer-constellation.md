@@ -15,7 +15,7 @@ publish_post_category:
 publish_to_discourse:
   - "0"
 update_discourse_topic:
-  - "0"
+  - "1"
 discourse_post_id:
   - "1420"
 discourse_topic_id:
@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/installer-la-plateforme-constellation-1-8/938
-post_modified: 2018-04-19 20:43:05
+post_modified: 2018-04-25 14:51:08
 ---
 Après avoir <a href="/plateforme/">introduit Constellation</a>, découvrons comment installer la plateforme sur vos ordinateurs ou serveurs.
 <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hD8Upyb2jXo" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
@@ -181,6 +181,7 @@ Vous entrez alors dans la configuration de la sentinelle avec la possibilité d�
 <ul>
  	<li><a href="https://developer.myconstellation.io/getting-started/ajouter-des-sentinelles/">Ajoutez des sentinelles dans votre Constellation</a></li>
  	<li><a href="https://developer.myconstellation.io/getting-started/telecharger-et-deployer-des-packages-sur-vos-sentinelles/">Téléchargez et déployez des packages sur vos sentinelles</a></li>
+ 	<li>Exposer votre serveur Constellation derrière avec reverse proxy <a href="/constellation-platform/constellation-server/exposer-constellation-derrire-un-serveur-web-reverse-proxy/">IIS</a> ou <a href="/constellation-platform/constellation-server/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/">Nginx</a> et ajouter le <a href="https://developer.myconstellation.io/constellation-platform/constellation-server/configuration-ssl/">support du HTTPS/SSL</a></li>
 </ul>
 Vous souhaitez installer le serveur et sa console sur un système Linux ?
 <ul>
