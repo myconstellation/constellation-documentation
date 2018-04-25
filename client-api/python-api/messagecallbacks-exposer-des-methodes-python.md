@@ -21,7 +21,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/messagecallback-exposer-des-methodes-python/898
-post_modified: 2018-04-25 16:28:53
+post_modified: 2018-04-25 16:33:45
 ---
 <h3>Exposer une méthode</h3>
 Pour exposer une méthode Python dans Constellation vous devez tout simplement ajouter le décorateur “<em>Constellation.MessageCallback</em>” sur votre méthode :
@@ -33,19 +33,19 @@ Ici nous déclarons le MessageCallback “SimpleMessageCallback” sans paramèt
 Vous pouvez ajouter un ou plusieurs arguments à votre MC et utiliser la syntaxe de Python pour commenter vos MC :
 <pre class="lang:default decode:true">@Constellation.MessageCallback()
 def DemoArg(data):
-    "Ceci est la description du MessageCallback DemoArg"
+    "Ceci est la description du MessageCallback DemoArg avec 1 argument"
     Constellation.WriteInfo('arg = %s', data)
 
 @Constellation.MessageCallback()
 def DemoArgs(a, b, c):
-    "Ceci est la description du MessageCallback DemoArgs"
+    "Ceci est la description du MessageCallback DemoArgs avec 3 arguments"
     Constellation.WriteInfo(a)
     Constellation.WriteInfo(b)
     Constellation.WriteInfo(c)</pre>
 Le ou les paramètres peuvent être des types simples (string, int, bool, etc..) ou des types (objets) complexes :
-<pre class="lang:python decode:true">@Constellation.MessageCallback()
+<pre class="lang:python decode:true crayon-selected">@Constellation.MessageCallback()
 def ComplexMessageCallback(data):
-    "MessageCallback with object parameter"
+    "Ceci est la description du MessageCallback ComplexMessageCallback avec un objet complexe en argument"
     Constellation.WriteInfo(data.A)
     Constellation.WriteInfo(data.B)
     Constellation.WriteInfo(data.C)</pre>
