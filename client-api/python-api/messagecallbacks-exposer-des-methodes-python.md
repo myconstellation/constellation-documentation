@@ -1,6 +1,6 @@
 ---
 ID: 2511
-post_title: 'MessageCallback : Exposer des m&eacute;thodes Python'
+post_title: 'MessageCallback : Exposer des méthodes Python'
 author: Sebastien Warin
 post_date: 2016-08-24 10:47:40
 post_excerpt: ""
@@ -23,7 +23,7 @@ discourse_permalink:
     https://forum.myconstellation.io/t/messagecallback-exposer-des-methodes-python/898
 wpdc_xmlrpc_failure_sent:
   - "1"
-post_modified: 2018-04-25 16:56:45
+post_modified: 2018-04-25 17:16:40
 ---
 <h3>Exposer une méthode</h3>
 Pour exposer une méthode Python dans Constellation vous devez tout simplement ajouter le décorateur “<em>Constellation.MessageCallback</em>” sur votre méthode :
@@ -93,8 +93,7 @@ def Demo(a, b, c):
     Constellation.WriteInfo("a = %s - type: %s" % (a, type(a)))
     Constellation.WriteInfo("b = %s - type: %s" % (b, type(b)))
     Constellation.WriteInfo("c = %s - type: %s" % (c, type(c)))</pre>
-<p align="center">
-<a href="https://developer.myconstellation.io/wp-content/uploads/2018/04/image-10.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Description des arguments d'un MC en Python" src="https://developer.myconstellation.io/wp-content/uploads/2018/04/image_thumb-9.png" alt="Description des arguments d'un MC en Python" width="484" height="166" border="0" /></a></p>
+<p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/04/image-10.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Description des arguments d'un MC en Python" src="https://developer.myconstellation.io/wp-content/uploads/2018/04/image_thumb-9.png" alt="Description des arguments d'un MC en Python" width="484" height="166" border="0" /></a></p>
 <p align="left">Ainsi en retournant sur le MC Explorer, chaque argument est correctement typé dans Constellation.</p>
 
 <h4 align="left">Paramètres optionnels avec valeur par défaut</h4>
