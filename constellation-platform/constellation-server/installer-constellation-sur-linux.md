@@ -11,10 +11,17 @@ published: true
 publish_post_category:
   - "19"
 publish_to_discourse:
-  - "1"
-update_discourse_topic:
   - "0"
-post_modified: 2018-04-19 10:14:28
+update_discourse_topic:
+  - "1"
+discourse_post_id:
+  - "1421"
+discourse_topic_id:
+  - "939"
+discourse_permalink:
+  - >
+    https://forum.myconstellation.io/t/installer-constellation-sur-linux/939
+post_modified: 2018-04-25 14:48:54
 ---
 Dans cet article nous allons découvrir comment installer Constellation sur un système Linux/Debian et ses dérivés (Raspbian, Ubuntu, etc..).
 
@@ -155,6 +162,7 @@ Ouvrez un navigateur Internet et rendez-vous sur l’adresse IP ou DNS de votre 
 <ul>
  	<li><a href="https://developer.myconstellation.io/getting-started/ajouter-des-sentinelles/">Ajoutez des sentinelles dans votre Constellation</a></li>
  	<li><a href="https://developer.myconstellation.io/getting-started/telecharger-et-deployer-des-packages-sur-vos-sentinelles/">Téléchargez et déployez des packages sur vos sentinelles</a></li>
+ 	<li><a href="/constellation-platform/constellation-server/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/">Exposer votre Constellation sur Internet derrière un reverse proxy Nginx en HTTPS avec des certificats SSL Let's Encrypt</a></li>
 </ul>
 Prêt pour développer avec Constellation ?
 <ul>
