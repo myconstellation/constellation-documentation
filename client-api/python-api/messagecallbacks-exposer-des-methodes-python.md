@@ -13,17 +13,17 @@ publish_post_category:
 publish_to_discourse:
   - "0"
 update_discourse_topic:
-  - "1"
+  - "0"
 discourse_post_id:
   - "1378"
 discourse_topic_id:
   - "898"
 discourse_permalink:
   - >
-    https://forum.myconstellation.io/t/messagecallback-exposer-des-methodes-python/898
+    https://forum.myconstellation.io/t/messagecallback-exposer-des-m-eacute-thodes-python/898
 wpdc_xmlrpc_failure_sent:
   - "1"
-post_modified: 2018-04-25 17:16:40
+post_modified: 2018-04-30 14:40:00
 ---
 <h3>Exposer une méthode</h3>
 Pour exposer une méthode Python dans Constellation vous devez tout simplement ajouter le décorateur “<em>Constellation.MessageCallback</em>” sur votre méthode :
@@ -81,10 +81,10 @@ Si vous regardez attentivement les arguments des MC dans le MessageCallback Expl
 Pour décrire les paramètres utilisez la syntaxe suivante dans la description du MC :
 <pre title="Syntaxe de description d'un paramètre" class="lang:default decode:true ">    :param &lt;type&gt; &lt;name&gt; : &lt;description&gt;</pre>
 Par exemple :
-<pre title="MC avec plusieurs paramètres doucmentés" class="lang:default decode:true">@Constellation.MessageCallback()
+<pre title="MC avec plusieurs paramètres doucmentés" class="lang:default decode:true crayon-selected">@Constellation.MessageCallback()
 def Demo(a, b, c):
     '''
-    Ceci est un exemple de MC avec 4 parametre
+    Ceci est un exemple de MC avec 3 parametres
 
     :param int a: My int value
     :param bool b: My boolean value
