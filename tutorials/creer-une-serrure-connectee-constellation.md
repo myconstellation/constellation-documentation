@@ -13,10 +13,10 @@ published: true
 publish_post_category:
   - "10"
 publish_to_discourse:
-  - "0"
+  - "1"
 update_discourse_topic:
   - "0"
-post_modified: 2018-05-16 16:05:31
+post_modified: 2018-05-16 16:25:36
 ---
 <em>Article proposé par Olivier MOUILLOT, Mohammed TAHRI JOUTEI HASSANI et Gaëtan DELABY</em>
 
