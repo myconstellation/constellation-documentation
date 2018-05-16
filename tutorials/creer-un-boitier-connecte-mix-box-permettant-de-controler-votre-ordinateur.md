@@ -14,10 +14,10 @@ published: true
 publish_post_category:
   - "10"
 publish_to_discourse:
-  - "0"
+  - "1"
 update_discourse_topic:
   - "0"
-post_modified: 2018-05-16 16:24:43
+post_modified: 2018-05-16 16:25:10
 ---
 <em>Tutoriel proposé par Marc-Antoine DUVAL, Joël GUILLEM et Quentin LEVERT.</em>
 
