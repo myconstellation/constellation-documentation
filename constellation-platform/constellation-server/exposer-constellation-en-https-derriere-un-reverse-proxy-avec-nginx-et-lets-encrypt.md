@@ -15,7 +15,7 @@ publish_post_category:
 publish_to_discourse:
   - "0"
 update_discourse_topic:
-  - "1"
+  - "0"
 discourse_post_id:
   - "1629"
 discourse_topic_id:
@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/996
-post_modified: 2018-04-25 14:47:31
+post_modified: 2018-07-05 21:15:52
 ---
 Pour sécuriser votre Constellation vous devez utilise le protocole HTTPS afin de chiffrer toutes les communications en SSL.
 
@@ -111,6 +111,7 @@ Dans ce fichier, copiez le contenu suivant :
         proxy_cache off;
         proxy_connect_timeout 30;
         proxy_send_timeout 30;
+        proxy_read_timeout 150;
     }
 }</pre>
 Vous devez modifier le paramètre “<em>server_name</em>” avec le nom DNS de votre serveur Constellation, dans le cas présent “demo.internal.myconstellation.io”.
