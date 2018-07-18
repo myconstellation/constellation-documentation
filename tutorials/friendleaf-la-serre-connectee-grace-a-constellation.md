@@ -11,14 +11,21 @@ published: true
 publish_post_category:
   - "10"
 publish_to_discourse:
-  - "1"
+  - "0"
 update_discourse_topic:
   - "0"
-post_modified: 2018-07-17 11:40:50
+discourse_post_id:
+  - "1847"
+discourse_topic_id:
+  - "1187"
+discourse_permalink:
+  - >
+    https://forum.myconstellation.io/t/friendleaf-la-serre-connectee-grace-a-constellation/1187
+post_modified: 2018-07-18 17:30:22
 ---
 <i>Plus besoin de disposer d'un espace extérieur pour faire pousser vos propres herbes aromatiques, salades et fleurs. Grâce à la serre connectée FriendLeaf, vous pouvez faire pousser plusieurs plantes et vous en occuper facilement.</i>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure1.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title=" FriendLeaf : la serre connectée grâce à Constellation" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure1_thumb.png" alt="FriendLeaf : la serre connectée grâce à Constellation" width="354" height="266" border="0" /></a></p>
-Projet réalisé par Théo DELOOSE,Clara BOMY,Clément NOUGET,Mathieu GABRIEL,Marine DAEL etThaï-Son DANG.
+Projet réalisé par Théo DELOOSE, Clara BOMY, Clément NOUGET, Mathieu GABRIEL, Marine DAEL et Thaï-Son DANG.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure2.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="L'équipe FriendLeaf" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure2_thumb.png" alt="L'équipe FriendLeaf" width="254" height="208" border="0" /></a></p>
 <!--more-->
 
@@ -229,7 +236,7 @@ Maintenant, il ne reste plus qu'à sécuriser notre système d’arrosage via le
 Les données du capteur de niveau d’eau nous permettent d’arrêter le système d’arrosage lorsque le réservoir est presque vide et d’informer l’utilisateur via un PushBullet et l’allumage des LEDs qu’il faut remplir le réservoir.
 <pre title="Notification via PushBullet" class="lang:python decode:true">Constellation.SendMessage("PushBullet", "PushNote", [ "FriendLead", "Le reservoir d'eau est vide"], Constellation.MessageScope.package)</pre>
 <div align="center">
-<pre><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Notification sur smartphone" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20_thumb.png" alt="Notification sur smartphone" width="184" height="364" border="0" /></a></pre>
+<a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Notification sur smartphone" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20_thumb.png" alt="Notification sur smartphone" width="184" height="364" border="0" /></a>
 </div>
 <h4>Étape 2 : Package relatif au stockage des données</h4>
 Afin d’historiser les valeurs des capteurs stockées dans un des State Objects du premier package, nous en avons créé un autre que l’on a déployé sur le même serveur que Constellation.
@@ -244,8 +251,8 @@ def RecupValue(stateObject):
     temperature = stateObject.Value.Temperature
 </pre>
 Nous avons ensuite créé un message callback qui permet de visualiser le fichier CSV dans notre Constellation.
-<pre title="Lecture du fichier" class="lang:python decode:true">@Constellation.MessageCallback()</pre>
-<pre title="Lecture du fichier" class="lang:python decode:true">def LireBDD():
+<pre title="Lecture du fichier" class="lang:python decode:true">@Constellation.MessageCallback()
+def LireBDD():
 '''
 : return string : La base de données 
 '''
@@ -266,8 +273,8 @@ De plus, pour gérer certaines fonctionnalités comme le traitement du CSV ou l�
 <h4>Étape 2 : Connexion à Constellation, State Object et Messages Callback</h4>
 Pour nous connecter à Constellation avec AngularJS, nous avons utilisé ces lignes de codes :
 <pre title="Connexion à Constellation" class="lang:javascript decode:true">Constellation.initializeClient(url_port, sha, "FriendLeaf");
-</pre>
-<pre title="Connexion à Constellation" class="lang:javascript decode:true">Constellation.onConnectionStateChanged(function (change) {
+
+Constellation.onConnectionStateChanged(function (change) {
    //suite
 });
 </pre>
