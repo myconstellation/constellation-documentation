@@ -13,7 +13,7 @@ publish_post_category:
 publish_to_discourse:
   - "0"
 update_discourse_topic:
-  - "0"
+  - "1"
 discourse_post_id:
   - "1847"
 discourse_topic_id:
@@ -21,11 +21,11 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/friendleaf-la-serre-connectee-grace-a-constellation/1187
-post_modified: 2018-07-18 17:30:22
+post_modified: 2018-07-29 07:49:22
 ---
 <i>Plus besoin de disposer d'un espace extérieur pour faire pousser vos propres herbes aromatiques, salades et fleurs. Grâce à la serre connectée FriendLeaf, vous pouvez faire pousser plusieurs plantes et vous en occuper facilement.</i>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure1.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title=" FriendLeaf : la serre connectée grâce à Constellation" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure1_thumb.png" alt="FriendLeaf : la serre connectée grâce à Constellation" width="354" height="266" border="0" /></a></p>
-Projet réalisé par Théo DELOOSE, Clara BOMY, Clément NOUGET, Mathieu GABRIEL, Marine DAEL et Thaï-Son DANG.
+Projet réalisé par Théo DELOOSE, Clara BOMY, Clément NOUGÉ, Mathieu GABRIEL, Marine DAEL et Thaï-Son DANG.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure2.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="L'équipe FriendLeaf" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure2_thumb.png" alt="L'équipe FriendLeaf" width="254" height="208" border="0" /></a></p>
 <!--more-->
 
@@ -235,9 +235,7 @@ Maintenant, il ne reste plus qu'à sécuriser notre système d’arrosage via le
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure19.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Package PushBullet" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure19_thumb.png" alt="Package PushBullet" width="354" height="163" border="0" /></a></p>
 Les données du capteur de niveau d’eau nous permettent d’arrêter le système d’arrosage lorsque le réservoir est presque vide et d’informer l’utilisateur via un PushBullet et l’allumage des LEDs qu’il faut remplir le réservoir.
 <pre title="Notification via PushBullet" class="lang:python decode:true">Constellation.SendMessage("PushBullet", "PushNote", [ "FriendLead", "Le reservoir d'eau est vide"], Constellation.MessageScope.package)</pre>
-<div align="center">
-<a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Notification sur smartphone" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20_thumb.png" alt="Notification sur smartphone" width="184" height="364" border="0" /></a>
-</div>
+<div align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Notification sur smartphone" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure20_thumb.png" alt="Notification sur smartphone" width="184" height="364" border="0" /></a></div>
 <h4>Étape 2 : Package relatif au stockage des données</h4>
 Afin d’historiser les valeurs des capteurs stockées dans un des State Objects du premier package, nous en avons créé un autre que l’on a déployé sur le même serveur que Constellation.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure21.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Enregistrement CSV" src="https://developer.myconstellation.io/wp-content/uploads/2018/07/figure21_thumb.png" alt="Enregistrement CSV" width="177" height="244" border="0" /></a></p>
