@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/996
-post_modified: 2018-07-05 21:15:52
+post_modified: 2018-10-15 09:59:19
 ---
 Pour sécuriser votre Constellation vous devez utilise le protocole HTTPS afin de chiffrer toutes les communications en SSL.
 
@@ -122,7 +122,11 @@ Dans le cas présent Nginx va "proxifer" les requêtes vers <em>http://localhost
 
 Tapez ensuite sur la combinaison de touches “Ctrl+X” pour quitter en prenant suivant d’enregistrer le fichier. Puis, pour activer cette configuration, créez le lien symbolique suivant :
 <pre title="Activation de la configuration" class="lang:shell decode:true">sudo ln -s /etc/nginx/sites-available/constellation  /etc/nginx/sites-enabled/constellation</pre>
-Et pour finir recharger Nginx pour prendre en compte notre configuration fraîchement créée :
+Avant de redémarrer Nginx, éditez le fichier de configuration global pour augmenter la taille maximale des requêtes entrantes afin de pouvoir uploader des packages Constellation sur le serveur (par défaut cette taille est fixée à 1Mo, autrement dit vous obtiendrez une erreur 413 "Request Entity Too Large" si vous tentez d'uploader un package de plus de 1Mo).
+<pre class="lang:default decode:true" title="Edition du fichier de configuration global de Ngnix">sudo nano /etc/nginx/nginx.conf</pre>
+Sous la section "http", ajoutez l'option "<strong>client_max_body_size</strong>" (ou si l'option existe déjà, modifiez sa valeur) que nous fixerons à 100 Méga :
+<pre class="lang:default decode:true" title="Augmentation de la taille maximale des requêtes entrantes à 100 Megà">client_max_body_size 100M;</pre>
+Pour finir, rechargez Nginx afin prendre en compte notre nouvelle configuration :
 <pre title="Recharger NGINX" class="lang:shell decode:true">sudo systemctl reload nginx</pre>
 Votre Constellation est maintenant accessible derrière Nginx sur le port 80.
 
