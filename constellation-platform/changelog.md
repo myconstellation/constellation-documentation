@@ -21,12 +21,12 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-02-04 18:02:15
+post_modified: 2019-02-04 19:21:32
 ---
 <h3>04/02/2019 : Update Python lib 1.8.6.19032</h3>
 <ul>
  	<li>PythonProxy : Support de Python 3.x</li>
- 	<li>PythonProxy : innovation des MessageCallbacks, StateObjectLink et autres événements de manière asynchrone (thread différent)</li>
+ 	<li>PythonProxy : invocation des MessageCallbacks, StateObjectLink et autres événements de manière asynchrone (thread différent)</li>
  	<li>PythonProxy : Ajout d'un événement OnSettingsUpdated permettant d'être notifié en cas de mise à jour des settings sur Constellation</li>
  	<li>PythonProxy : l'accès aux settings (via la méthode <em>GetSettings</em>) est possible juste après l'import de la librairie Constellation (avant même d'invoquer le <em>Constellation.Start</em>)</li>
  	<li>PythonProxy : le "Working Directory" (<em>os.getcwd()</em>) est maintenant le répertoire du package et non le répertoire du script Python lui-même</li>
