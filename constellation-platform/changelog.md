@@ -11,11 +11,34 @@ published: true
 publish_post_category:
   - "9"
 publish_to_discourse:
-  - "1"
+  - "0"
 update_discourse_topic:
   - "0"
-post_modified: 2018-04-25 17:46:02
+discourse_post_id:
+  - "1631"
+discourse_topic_id:
+  - "997"
+discourse_permalink:
+  - >
+    https://forum.myconstellation.io/t/changelog/997
+post_modified: 2019-02-04 18:02:15
 ---
+<h3>04/02/2019 : Update Python lib 1.8.6.19032</h3>
+<ul>
+ 	<li>PythonProxy : Support de Python 3.x</li>
+ 	<li>PythonProxy : innovation des MessageCallbacks, StateObjectLink et autres événements de manière asynchrone (thread différent)</li>
+ 	<li>PythonProxy : Ajout d'un événement OnSettingsUpdated permettant d'être notifié en cas de mise à jour des settings sur Constellation</li>
+ 	<li>PythonProxy : l'accès aux settings (via la méthode <em>GetSettings</em>) est possible juste après l'import de la librairie Constellation (avant même d'invoquer le <em>Constellation.Start</em>)</li>
+ 	<li>PythonProxy : le "Working Directory" (<em>os.getcwd()</em>) est maintenant le répertoire du package et non le répertoire du script Python lui-même</li>
+ 	<li>PythonProxy : revu du mécanisme de ping entre le proxy .NET et la sandbox Python basé maintenant sur le temps CPU et non l’horloge système (problème lié au changement d'heure)</li>
+ 	<li>PythonProxy : affichage des numéros de version du Proxy python et interpréteur python au démarrage des scripts</li>
+ 	<li>PythonProxy : Correction de la non prise en charge de l'attribut "pythonCmd" suite mise à jour 1.8.5 si défini au niveau global</li>
+</ul>
+<h3>15/10/2018 : Update Python lib 1.8.5.18283</h3>
+<ul>
+ 	<li>PythonProxy : Ajout de l'attribut "pythonCmd" dans la configuration du PythonProxy (<em>app.config</em>) permettant de sélectionner l’interpréteur Python à utiliser pour un script donné ou pour l'ensemble des scripts d'un package Python</li>
+ 	<li>PythonProxy : Correctifs mineurs</li>
+</ul>
 <h3>25/04/2018 : Update SDK 1.8.3.17334</h3>
 <ul>
  	<li>Mise à jour du template Python</li>
@@ -48,6 +71,11 @@ post_modified: 2018-04-25 17:46:02
  	<li>Console / MessageCallbacks Explorer : typage des paramètres Number (Int, Decimal, Float, etc..) et Boolean dans l'envoi de message depuis l'explorateur</li>
  	<li>Console / Package : bugfix de l'appel du 'RefreshSettings' doublé en cas de mise à jour des settings</li>
 </ul>
+<h3>21/11/2017 : Update Python lib 1.8.3.17325</h3>
+<ul>
+ 	<li>PythonProxy : Support de la description des MessageCallbacks (<a href="https://developer.myconstellation.io/blog/decrire-les-messagescallbacks-en-python-avec-la-mise-a-jour-du-pythonproxy-1-8-4/">officiellement annoncé avec la version 1.8.4</a>)</li>
+ 	<li>PythonProxy : Conversation des types de base Python en types .NET lors du PushStateObject</li>
+</ul>
 <h3>15/09/2017 : Release 1.8.3 (1.8.3.17258)</h3>
 <ul>
  	<li>Common : Correction interne d'un bug fatal entraînant le crash du serveur au démarrage, des sentinelles et dans certain cas des packages (si le package invoque <a href="/client-api/net-package-api/envoyer-des-messages-invoquer-des-messagecallbacks/#Utiliser_les_Tasks_awaitable_pour_attendre_la_reponse_dune_saga">une saga avec une Task&lt;T&gt;</a>) sur les systèmes utilisant la version 5.2 (ou supérieure) du runtime Mono (inclus nativement depuis Debian / Raspbian 9). Ce bug est lié au PR Mono <a href="https://github.com/mono/mono/pull/4404">#4404</a> publié depuis Mono 5.2.0.179 (remplacement du Microsoft.CSharp par l'implémentation du CoreFX)</li>
@@ -56,6 +84,12 @@ post_modified: 2018-04-25 17:46:02
  	<li>Server : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
  	<li>Server : enregistrement de toutes erreurs Fatales dans le fichier de log "ConstellationServerManager" avant la fermeture du processus en cas de crash</li>
  	<li>SDK : Mise à jour des templates de projet avec le package Constellation 1.8.3.17258</li>
+</ul>
+<h3>28/08/2017 : Update Python lib 1.8.3.17240</h3>
+<ul>
+ 	<li>PythonProxy : ZMQ linger timeout à 1sec pour améliorer la stabilité de la communication avec les scripts Python</li>
+ 	<li>PythonProxy : choix du port ZMX/TCP aléatoire (géré par ZMQ)</li>
+ 	<li>PythonProxy : correctifs de bugs mineurs</li>
 </ul>
 <h3>26/08/2017 : Release 1.8.3 (1.8.3.17238)</h3>
 <ul>
@@ -78,6 +112,11 @@ post_modified: 2018-04-25 17:46:02
  	<li>SDK : Mise à jour du template de projet PythonPackage avec le PythonProxy 1.8.3.17234</li>
  	<li>SDK : Mise à jour des reférences du VS Package &amp; Code Generator avec Constellation 1.8.3.17190, SignalR 2.2.2 et Json.net 9.0.1</li>
  	<li>SDK : Compatibilité VS2017 Update 3 (15.3)</li>
+</ul>
+<h3>21/08/2017 : Update Python lib 1.8.3.17234</h3>
+<ul>
+ 	<li>PythonProxy : Supervision des scripts par un mécanisme de ping avec redémarrage automatique</li>
+ 	<li>PythonProxy : Meilleur gestion des erreurs sur les appels d’événement</li>
 </ul>
 <h3>10/07/2017 : Release 1.8.3 (1.8.3.17190)</h3>
 <ul>
