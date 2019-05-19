@@ -21,8 +21,26 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-02-04 19:21:32
+post_modified: 2019-05-19 19:54:00
 ---
+<h3>17/05/2019 : Update SDK 1.8.5.637</h3>
+<ul>
+ 	<li>SDK : support Visual Studio 2019</li>
+ 	<li>SDK : mise à jour de la commandbar</li>
+ 	<li>SDK : mise à jour sur .NET 4.7.2 et VS libs 16.0</li>
+ 	<li>SDK : mise à jour de la signature Code-Signin</li>
+ 	<li>SDK: mise à jour des templates de projet avec les dernières versions des packages NuGet</li>
+</ul>
+<h3>17/05/2019 : Update Python lib 1.8.7.633</h3>
+<ul>
+ 	<li>PythonProxy : mise à jour des dépendances du package NuGet pour exclure ZMQ 4.x (non compatible)</li>
+</ul>
+<h3>10/05/2019 : Update Python lib 1.8.7.597</h3>
+<ul>
+ 	<li>PythonProxy : affichage de la stacktrace complète lorsqu'une exception est levée dans le dispatch d'un MessageCallback ou d'un StateObjectLink</li>
+ 	<li>PythonProxy : ajout d'un mécanisme de substitution XML dans la section de configuration "pythonProxy" dans votre app.config par des settings Constellation</li>
+ 	<li>PythonProxy : ajout automatique de la section XML de configuration dans le fichier "app.config" lors de l'installation du package</li>
+</ul>
 <h3>04/02/2019 : Update Python lib 1.8.6.19032</h3>
 <ul>
  	<li>PythonProxy : Support de Python 3.x</li>
