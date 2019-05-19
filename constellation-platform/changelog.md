@@ -21,19 +21,40 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-19 19:54:00
+post_modified: 2019-05-19 20:04:58
 ---
+<h3>17/05/2019 : Update WPI 1.9.641</h3>
+<ul>
+ 	<li>WPI : ajout d'un écran de sélection du canal Stable vs Beta pour l'installation des composants Constellation</li>
+ 	<li>WPI : Auto-configuration du serveur local Constellation dans Visual Studio lorsque le SDK est installé sur une machine Windows avec le serveur Constellation (bugfix)</li>
+ 	<li>WPI : Bugfix de la connection au service de licence</li>
+ 	<li>WPI : mise à jour de la signature code-signing</li>
+</ul>
 <h3>17/05/2019 : Update SDK 1.8.5.637</h3>
 <ul>
  	<li>SDK : support Visual Studio 2019</li>
  	<li>SDK : mise à jour de la commandbar</li>
  	<li>SDK : mise à jour sur .NET 4.7.2 et VS libs 16.0</li>
- 	<li>SDK : mise à jour de la signature Code-Signin</li>
+ 	<li>SDK : mise à jour de la signature Code-Signing</li>
  	<li>SDK: mise à jour des templates de projet avec les dernières versions des packages NuGet</li>
+ 	<li>Installeur : suppression de l'ancien serveur NuGet dans les sources VS (<a href="/blog/migration-serveur-nuget-constellation-vers-nuget-org/">plus d'info</a>)</li>
 </ul>
 <h3>17/05/2019 : Update Python lib 1.8.7.633</h3>
 <ul>
  	<li>PythonProxy : mise à jour des dépendances du package NuGet pour exclure ZMQ 4.x (non compatible)</li>
+</ul>
+<h3>14/05/2019 : Update WPI Linux 1.9.613</h3>
+<ul>
+ 	<li>Bootstrapper : sélection du repository Mono selon l'OS et l'architecture CPU</li>
+ 	<li>Bootstrapper : revu des installations APT et mise à jour des sources</li>
+ 	<li>WPI : support Python 3.x</li>
+ 	<li>WPI : écran de sélection du canal Stable vs Beta pour l'installation des composants Constellation</li>
+ 	<li>WPI : nouveau « menu général » indiquant clairement les opérations possibles (Installation, Réinstallation, Upgrade ou Downgrade des différents composants en se basant sur les capacités du système et les versions déjà installées)</li>
+ 	<li>WPI : installation et enregistrement automatique de la sentinelle sur le serveur Constellation local (détection et configuration automatique)</li>
+ 	<li>WPI : suggestion d’installation et de configuration automatique de la Console puis de la Sentinelle lors de l’installation du serveur</li>
+ 	<li>WPI : réécriture du programme WPI en « All-In-One » (un seul programme Python gérant l’ensemble du processus d’installation pour une meilleure UX)</li>
+ 	<li>WPI  : correction des problèmes liés aux mots de passe trop complexes</li>
+ 	<li>WPI : autre amélioration et correctif mineur</li>
 </ul>
 <h3>10/05/2019 : Update Python lib 1.8.7.597</h3>
 <ul>
