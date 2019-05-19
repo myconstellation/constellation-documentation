@@ -21,9 +21,9 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-19 20:04:58
+post_modified: 2019-05-19 20:05:16
 ---
-<h3>17/05/2019 : Update WPI 1.9.641</h3>
+<h3>17/05/2019 : Update WPI Windows 1.9.641</h3>
 <ul>
  	<li>WPI : ajout d'un écran de sélection du canal Stable vs Beta pour l'installation des composants Constellation</li>
  	<li>WPI : Auto-configuration du serveur local Constellation dans Visual Studio lorsque le SDK est installé sur une machine Windows avec le serveur Constellation (bugfix)</li>
