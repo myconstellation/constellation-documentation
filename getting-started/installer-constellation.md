@@ -15,7 +15,7 @@ publish_post_category:
 publish_to_discourse:
   - "0"
 update_discourse_topic:
-  - "1"
+  - "0"
 discourse_post_id:
   - "1420"
 discourse_topic_id:
@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/installer-la-plateforme-constellation-1-8/938
-post_modified: 2018-04-25 14:51:08
+post_modified: 2019-05-19 20:14:04
 ---
 Après avoir <a href="/plateforme/">introduit Constellation</a>, découvrons comment installer la plateforme sur vos ordinateurs ou serveurs.
 <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hD8Upyb2jXo" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
@@ -44,7 +44,7 @@ Pour démarrer, nous allons déployer dans ce guide une Constellation complète 
 Vous avez donc besoin pour suivre ce guide :
 <ul>
  	<li>d'un ordinateur ou serveur sous <strong>Windows</strong> (Windows 7/8/10 ou Windows Server)</li>
- 	<li>Pour installer le SDK : <strong>Visual Studio 2012, 2013, 2015 ou 2017</strong></li>
+ 	<li>Pour installer le SDK : <strong>Visual Studio 2012, 2013, 2015, 2017 ou 2019</strong></li>
 </ul>
 Si vous ne disposez pas de licence de Visual Studio, vous pouvez installer la version  “Community”, une version gratuite de Visual Studio compatible avec le SDK Constellation : <a title="https://www.visualstudio.com/fr-fr/products/visual-studio-community-vs.aspx" href="https://www.visualstudio.com/fr-fr/products/visual-studio-community-vs.aspx">https://www.visualstudio.com/fr-fr/products/visual-studio-community-vs.aspx</a>
 <h3>Télécharger la plateforme Constellation</h3>
@@ -73,11 +73,15 @@ Vous devez dans cette étape renseigner votre compte myConstellation.io afin de 
 Vous retrouverez le détail des licences Constellation <a href="/licensing/">sur cette page</a>. Pour résumer, Constellation est gratuit pour un usage personnel ou éducatif sans aucun but lucratif et soumis à l’acquisition d’une licence pour un usage professionnel ou entreprise.
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/03/image11.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Licence d'utilisation" src="https://developer.myconstellation.io/wp-content/uploads/2016/03/image11_thumb.png" alt="Licence d'utilisation" width="424" height="347" border="0" /></a></p>
 
-<h4 align="left">Etape 4 : répertoire d’installation</h4>
+<h4 align="left">Etape 4 : choix du canal de distribution</h4>
+Vous devez sélectionner le canal de distribution à utiliser : Stable ou Pre-release (versions Beta) :
+<p style="text-align: center;"><a href="https://developer.myconstellation.io/wp-content/uploads/2019/05/image-6.png"><img class="alignnone aligncenter" style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Choix du canal" src="https://developer.myconstellation.io/wp-content/uploads/2019/05/image-6.png" alt="Choix du canal" width="424" height="347" border="0" /></a></p>
+
+<h4 align="left">Etape 5 : répertoire d’installation</h4>
 <p align="left">Vous devez choisir le répertoire d’installation racine de la plateforme Constellation :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/03/image47.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Repertoire d'installation de la plateforme" src="https://developer.myconstellation.io/wp-content/uploads/2016/03/image47_thumb.png" alt="Repertoire d'installation de la plateforme" width="424" height="347" border="0" /></a></p>
 
-<h4 align="left">Etape 5 : sélectionnez les composants Constellation à installer</h4>
+<h4 align="left">Etape 6 : sélectionnez les composants Constellation à installer</h4>
 <p align="left">Vous pouvez sélectionner ici les composants à installer ou utiliser les profils prédéfinis :</p>
 
 <ul>
@@ -96,28 +100,28 @@ Notez également que si Visual Studio n’est pas installé, le composant SDK se
 Dans ce guide, sélectionnons le profil “Développeur” :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-11.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Selection des composants" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-11.png" alt="Selection des composants" width="428" height="333" border="0" /></a></p>
 
-<h4 align="left">Etape 6 : configuration du serveur Constellation</h4>
+<h4 align="left">Etape 7 : configuration du serveur Constellation</h4>
 <p align="left">Entrons désormais dans les étapes de configuration de chacun des composants à installer en commençant par le serveur Constellation.</p>
 
-<h5 align="left">Etape 6.1 : sélection de la licence</h5>
+<h5 align="left">Etape 7.1 : sélection de la licence</h5>
 <p align="left">Premièrement, vous devez sélectionner <a href="/licensing/">une licence</a> pour l’utilisation du serveur. Vous pouvez utiliser une licence que vous aurez préalablement téléchargée depuis le portail Constellation ou  vous connecter directement sur le service de licence de Constellation depuis le WPI :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-12.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Selection de la licence" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-12.png" alt="Selection de la licence" width="428" height="333" border="0" /></a></p>
 <p align="left">Vous obtiendrez l’ensemble des licences associées à votre compte avec la possibilité de créer des licences gratuites pour un usage personnel (<a href="/licensing/">plus d’information ici</a>).</p>
 <p align="left">Dans notre cas créons une licence personnelle :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-13.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Selection/Création de la licence" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-13.png" alt="Selection/Création de la licence" width="428" height="333" border="0" /></a></p>
 
-<h5 align="left">Etape 6.2 : choix du répertoire des packages</h5>
+<h5 align="left">Etape 7.2 : choix du répertoire des packages</h5>
 <p align="left">Dans cette étape vous devez définir le répertoire pour votre catalogue de packages de votre Constellation.</p>
 <p align="left">Par défaut, il s’agit du sous-dossier “Packages” de votre répertoire d’installation :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-14.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration du Package Repository" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-14.png" alt="Configuration du Package Repository" width="428" height="333" border="0" /></a></p>
 
-<h5 align="left">Etape 6.3 : choix du port d’écoute du serveur</h5>
+<h5 align="left">Etape 7.3 : choix du port d’écoute du serveur</h5>
 <p align="left">Le serveur Constellation utilise le protocole HTTP pour exposer ses différents hubs et API. Pour cela vous avez besoin de choisir le port d’écoute et de l’ouvrir au niveau de votre firewall.</p>
 <p align="left">L’assistant peut déclarer le port que vous avez choisi dans le pare-feu de Windows. Si vous souhaitez ouvrir Constellation à l’extérieur de votre réseau local, à vous d’ouvrir le port sur votre routeur.</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-15.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration réseau" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-15.png" alt="Configuration réseau" width="428" height="333" border="0" /></a></p>
 <p align="left">A noter que vous pouvez déclarer dans la configuration du serveur Constellation sur plusieurs ports HTTP et/ou HTTPS ou même définir un chemin HTTP personnalisé. Il est d’ailleurs conseillé d’activer le protocole HTTPS si vous souhaitez exposer votre serveur Constellation sur Internet. Vous retrouverez plusieurs articles sur la configuration avancée du serveur dans la rubrique <a href="https://developer.myconstellation.io/constellation-platform/constellation-server/">Constellation Server</a>.</p>
 
-<h5 align="left">Etape 6.4 : choix des clés d’accès</h5>
+<h5 align="left">Etape 7.4 : choix des clés d’accès</h5>
 <p align="left">Pour se connecter à Constellation vous avez besoin de créer des clés d’accès (les “Access Keys”). Dans le cas d’une nouvelle installation, l’assistant vous proposera de créer deux clés :</p>
 
 <ul>
@@ -134,7 +138,7 @@ Dans ce guide, sélectionnons le profil “Développeur” :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-17.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Création des Access Keys" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-17.png" alt="Création des Access Keys" width="354" height="275" border="0" /></a><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-18.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Création des Access Keys" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-18.png" alt="Création des Access Keys" width="354" height="275" border="0" /></a></p>
 <p align="left">Pour finir, vous pouvez ajouter le droit de débogage sur la clé “Administrator” en cochant la case correspondante. Cela nous permettra de tester des packages connectés à votre Constellation depuis Visual Studio.</p>
 
-<h4 align="left">Etape 7 : configuration de la Console Constellation</h4>
+<h4 align="left">Etape 8 : configuration de la Console Constellation</h4>
 <p align="left">Comme la Console Constellation est déployée sur la même machine que le serveur Constellation, l’assistant vous propose héberger la console par le serveur Constellation lui-même.</p>
 <p align="left">Si vous désirez utiliser votre propre serveur Web pour exposer la Console (Apache, IIS ou autre) sélectionnez la deuxième option mais dans notre guide laissons le serveur Constellation héberger la console :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-19.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Hosting de la console" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-19.png" alt="Hosting de la console" width="428" height="333" border="0" /></a></p>
@@ -142,13 +146,13 @@ Dans ce guide, sélectionnons le profil “Développeur” :
 <p align="left">Laissons les options par défaut (c’est à dire Console ouverte à tous avec une page de login) :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-20.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Configuration de la console" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-20.png" alt="Configuration de la console" width="428" height="333" border="0" /></a></p>
 
-<h4 align="left">Etape 8 : configuration de la Sentinelle Constellation</h4>
+<h4 align="left">Etape 9 : configuration de la Sentinelle Constellation</h4>
 <p align="left">Dans la sélection des composants nous avons indiqué vouloir installer la sentinelle UI. Vous arrivez donc à cette étape de configuration.</p>
 <p align="left">Comme la sentinelle est installée sur la même machine sur le serveur, vous pouvez l’inclure automatiquement dans votre Constellation ou bien l’inclure dans une autre Constellation en sélectionnant la deuxième option.</p>
 <p align="left">Dans notre cas, laissons la première option sélectionnée pour ajouter notre sentinelle UI à notre Constellation en cours d”installation :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-21.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Ajout de la sentinelle" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-21.png" alt="Ajout de la sentinelle" width="428" height="333" border="0" /></a></p>
 
-<h4>Etape 8 : Installation</h4>
+<h4>Etape 10 : Installation</h4>
 La configuration des composants est désormais terminée. Vous retrouverez tout le détail sur l’écran de confirmation :
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-22.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Confirmation d'installation" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-22.png" alt="Confirmation d'installation" width="428" height="333" border="0" /></a></p>
 <p align="left">En cliquant sur le bouton “Install”, le <em>Web Platform Installer </em>va télécharger les dernières versions de composants Constellation à installer :</p>
@@ -158,7 +162,7 @@ La configuration des composants est désormais terminée. Vous retrouverez tout 
 <p align="left">A la fin de l’installation, l’assistant vous proposera de lancer la Console et la Sentinelle UI (car ces deux composants ont été installés) :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/05/image-25.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Fin de l'installation" src="https://developer.myconstellation.io/wp-content/uploads/2016/05/image_thumb-25.png" alt="Fin de l'installation" width="428" height="333" border="0" /></a></p>
 
-<h4 align="left">Etape 9 : Validation de l’installation</h4>
+<h4 align="left">Etape 11 : Validation de l’installation</h4>
 <p align="left">En fermant le programme d’installation, la sentinelle UI va être lancée :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/03/image73.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Démarrage de la sentinelle UI" src="https://developer.myconstellation.io/wp-content/uploads/2016/03/image73_thumb.png" alt="Démarrage de la sentinelle UI" width="424" height="140" border="0" /></a></p>
 <p align="left">En double-cliquant sur l’icone vous pourrez visualiser les logs de cette sentinelle qui doit être correctement connectée au serveur :</p>
