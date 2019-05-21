@@ -13,7 +13,7 @@ publish_post_category:
 publish_to_discourse:
   - "0"
 update_discourse_topic:
-  - "0"
+  - "1"
 discourse_post_id:
   - "1377"
 discourse_topic_id:
@@ -23,7 +23,7 @@ discourse_permalink:
     https://forum.myconstellation.io/t/creez-votre-premier-package-constellation-en-python/897
 wpdc_xmlrpc_failure_sent:
   - "1"
-post_modified: 2019-05-21 16:34:33
+post_modified: 2019-05-21 16:41:14
 ---
 Vous pouvez développer des packages Constellation avec le langage Python. Sur vos sentinelles Windows comme sur vos sentinelles Linux vous pourrez profiter des différentes libraires et de l’écosystème Python connectés dans Constellation.
 
@@ -31,7 +31,7 @@ Découvrons dans cet article comment créer et déployer votre premier package C
 
 <!--more-->
 <h3>Prérequis</h3>
-Tout d’abord, que vous soyez sur Windows ou Linux, il vous faudra un interpréteur Python 2 ou Python 3 et quelques libraires indispensables pour Constellation.
+Tout d’abord, que vous soyez sur Windows ou Linux, il vous faudra un interpréteur Python 2 ou Python 3 et une ou deux libraires indispensables pour Constellation.
 
 Notez que ces prérequis sont automatiquement installés sur Linux avec le <em><a href="/dowload/">Web Platform Installer</a></em>.
 <h4>Installer Python sur Windows</h4>
@@ -41,7 +41,7 @@ Téléchargez <a href="https://www.python.org/downloads/windows/">Python pour Wi
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/04/image-2.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Installation des composants Python" src="https://developer.myconstellation.io/wp-content/uploads/2016/04/image_thumb-2.png" alt="Installation des composants Python" width="424" height="363" border="0" /></a></p>
 <p align="left">Une fois l’installation terminée, lancez une invite de commande (cmd.exe) et assurez-vous que la commande “python” fonctionne :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2016/04/image-3.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Python.exe fonctionnel" src="https://developer.myconstellation.io/wp-content/uploads/2016/04/image_thumb-3.png" alt="Python.exe fonctionnel" width="424" height="130" border="0" /></a></p>
-<p align="left">Maintenant dans une nouvelle invite de commande Windows, installez via PIP les librairies “enum34” et “pyzmq” si vous êtes en Python 2.x grâce aux commandes suivantes :</p>
+<p align="left">Toujours dans une invite de commande Windows, installez via PIP les librairies “pyzmq” (et “enum34” si vous êtes en Python 2.x) grâce aux commandes suivantes :</p>
 
 <pre lang="lang:shell">pip install pyzmq
 pip install enum34</pre>
@@ -58,9 +58,9 @@ Autrement, pour installer manuellement ces prérequis, vous pouvez utiliser les 
 <pre lang="lang:shell">sudo easy_install pip
 sudo pip install pyzmq
 sudo pip install enum34</pre>
-Encore une fois, la libraire “enum34” est seulement requis pour Python 2.x.
+Encore une fois, la libraire “enum34” est seulement requise sur Python 2.x.
 
-Si vous utilisez un Raspberry Pi, vous pouvez également <a href="/constellation-platform/constellation-server/constellation-raspberry-pi/">consulter cet article en particulier</a>.
+Enfin si vous utilisez un Raspberry Pi, vous pouvez également <a href="/constellation-platform/constellation-server/constellation-raspberry-pi/">consulter cet article en particulier</a>.
 
 Et voilà, votre environnement Linux est prêt !
 <h3>Développer un package Python en ligne de commande</h3>
@@ -94,7 +94,7 @@ Après avoir installé les prérequis et le <a href="/getting-started/installer-
 </li>
 </ul>
 <h4 align="left">Configurer les scripts à démarrer</h4>
-<p align="left">Vous pouvez ajouter autant de scripts Python dans le dossier “Scripts” comme vous le souhaitez. Pour cela, cliquez-droit sur ce répertoire et sélectionnez "<em>Ajouter un nouvel élément</em>".</p>
+<p align="left">Vous pouvez ajouter autant de scripts Python dans le dossier “Scripts” comme vous le souhaitez. Pour cela, cliquez-droit sur ce répertoire et sélectionnez "<em>Ajouter un nouvel élément"</em>.</p>
 <p align="left">Dans la catégorie "Constellation" sélectionnez "<strong><em>Constellation Python Script</em></strong>" :</p>
 <p align="center"><a href="https://developer.myconstellation.io/wp-content/uploads/2017/06/image-1.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="Création d'un nouveau script Constellation Python" src="https://developer.myconstellation.io/wp-content/uploads/2017/06/image_thumb-1.png" alt="Création d'un nouveau script Constellation Python" width="354" height="246" border="0" /></a></p>
 <p align="left">Chaque script sera démarré dans un processus dédié et connecté à Constellation.</p>
@@ -144,7 +144,7 @@ while Constellation.IsRunning:
     time.sleep(1) 
 </pre>
 <h4 align="left">Interpréteurs Python et environnements virtuels</h4>
-<p align="left">Par défaut chaque script est lancé avec la commande “python”. C’est pour cela qu’il est recommandé d’ajouter Python dans le PATH de votre système afin de voir “résoudre” la commande “python”.</p>
+<p align="left">Par défaut chaque script est lancé avec la commande “python”. C’est pour cela qu’il est recommandé d’ajouter Python dans le PATH de votre système afin de pouvoir “résoudre” la commande “python”.</p>
 Vous pouvez aussi définir dans le fichier <em>App.config</em> de votre package Python, l’attribut “<em>pythonCmd</em>” pour spécifier la commande à lancer. Ci-dessous un exemple avec l’interpréteur Python 2.7 :
 <pre title="Exemple avec Python 3" class="lang:default decode:true">&lt;pythonProxy xmlns="urn:Constellation.PythonProxy" pythonCmd="C:\Python27\python.exe"&gt;
   &lt;scripts&gt;
@@ -168,9 +168,9 @@ Ci-dessus le package Python démarre trois scripts Demo.py, Demo2.py et Demo3.py
  	<li>Demo2.py sera lancé par un environnement virtuel ici nommé “venv” (défini pour le script)</li>
  	<li>Demo3.py sera lancé par l’interpréteur Python 2.7 installé dans “C:\Python27”</li>
 </ul>
-Vous pouvez donc utiliser cet attribut pour spécifier l’interpréteur Python à utiliser (Python 2 vs 3 ou dans des environnements virtuels). Quelque soit l’interpréteur utilisé n’oubliez d’installer les librairies “pyzmq” (et “enum34” si Python 2.x).
+Vous pouvez donc utiliser cet attribut pour spécifier l’interpréteur Python à utiliser (Python 2 vs 3 ou même des interpréteurs dans des environnements virtuels). Quelque soit l’interpréteur utilisé n’oubliez d’installer les librairies “pyzmq” (et “enum34” si Python 2.x).
 
-<span style="text-decoration: underline;">Note</span> : vous pouvez utiliser les Settings Constellation pour définir l'attribut "pythonCmd" vous permettant ainsi de définir/changer d'interpréteur sans modifier le code de votre package, simplement en manipulant les settings de votre package depuis la Console Constellation. Plus d'information <a href="/blog/support-python-3-et-environnements-virtuels/#La_configuration_du_Proxy_par_settings_Constellation">sur ce billet</a>.
+<span style="text-decoration: underline;">Note</span> : vous pouvez aussi les Settings Constellation dans l'attribut "pythonCmd" vous permettant ainsi de définir/changer d'interpréteur sans modifier le code de votre package, simplement en manipulant les settings de votre package depuis la Console Constellation. Plus d'information <a href="/blog/support-python-3-et-environnements-virtuels/#La_configuration_du_Proxy_par_settings_Constellation">sur ce billet</a>.
 <h4 align="left">Produire des logs</h4>
 <p align="left">Pour écrire des logs dans le hub Constellation, <a href="/client-api/net-package-api/les-bases-des-packages-net/#Ecrire_des_logs">tout comme en C#,</a> vous disposez des méthodes suivantes :</p>
 
