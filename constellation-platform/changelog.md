@@ -21,8 +21,15 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-19 20:05:16
+post_modified: 2019-05-27 23:36:14
 ---
+<h3>27/05/2019 : Update SDK 1.8.6.664</h3>
+<ul>
+ 	<li>SDK : fin du support pour Visual Studio 2012 et Visual Studio 2013 (extension compatible VS2015 (14.0), VS2017 (15.0) et VS2019 (16.0))</li>
+ 	<li>SDK : migration du package VS en AsyncPackage (chargement asynchrone de l'extension Constellation par Visual Studio pour se conformer aux nouvelles exigences en matière de performance et UX de Visual Studio)</li>
+ 	<li>SDK : mise à jour (downgrade par rapport au SDK 1.8.5) sur .NET 4.6.2 et VS libs 14.0 pour supporter pleinement VS2015 et +</li>
+ 	<li>Mise à jour du Code Generator (gestion des "default values" sur les paramètres de type Enum et gestion des doublons de propriétés)</li>
+</ul>
 <h3>17/05/2019 : Update WPI Windows 1.9.641</h3>
 <ul>
  	<li>WPI : ajout d'un écran de sélection du canal Stable vs Beta pour l'installation des composants Constellation</li>
@@ -36,7 +43,7 @@ post_modified: 2019-05-19 20:05:16
  	<li>SDK : mise à jour de la commandbar</li>
  	<li>SDK : mise à jour sur .NET 4.7.2 et VS libs 16.0</li>
  	<li>SDK : mise à jour de la signature Code-Signing</li>
- 	<li>SDK: mise à jour des templates de projet avec les dernières versions des packages NuGet</li>
+ 	<li>SDK : mise à jour des templates de projet avec les dernières versions des packages NuGet</li>
  	<li>Installeur : suppression de l'ancien serveur NuGet dans les sources VS (<a href="/blog/migration-serveur-nuget-constellation-vers-nuget-org/">plus d'info</a>)</li>
 </ul>
 <h3>17/05/2019 : Update Python lib 1.8.7.633</h3>
@@ -83,7 +90,7 @@ post_modified: 2019-05-19 20:05:16
  	<li>Mise à jour du template Python</li>
  	<li>Mise à jour des templates de projet avec le package PythonProxy 1.8.3.17332</li>
 </ul>
-<h3>10/04/2018 : Release 1.8.4.18100 [BETA]</h3>
+<h3>10/04/2018 : Release 1.8.4.18100</h3>
 <ul>
  	<li>Server : Mise à jour des dépendances vers .NET 4.6.2, SignalR 2.2.3, OWIN 4.0, JSON.net 11.0.2 et NLog 4.5.1</li>
  	<li>Sentinel : Mise à jour des dépendances vers SignalR 2.2.3, JSON.net 11.0.2 et NLog 4.5.1</li>
