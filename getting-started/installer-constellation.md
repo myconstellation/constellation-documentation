@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/installer-la-plateforme-constellation-1-8/938
-post_modified: 2019-05-19 20:14:04
+post_modified: 2019-05-28 00:12:49
 ---
 Après avoir <a href="/plateforme/">introduit Constellation</a>, découvrons comment installer la plateforme sur vos ordinateurs ou serveurs.
 <p style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hD8Upyb2jXo" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
@@ -44,7 +44,7 @@ Pour démarrer, nous allons déployer dans ce guide une Constellation complète 
 Vous avez donc besoin pour suivre ce guide :
 <ul>
  	<li>d'un ordinateur ou serveur sous <strong>Windows</strong> (Windows 7/8/10 ou Windows Server)</li>
- 	<li>Pour installer le SDK : <strong>Visual Studio 2012, 2013, 2015, 2017 ou 2019</strong></li>
+ 	<li>Pour installer le SDK : <strong>Visual Studio 2015, 2017 ou 2019</strong></li>
 </ul>
 Si vous ne disposez pas de licence de Visual Studio, vous pouvez installer la version  “Community”, une version gratuite de Visual Studio compatible avec le SDK Constellation : <a title="https://www.visualstudio.com/fr-fr/products/visual-studio-community-vs.aspx" href="https://www.visualstudio.com/fr-fr/products/visual-studio-community-vs.aspx">https://www.visualstudio.com/fr-fr/products/visual-studio-community-vs.aspx</a>
 <h3>Télécharger la plateforme Constellation</h3>
