@@ -21,9 +21,9 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-27 23:36:14
+post_modified: 2019-05-28 00:11:01
 ---
-<h3>27/05/2019 : Update SDK 1.8.6.664</h3>
+<h3>27/05/2019 : Update SDK 1.8.6.667</h3>
 <ul>
  	<li>SDK : fin du support pour Visual Studio 2012 et Visual Studio 2013 (extension compatible VS2015 (14.0), VS2017 (15.0) et VS2019 (16.0))</li>
  	<li>SDK : migration du package VS en AsyncPackage (chargement asynchrone de l'extension Constellation par Visual Studio pour se conformer aux nouvelles exigences en matière de performance et UX de Visual Studio)</li>
