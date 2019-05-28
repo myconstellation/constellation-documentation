@@ -21,9 +21,9 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-28 17:09:56
+post_modified: 2019-05-28 17:11:22
 ---
-<h3>28/03/2019 : Console 1.8.5.669</h3>
+<h3>28/05/2019 : Console 1.8.5.669</h3>
 <ul>
  	<li>Console : correction des modals "Package Settings", "Credential" et "Message Groups" suite à la mise à jour d'UI Bootstrap 2.5 introduit dans la version 1.8.5.532</li>
  	<li>Console : correction de l'affichage "responsive" de la Console Log</li>
