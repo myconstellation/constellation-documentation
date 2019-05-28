@@ -21,8 +21,16 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-28 00:11:01
+post_modified: 2019-05-28 16:48:39
 ---
+<h3>28/03/2019 : Update Console  1.8.5.669</h3>
+<ul>
+ 	<li>Console : correction des modals "Package Settings", "Credential" et "Message Groups" suite à la mise à jour d'UI Bootstrap 2.5 introduit dans la version 1.8.5.532</li>
+ 	<li>Console : correction de l'affichage "responsive" de la Console Log</li>
+ 	<li>Console : correction d'un bug critique qui "cassé" la page si la Console Log était trop longue à s'initialiser (sur mobile par exemple)</li>
+ 	<li>Console : Mise à jour de la Console Log vers jqueryTerminal 2.6.1 et encapsulation de la librairie dans un module AngularJS pour une meilleure interaction</li>
+ 	<li>Console : Mise à jour vers jQuery 3.4.1, Angular 1.7.8 et SignalR 2.4.1</li>
+</ul>
 <h3>27/05/2019 : Update SDK 1.8.6.667</h3>
 <ul>
  	<li>SDK : fin du support pour Visual Studio 2012 et Visual Studio 2013 (extension compatible VS2015 (14.0), VS2017 (15.0) et VS2019 (16.0))</li>
@@ -68,6 +76,14 @@ post_modified: 2019-05-28 00:11:01
  	<li>PythonProxy : affichage de la stacktrace complète lorsqu'une exception est levée dans le dispatch d'un MessageCallback ou d'un StateObjectLink</li>
  	<li>PythonProxy : ajout d'un mécanisme de substitution XML dans la section de configuration "pythonProxy" dans votre app.config par des settings Constellation</li>
  	<li>PythonProxy : ajout automatique de la section XML de configuration dans le fichier "app.config" lors de l'installation du package</li>
+</ul>
+<h3>25/03/2019 : Update Console  1.8.5.532</h3>
+<ul>
+ 	<li>Console / StateObject Explorer : nette amélioration des performances par la mise en place d'un binding "one-way"</li>
+ 	<li>Console / MessageCallback Explorer : nette amélioration des performances par la mise en place d'un binding "one-way"</li>
+ 	<li>Console : Migration des appels AJAX sur la nouvelle API jQuery 3.x</li>
+ 	<li>Console : Mise à jour vers jQuery 3.3.1, Angular 1.7.7, UI Bootstrap 2.5 et SignalR 2.4</li>
+ 	<li>Console : Nouveau pipeline CI/CD</li>
 </ul>
 <h3>04/02/2019 : Update Python lib 1.8.6.19032</h3>
 <ul>
