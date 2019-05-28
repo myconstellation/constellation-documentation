@@ -21,8 +21,12 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-28 17:11:22
+post_modified: 2019-05-29 00:57:18
 ---
+<h3>28/05/2019 : WPI Linux 1.9.671</h3>
+<ul>
+ 	<li>Correction et amélioration du mécanisme de détection des installations existantes</li>
+</ul>
 <h3>28/05/2019 : Console 1.8.5.669</h3>
 <ul>
  	<li>Console : correction des modals "Package Settings", "Credential" et "Message Groups" suite à la mise à jour d'UI Bootstrap 2.5 introduit dans la version 1.8.5.532</li>
