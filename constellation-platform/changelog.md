@@ -21,7 +21,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-05-29 00:57:18
+post_modified: 2019-06-05 01:18:56
 ---
 <h3>28/05/2019 : WPI Linux 1.9.671</h3>
 <ul>
@@ -31,9 +31,10 @@ post_modified: 2019-05-29 00:57:18
 <ul>
  	<li>Console : correction des modals "Package Settings", "Credential" et "Message Groups" suite à la mise à jour d'UI Bootstrap 2.5 introduit dans la version 1.8.5.532</li>
  	<li>Console : correction de l'affichage "responsive" de la Console Log</li>
- 	<li>Console : correction d'un bug critique qui "cassé" la page si la Console Log était trop longue à s'initialiser (sur mobile par exemple)</li>
- 	<li>Console : Mise à jour de la Console Log vers jqueryTerminal 2.6.1 et encapsulation de la librairie dans un module AngularJS pour une meilleure interaction</li>
- 	<li>Console : Mise à jour vers jQuery 3.4.1, Angular 1.7.8 et SignalR 2.4.1</li>
+ 	<li>Console : correction d'un bug critique qui "cassé" la page si la Console Log était trop longue à s'initialiser (sur un mobile par exemple)</li>
+ 	<li>Console : mise à jour de la Console Log vers jqueryTerminal 2.6.1 et encapsulation de la librairie dans un module AngularJS pour une meilleure interaction</li>
+ 	<li>Console : possibilité de copier dans le presse-papier (Ctrl+C) la sortie de la Console Log</li>
+ 	<li>Console : mise à jour vers jQuery 3.4.1, Angular 1.7.8 et SignalR 2.4.1</li>
 </ul>
 <h3>27/05/2019 : SDK 1.8.6.667</h3>
 <ul>
@@ -150,7 +151,7 @@ post_modified: 2019-05-29 00:57:18
  	<li>Common : Correction interne d'un bug fatal entraînant le crash du serveur au démarrage, des sentinelles et dans certain cas des packages (si le package invoque <a href="/client-api/net-package-api/envoyer-des-messages-invoquer-des-messagecallbacks/#Utiliser_les_Tasks_awaitable_pour_attendre_la_reponse_dune_saga">une saga avec une Task&lt;T&gt;</a>) sur les systèmes utilisant la version 5.2 (ou supérieure) du runtime Mono (inclus nativement depuis Debian / Raspbian 9). Ce bug est lié au PR Mono <a href="https://github.com/mono/mono/pull/4404">#4404</a> publié depuis Mono 5.2.0.179 (remplacement du Microsoft.CSharp par l'implémentation du CoreFX)</li>
  	<li>Common : durcissement de la classe ci-dessus pour éviter qu'un bug de ce type ne soit "fatal" en cas de changement d'implémentation du RuntimeBinder.</li>
 </ul>
-<h3>15/09/2017 : Server & Sentinel 1.8.3.17258</h3>
+<h3>15/09/2017 : Server &amp; Sentinel 1.8.3.17258</h3>
 <ul>
  	<li>Sentinel : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
  	<li>Server : mise à jour de la libraire Common pour bénéficier du correctif sur un environnement Mono &gt;= 5.2</li>
@@ -224,8 +225,8 @@ post_modified: 2019-05-29 00:57:18
  	<li>Sentinel : Dépendances mises à jour vers JSON.NET 9.0.1, SignalR 2.2.2, NLog 4.4.11 (et NLog.Windows.Form 4.2.3 pour les SentinelUI)</li>
  	<li>Sentinel : Refactoring complet des sentinelles (suppression du ProcessManager présent depuis la 1.0, réécriture complète, chargement en mémoire et ne relance pas les packages au reload, plus stable et meilleure cohérence des états, etc..)</li>
  	<li>Sentinel : ne lève pas d'erreur si la collection est modifiée au CheckProcessUsage (InvalidOperationException)</li>
- 	<li>Sentinel : les packages virtuels déployés sur une sentinelles réelles sont exclus (et ne lève pas d'erreur)</li> 
- 	<li>SDK : Mise à jour des templates de projet avec les librairies Constellation 1.8.3.17190, SignalR 2.2.2 et Json.net 9.0.1</li>	
+ 	<li>Sentinel : les packages virtuels déployés sur une sentinelles réelles sont exclus (et ne lève pas d'erreur)</li>
+ 	<li>SDK : Mise à jour des templates de projet avec les librairies Constellation 1.8.3.17190, SignalR 2.2.2 et Json.net 9.0.1</li>
 </ul>
 <h3>10/07/2017 : Console 1.8.3.17190</h3>
 <ul>
@@ -623,7 +624,7 @@ post_modified: 2019-05-29 00:57:18
  	<li>SDK : Bugfix de l'upload de la configuration du serveur après enregistrement</li>
  	<li>SDK : Réorganisation du code du VS Package</li>
 </ul>
-<h3>25/03/2016 :  SDK et .NET lib 1.8.0.16085</h3>
+<h3>25/03/2016 : SDK et .NET lib 1.8.0.16085</h3>
 <ul>
  	<li>Common : DeclarePackageDescriptor check la connexion pour ne pas bloquer le thread si pas connecté (Standalone par exemple)</li>
  	<li>Common : le PackageVersion retourne le numéro de version du package tel quel défini dans le manifeste du package. Si il n’y a pas de manifeste, on retourne le PackageAssemblyVersion. <!--EndFragment--></li>
@@ -952,7 +953,7 @@ post_modified: 2019-05-29 00:57:18
 <h3>09/04/2015 : .NET lib 1.7.5.15099</h3>
 <ul>
  	<li>Client lib : ajout des propriétés SentinelName &amp; PackageInstanceName sur le PackageHost</li>
- 	<li>Client lib / ControlManager : modification de la signature du UpdatePackageDescriptor</li> 	
+ 	<li>Client lib / ControlManager : modification de la signature du UpdatePackageDescriptor</li>
 </ul>
 <h3>24/03/2015 : .NET lib 1.7.4.15083</h3>
 <ul>
@@ -1005,7 +1006,7 @@ post_modified: 2019-05-29 00:57:18
 <h3>09/03/2015 : Version 1.7 RC 1.2 (1.7.2.15068)</h3>
 <ul>
  	<li>Server : modification du schéma de configuration -&gt; il n'y a plus d'attribut "SettingsGroupName" sur le Package, mais une balise "&lt;import&gt;" dans les Settings pour pouvoir importer plusieurs groupes (idem sur les groupes qui peuvent aussi importer eux même)</li>
- 	<li>SDK : Ajout du Code Generator
+ 	<li>SDK : Ajout du Code Generator</li>
 </ul>
 <h3>06/03/2015 : Version 1.7 RC 1.1 (1.7.2.15066)</h3>
 <ul>
