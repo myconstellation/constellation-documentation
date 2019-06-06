@@ -21,7 +21,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-06-06 21:35:54
+post_modified: 2019-06-07 00:17:36
 ---
 <h3>06/06/2019 : Console 1.8.5.693</h3>
 <ul>
@@ -1095,15 +1095,15 @@ post_modified: 2019-06-06 21:35:54
 <ul>
  	<li>Mise à jour des librairies SignalR 2.2, JSON.NET 6.0, OWIN 3.0</li>
  	<li>Migration du système de log vers NLog (en remplacement d'EntLib 6.0)</li>
- 	<li>Constellation (Server/Sentinel/Package) full compliant sous Linux supression de la MonoSentinel et MonoCommon</li>
+ 	<li>Constellation (Server/Sentinel/Package) full compliant sous Linux et suppression de la MonoSentinel et MonoCommon</li>
  	<li>Schéma de configuration Server : remplacement des balises "host(s)" par "sentinel(s)" &amp; l'attribut 'machineName' devient 'name'</li>
  	<li>Rename global : Machine devient Sentinel !</li>
- 	<li>Suppression de l'attribut "serverURI" et remplacement dans un collection d'élements "ListenUris" pour permettre d'ajouter plusieur endpoints aux serveurs (HTTP ou HTTPS)</li>
- 	<li>Enrichissement des Settings : un Setting est associé à un attribut de String nommé "Value" (mode actuel) ou à un element XML "&lt;content&gt;" permettant d'embarquer un ConfigurationElement complet</li>
+ 	<li>Suppression de l'attribut "serverURI" et remplacement dans un collection d’éléments "ListenUris" pour permettre d'ajouter plusieurs endpoints aux serveurs (HTTP ou HTTPS)</li>
+ 	<li>Enrichissement des Settings : un Setting est associé à un attribut de String nommé "Value" (mode actuel) ou à un élément XML "&lt;content&gt;" permettant d'embarquer un ConfigurationElement complet</li>
  	<li>Ajout de l'attribut "EnableDeveloperAccess" sur les credentials permettant de connecter fictivement n'importe quel package sous la Sentinel "Debugger"</li>
- 	<li>Client lib : ajout d'une methode "GetSettingContent" récupérer un l'élement de configuration ajout des méthodes TryGetSettingValue et TryGetSettingContent</li>
+ 	<li>Client lib : ajout d'une méthode "GetSettingContent" récupérer un l’élément de configuration ajout des méthodes TryGetSettingValue et TryGetSettingContent</li>
  	<li>Package : ajout d'un "PackageManifest", fichier XML permettant de décrire le package (info, auteur, settings, compatibilité, etc...)</li>
- 	<li>Client lib : AJout de la propriété "PackageManifest" pour accès à l'info rename du CurrentPackageName en PackageName (chargement par manifest sinon attribut, sinon type name)</li>
+ 	<li>Client lib : ajout de la propriété "PackageManifest" pour accès à l'info rename du CurrentPackageName en PackageName (chargement par manifest sinon attribut, sinon type name)</li>
  	<li>Client lib : connexion au ControlHub si défini dans le manifest</li>
  	<li>Client lib : récupération des settings avant le OnStart du package suppression du GetSettingsAsync (les settings sont déjà chargé au lancement) RefreshSettings devient RequestSettings</li>
  	<li>ControlHub : ajout d'un event à chaque message envoyé pour l'interface REST</li>
@@ -1131,11 +1131,11 @@ post_modified: 2019-06-06 21:35:54
 </ul>
 <h3>19/02/2015 : Sentinel 1.6.10</h3>
 <ul>
- 	<li>Bug-fix : problème de "/" manquant dans l'URI du package à télécharger (ajout de log)</li>
+ 	<li>Bug-fix : problème de "/" manquant dans l'URI du package à télécharger (et ajout de log)</li>
 </ul>
 <h3>18/02/2015 : Server 1.6.9</h3>
 <ul>
- 	<li>Bug-fix dans le ReportPackageState si le package n'est pas hosté dans une Sentinel (debug VS) causait une NullReference</li>
+ 	<li>Bug-fix dans le ReportPackageState si le package n'est pas lancé par une sentinelle (ex. debug VS) qui causait une NullReference</li>
  	<li>Ajout des FileVersionAttribute sur le Server &amp; Server.Core</li>
 </ul>
 <h3>17/02/2015 : SDK 1.0</h3>
@@ -1144,14 +1144,14 @@ post_modified: 2019-06-06 21:35:54
 </ul>
 <h3>08/01/2015 : Sentinel 1.6.9</h3>
 <ul>
- 	<li>Bugfix : les sentinelles ne redémarre plus un package après un crash s'il a été arrêté, redémarré ou reloadé depuis le ControlHub</li>
+ 	<li>Bugfix : les sentinelles ne redémarrent plus un package après un crash s'il a été arrêté, redémarré ou reloadé depuis le ControlHub</li>
  	<li>Ajout des FileVersionAttribute sur les Sentinel.Core</li>
 </ul>
 <h3>10/12/2014 : Version 1.6.9</h3>
 <ul>
  	<li>Ajout de l'attribut 'JsonIgnore' sur la 'DynamicValue' d'un StateObject pour éviter d'envoyer la Value deux fois dans un StateObjet</li>
  	<li>Refonte du SerializationHelper par appel de 'providers' (interface ISerializer) : DataContractSerializer ou JsonSerializer (par défaut). Les méthodes "From/To file" se basent sur les File.Read/Write</li>
- 	<li>Sauvegarde/restauration des SO du serveur se base sur le nouveau SerializationHelper par utilison du JSON serializer (correction du problème où les SO ne pouvaient etre serialisés avec le DC)</li>
+ 	<li>Sauvegarde/restauration des StateObjects du serveur se base sur le nouveau SerializationHelper par utilisation du JSON serializer (correction du problème où les StateObjects ne pouvaient être sérialisés avec le DC)</li>
 </ul>
 <h3>07/12/2014 : .NET lib 1.6.8</h3>
 <ul>
@@ -1159,101 +1159,102 @@ post_modified: 2019-06-06 21:35:54
 </ul>
 <h3>07/12/2014 : .NET lib 1.6.7</h3>
 <ul>
- 	<li>Paramètre pour attraper les exceptions dans le WriteLog : le WriteLog du Disconnected dans un PackageHost ne leve plus d'exception (évite l UnhandledException)</li>
+ 	<li>Paramètre pour attraper les exceptions dans le WriteLog : le WriteLog du Disconnected dans un PackageHost ne lève plus d'exception (évite l UnhandledException)</li>
  	<li>Démystification : WriteLog(format, object[] args) vs WriteLogWithOptions(message, bool wait = false, bool catchException = false)</li>
 </ul>
 <h3>19/11/2014 : .NET lib 1.6.6</h3>
 <ul>
- 	<li>StateObjectCollectionNotifier : la clé peut être le nom du SO (SOKey) seul, ou le Package::SOKey, ou Machine::Package::SOKey</li>
+ 	<li>StateObjectCollectionNotifier : la clé peut être le nom du StateObjects (SOKey) seul, ou le Package::SOKey, ou Machine::Package::SOKey</li>
  	<li>StateObjectCollectionNotifier : ajout d'une méthode ContainsStateObjects en spécifiant le clé recherchée</li>
  	<li>StateObject : ajout des méthodes "GetValue&lt;T&gt;" et "TryGetValue&lt;T&gt;"</li>
 </ul>
 <h3>05/09/2014 : .NET lib 1.6.5</h3>
 <ul>
- 	<li>Bugfix sur la levée des évènements "SentinelUpdated" et "UpdatePackageList" du ControlManager (problème de désérialisation)</li>
+ 	<li>Bugfix sur la levée des événements "SentinelUpdated" et "UpdatePackageList" du ControlManager (problème de dé sérialisation)</li>
 </ul>
 <h3>22/08/2014 : Version 1.6.4</h3>
 <ul>
- 	<li>Correction du UpdateSentinel sur le ControlManager de l'API client avec envoi des propriétés "IsConnected" et "RegistrationDate"</li>
- 	<li>Le PackageHost a connaissance des FileVersions du package et de la lib Constellation envoi dans les headers au server et propagation de l'information avec le ReportPackageState sur le ControlHub</li>
+ 	<li>Correction de la méthode UpdateSentinel sur le ControlManager de l'API client avec envoi des propriétés "IsConnected" et "RegistrationDate"</li>
+ 	<li>Le PackageHost a connaissance des FileVersions du package et de la librairie Constellation (envoi dans les headers HTTP au serveur et propagation de l'information avec le ReportPackageState sur le ControlHub)</li>
 </ul>
 <h3>21/08/2014 : Server 1.6.4</h3>
 <ul>
- 	<li>Ajout d'un ConstellationGroupManager pour gérer les groupes : permet de pusher aux client qu'une seule fois quand ils font partie de plusieurs groupes (pour les messages et SO)</li>
+ 	<li>Ajout d'un ConstellationGroupManager pour gérer les groupes : permet de pusher aux client qu'une seule fois quand ils font partie de plusieurs groupes (pour les messages et StateObjects)</li>
 </ul>
 <h3>19/08/2014 : .NET lib 1.6.3</h3>
 <ul>
- 	<li>Ajout du type de paramètre sur les MethodCallbackDescription.ParameterDescription</li>
+ 	<li>Ajout du type pour chaque paramètre sur les MethodCallbackDescription.ParameterDescription</li>
 </ul>
 <h3>18/08/2014 : .NET lib 1.6.2</h3>
 <ul>
- 	<li>Bugfix : envoi des CallBackDescriptions sur méthode sans params</li>
+ 	<li>Bugfix : envoi des MessageCallbackDescriptions pour les méthodes sans paramètres</li>
 </ul>
 <h3>18/08/2014 : Version 1.6.1</h3>
 <ul>
- 	<li>Bugfix sur l'authentification sur le path URI est redéfini en configuration</li>
- 	<li>Suppression du report des packages Déconnectés (problème de déconnexion non contrôlé et pas de retour à la normal !)</li>
- 	<li>ControlManager : Request des SO attachés lors de la reconnexion pour forcer le rafraichissement</li>
+ 	<li>Bugfix de l'authentification sur le path où l'URI est redéfini en configuration</li>
+ 	<li>Suppression du report des packages déconnectés (problème de déconnexion non contrôlé)</li>
+ 	<li>ControlManager : Request des StateObjects attachés lors de la reconnexion pour forcer le rafraîchissement</li>
 </ul>
 <h3>14/08/2014 : Version 1.6</h3>
 <ul>
  	<li>Support des StateObjectLink sur des collections de StateObjects (StateObjectCollectionNotifier)</li>
- 	<li>A chaque connexion, le PackageHost et le ControlManager se rattache aux groupes, messages et StateObjects auquel il est inscrit</li>
+ 	<li>A chaque connexion, le PackageHost et le ControlManager se rattachent aux groupes, messages et StateObjects auquel ils sont abonnés</li>
  	<li>Ajout des méthodes Restart/Shutdown et Kill sur le PackageHost et refactorisation des procédures d'arrêt</li>
- 	<li>Bugfix : modification de l'objet de reponse du Request des Sentinels permettant d'indiquer si la sentinel est bien connectée</li>
- 	<li>Ajout d'une durée de vie en minute (Lifetime) sur un StateObject à titre informatif uniquement pour l'instant</li>
- 	<li>Ajout de la notion de "Saga" sur les messages permettant de lier des Requests/Responsse. On crée une saga depuis un MessageScope et on récupére le context depuis le MessageContext.Current</li>
- 	<li>Ajout d'un paramètre booléen sur le RegisterStateObjectCallback &amp; StateObjectLink permettant de Request ou non le SO à l'initialisation</li>
- 	<li>Gestion des MessageCallbacks sans parametre et ceux avec plusieurs parametres (&gt; 1) sans devoir les encapsuler dans un objet type "Request"</li>
+ 	<li>Bugfix : modification de l'objet de réponse du Request des Sentinels permettant d'indiquer si la sentinelle est bien connectée</li>
+ 	<li>Ajout d'une durée de vie en minute (Lifetime) sur un StateObject</li>
+ 	<li>Ajout de la notion de "Saga" sur les messages permettant de lier des Requests/Responsse. On crée une saga depuis un MessageScope et on récupère le contexte depuis le MessageContext.Current</li>
+ 	<li>Ajout d'un paramètre booléen sur le RegisterStateObjectCallback &amp; StateObjectLink permettant de Request ou non le StateObject à l'initialisation</li>
+ 	<li>Gestion des MessageCallbacks sans paramètre et ceux avec plusieurs paramètres (&gt; 1) sans devoir les encapsuler dans un objet type "Request"</li>
  	<li>Log des erreurs de dispatch de MessageCallback</li>
- 	<li>Possibilité d'associer un credential à un package en particulier (si pas, c'est le credential de la sentinel qui est utilisé). Utile pour n'autoriser que certain package à l'accès au ControlHub.</li>
+ 	<li>Possibilité d'associer un credential à un package en particulier (si pas, c'est le credential de la sentinelle qui sera utilisé). Utile pour n'autoriser que certain package à l'accès au ControlHub.</li>
  	<li>Log des erreurs d'authentification au serveur (dans une catégorie dédiée et pushées aux clients du ControlHub)</li>
- 	<li>WriteLog si exception dans PackageHost.Start (encapsulant OnStart et OnShutdown) par ajout d'un parametre "await" sur le WriteLog (On attend d'envoyer l'exception avant de tuer le process avant d'avoir le détail de l'erreur sur la Console Constellation)</li>
- 	<li>Possibilité de linker un StateObjectLink sans préciser le nom de la machine source. Si pas défini, on link vers un "*" (donc tout package qui match avec le packageName et soName)</li>
- 	<li>Ajout d'une propriété "IsHidden" sur le MessageCallbackAttribute pour exclure une méthode de la description des MC sur la constellation (idéal pour cacher les méthodes "handler" de certain event qui ne peuvent être considérées comme des méthodes de service)</li>
- 	<li>Breaking change : l'event ValueChanged sur le StateObjectNotifier contient maintenant le OldState et NewState (renommage de la propiété StateObject par NewState en breakin change) permettant de comparer le changement d'état lors du MAJ</li>
- 	<li>Breaking change : remplacement la methode GetDynamicValue() par la propriété DynamicValue (uniformisation des objects SONotifier et SO)</li>
- 	<li>Correction de la Sentinel : gestion des (sous)dossiers dans les ZIP des packages</li>
- 	<li>La propriété "PackageName" d'un MethodCallbackDescription est correctement affecté au nom du package défini sur le serveur (plus d'erreur avec le ".exe" en suffixe)</li>
+ 	<li>WriteLog si exception dans PackageHost.Start (encapsulant OnStart et OnShutdown) par ajout d'un paramètre "await" sur le WriteLog (On attend d'envoyer l'exception avant de tuer le process et avant d'avoir le détail de l'erreur sur la Console Constellation)</li>
+ 	<li>Possibilité de lier un StateObjectLink sans préciser le nom de la machine source. Si pas défini, on utilise un wildcard "*" (donc tout package qui match avec le packageName et soName)</li>
+ 	<li>Ajout d'une propriété "IsHidden" sur le MessageCallbackAttribute pour exclure une méthode de la description des MC sur la Constellation (idéal pour cacher les méthodes "handler" de certain événement qui ne peuvent être considérées comme des méthodes de service)</li>
+ 	<li>Breaking change : l'événement  ValueChanged sur le StateObjectNotifier contient maintenant le OldState et NewState (renommage de la propriété StateObject par NewState) permettant de comparer le changement d'état lors d'une mise à jour</li>
+ 	<li>Breaking change : remplacement la méthode GetDynamicValue() par la propriété DynamicValue (uniformisation des objets StateObjectNotifier et StateObject)</li>
+ 	<li>Correction de la Sentinelle : gestion des (sous)dossiers dans les ZIP des packages</li>
+ 	<li>La propriété "PackageName" d'un MethodCallbackDescription est correctement affectée au nom du package défini sur le serveur (plus d'erreur avec le ".exe" en suffixe)</li>
  	<li>Ajout du type et metadatas sur la méthode PushStateObject depuis l'interface REST</li>
 </ul>
 <h3>17/07/2014 : Version 1.5</h3>
 <ul>
- 	<li>Envoi de la description de l'objet de paramètre de chaque MethodCallbacks</li>
- 	<li>Ajout d'un attribut "EnableControlHub" dans la configuration de credential pour filtrer les accès au hub de control</li>
- 	<li>Ajout du ControlManager sur le PackageHost pour accéder au hub de control depuis un package</li>
- 	<li>Ajout d'un type (en string) et métadatas (clé/valeur) sur un StateObject</li>
- 	<li>Récupération des SO &amp; abonnement aux updates depuis le ControlManager</li>
- 	<li>Méthode permettant d'enregistrer des callbacks sur les MAJ des SO</li>
- 	<li>Ajout de la classe StateObjectNotifier permettant de fournir une classe container avec évènement PropertyChanged lors des mise à jour des StateObjects</li>
- 	<li>Ajout de l'attribut StateObjectLink permettant de lier automatique une propriété aux updates d'un StateObject défini pleinnement (machine/package/nom)</li>
- 	<li>Prise en charge du "Type" pour les Subscribe/Unsubscribe des SO &amp; RequestStateObject revu de l'algo de sélection (tous les cas sont possible, soit 2^4 = 16 combinaisons de groupe)</li>
+ 	<li>Envoi de la description de l'objet de paramètre de chaque MessageCallback</li>
+ 	<li>Ajout d'un attribut "EnableControlHub" dans la configuration des Credentials pour filtrer les accès au hub de contrôle</li>
+ 	<li>Ajout du ControlManager sur le PackageHost pour accéder au hub de contrôle depuis un package</li>
+ 	<li>Ajout d'un type (en string) et métadatas (clé/valeur) sur les StateObjects</li>
+ 	<li>Récupération des StateObjects &amp; abonnement aux mises à jour depuis le ControlManager</li>
+ 	<li>Méthode permettant d'enregistrer des callbacks sur les mises à jour des StateObjects</li>
+ 	<li>Ajout de la classe StateObjectNotifier permettant de fournir une classe container avec un événement PropertyChanged lors des mises à jour des StateObjects</li>
+ 	<li>Ajout de l'attribut StateObjectLink permettant de lier automatiquement une propriété .NET à un StateObject</li>
+ 	<li>Prise en charge du "Type" pour les Subscribe/Unsubscribe des StateObject</li>
+ 	<li>Réécriture de l’algorithme de sélection du RequestStateObject (tous les cas sont possible, soit 2^4 = 16 combinaisons de groupe)</li>
 </ul>
 <h3>02/07/2014 : Version 1.4</h3>
 <ul>
- 	<li>Remonté de l'état courant des packages à la reconnexion au serveur</li>
- 	<li>Sauvegarde et restauration des SO au redémarrage du serveur</li>
- 	<li>Ajout des AccessKey sur les Sentinelles et app de Control (les packages se connectent avec la clé de la Sentinelle)</li>
- 	<li>Ajout d'un middleware OWIN pour l'authentification (control des AccessKey)</li>
- 	<li>Interface HTTP/REST basée sur WebAPI 2.2 (module OWIN) pour exposée l'envoi de message et le push de SO directement sur une interface legacy HTTP</li>
- 	<li>Déclaration des MessagesCallbacks (avec description) à chaque connexion et exposition sur le hub de control afin de déclarer tous les callbacks de messages des packages sur le serveur</li>
+ 	<li>Remontée de l'état courant des packages à la reconnexion au serveur</li>
+ 	<li>Sauvegarde et restauration des StateObject au redémarrage du serveur</li>
+ 	<li>Ajout des AccessKey sur les Sentinelles et Packages (les packages se connectent avec la clé de la Sentinelle)</li>
+ 	<li>Ajout d'un middleware OWIN pour l'authentification (contrôle des AccessKey)</li>
+ 	<li>Interface HTTP/REST basée sur WebAPI 2.2 (module OWIN) pour exposer l'envoi de message et le push de StateObject sur une interface HTTP</li>
+ 	<li>Déclaration des MessagesCallbacks (avec description) à chaque connexion et exposition sur le hub de contrôle afin de déclarer tous les callbacks de messages des packages sur le serveur</li>
  	<li>Bugfixes</li>
 </ul>
 <h3>20/05/2014 : Version 1.3</h3>
 <ul>
- 	<li>Reconnexion automatique des Sentinelles et Packages si perte de connexion au serveur</li>
- 	<li>Remonté de la consommation des packages (cpu et ram)</li>
+ 	<li>Reconnexion automatique des Sentinelles et des Packages si perte de connexion au serveur</li>
+ 	<li>Remontée de la consommation des packages (cpu et ram)</li>
  	<li>Portage sur Mono</li>
  	<li>Bugfixes</li>
 </ul>
 <h3>12/05/2014 : Version 1.2</h3>
 <ul>
- 	<li>Ajout des MessageCallbacks</li>
+ 	<li>Ajout des MessageCallbacks basés sur le bus de message introduit dans la v 1.0</li>
  	<li>Nouvelle API pour la gestion des scopes des messages et exposition d'un Proxy dynamique</li>
- 	<li>Gestion des messages entre le hub de control et de la constellation</li>
- 	<li>Request des SO par filtre et notion d'abonnement</li>
+ 	<li>Gestion des messages entre le hub de contrôle et de la constellation</li>
+ 	<li>Request des StateObject par filtre et notion d'abonnement (Subscribe)</li>
  	<li>Notion d'abonnement pour les messages également</li>
- 	<li>Ajout de méthodes Ajout et suppression à des groupes</li>
+ 	<li>Ajout de méthodes d'ajout et de suppression à des groupes de message</li>
  	<li>Bugfixes</li>
 </ul>
 <h3>06/05/2014 : Version 1.1</h3>
@@ -1276,7 +1277,7 @@ post_modified: 2019-06-06 21:35:54
 </ul>
 <h3>18/04/2014 : Beta 1</h3>
 <ul>
- 	<li>Architecteur Serveur / Sentinelle / Serveur</li>
- 	<li>Console log temps réel</li>
+ 	<li>Architecture Serveur / Sentinelle / Package</li>
+ 	<li>Console Log temps réel</li>
  	<li>Notion de StateObject</li>
 </ul>
