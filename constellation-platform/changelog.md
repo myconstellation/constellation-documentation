@@ -21,15 +21,31 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-06-05 01:18:56
+post_modified: 2019-06-06 21:23:55
 ---
+<h3>06/06/2019 : Console 1.8.5.693</h3>
+<ul>
+ 	<li>Console : repli automatique du menu lors d'un changement page en mode mobile</li>
+ 	<li>Console : demande de confirmation à chaque fermeture de modale si des changements sont en attente d'enregistrement et désactivation du bouton d'enregistrement si aucun changement</li>
+ 	<li>Console / Console Log : correction de l'affichage inopinée de la scrollbar</li>
+ 	<li>Console / MessageCallback Explorer : gestion des paramètres et propriétés de type Nullable&lt;T&gt; dans la composition d'un message</li>
+ 	<li>Console / MessageCallback Explorer : sélection automatiquement de la valeur par défaut (si définie) pour les listes déroulantes (pour les types "Enum" et "Bool")</li>
+ 	<li>Console / StateObject Explorer : correction de l'enregistrement multiple des raccourcis clavier</li>
+ 	<li>Console / StateObject Explorer : correction d'un bug qui dans certain cas ne chargeait pas les StateObjects lors du premier affichage</li>
+ 	<li>Console / Configuration Editor : support de la recherche (Ctrl+F), remplacement, "Aller à la ligne", etc...</li>
+ 	<li>Console / Configuration Editor : ajout de différents raccourcis clavier et ajout d'une modale pour lister ces différents raccourcis claviers</li>
+ 	<li>Console : empêche la fermeture d'une modale si le focus est sur l'éditeur CodeMirror (comme par exemple lorsque l'on tente de sélectionner la valeur d'un setting ou d'un StateObject en passant le curseur de la souris hors de la modale)</li>
+ 	<li>Console : correction d'un bug lié au Ctrl+Z dans l'éditeur CodeMirror</li>
+ 	<li>Console : correction des erreurs levées dans la console du navigateur lors des fermetures des modales ou lors de l'édition des Credentials</li>
+ 	<li>Console : mise à jour vers CodeMirror 5.47 et des différentes colorations syntaxiques des langages utilisés</li>
+</ul>
 <h3>28/05/2019 : WPI Linux 1.9.671</h3>
 <ul>
  	<li>Correction et amélioration du mécanisme de détection des installations existantes</li>
 </ul>
 <h3>28/05/2019 : Console 1.8.5.669</h3>
 <ul>
- 	<li>Console : correction des modals "Package Settings", "Credential" et "Message Groups" suite à la mise à jour d'UI Bootstrap 2.5 introduit dans la version 1.8.5.532</li>
+ 	<li>Console : correction des modales "Package Settings", "Credential" et "Message Groups" suite à la mise à jour d'UI Bootstrap 2.5 introduit dans la version 1.8.5.532</li>
  	<li>Console : correction de l'affichage "responsive" de la Console Log</li>
  	<li>Console : correction d'un bug critique qui "cassé" la page si la Console Log était trop longue à s'initialiser (sur un mobile par exemple)</li>
  	<li>Console : mise à jour de la Console Log vers jqueryTerminal 2.6.1 et encapsulation de la librairie dans un module AngularJS pour une meilleure interaction</li>
