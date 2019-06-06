@@ -21,7 +21,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-06-06 21:23:55
+post_modified: 2019-06-06 21:35:54
 ---
 <h3>06/06/2019 : Console 1.8.5.693</h3>
 <ul>
@@ -34,6 +34,7 @@ post_modified: 2019-06-06 21:23:55
  	<li>Console / StateObject Explorer : correction d'un bug qui dans certain cas ne chargeait pas les StateObjects lors du premier affichage</li>
  	<li>Console / Configuration Editor : support de la recherche (Ctrl+F), remplacement, "Aller à la ligne", etc...</li>
  	<li>Console / Configuration Editor : ajout de différents raccourcis clavier et ajout d'une modale pour lister ces différents raccourcis claviers</li>
+ 	<li>Console : correction de l'impossibilité d'utiliser la fonction "Copier" (Ctrl+C) dans l’éditeur CodeMirror (Configuration Editor, édition d'un Setting JSON ou XML, visualisation d'une réponse d'un message ou générateur de code des MessageCallback). Régression introduite dans la version 1.8.5.669 avec la mise à jour de jQueryTerminal 2.6.1 en conflit avec Code Mirror</li>
  	<li>Console : empêche la fermeture d'une modale si le focus est sur l'éditeur CodeMirror (comme par exemple lorsque l'on tente de sélectionner la valeur d'un setting ou d'un StateObject en passant le curseur de la souris hors de la modale)</li>
  	<li>Console : correction d'un bug lié au Ctrl+Z dans l'éditeur CodeMirror</li>
  	<li>Console : correction des erreurs levées dans la console du navigateur lors des fermetures des modales ou lors de l'édition des Credentials</li>
