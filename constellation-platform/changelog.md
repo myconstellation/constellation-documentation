@@ -21,8 +21,12 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-06-07 00:17:36
+post_modified: 2019-06-07 14:49:32
 ---
+<h3>07/06/2019 : Console 1.8.5.700</h3>
+<ul>
+ 	<li>Console / StateObject Explorer : préserve la position de la scrollbar dans la modale de visualisation d'un StateObject quand la valeur est mise à jour (Refresh ou Subscribe)</li>
+</ul>
 <h3>06/06/2019 : Console 1.8.5.693</h3>
 <ul>
  	<li>Console : repli automatique du menu lors d'un changement page en mode mobile</li>
