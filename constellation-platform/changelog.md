@@ -21,8 +21,14 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/changelog/997
-post_modified: 2019-06-07 14:49:32
+post_modified: 2019-06-08 14:01:02
 ---
+<h3>08/06/2019 : Console 1.8.5.703</h3>
+<ul>
+ 	<li>Console : empêche la fermeture d'une modale si le focus est sur un champ de saisie (ex: lorsque l'on sélectionne le contenu d'un champ en passant le curseur de la souris en dehors de la modale)</li>
+ 	<li>Console : désactivation du 'backdrop' sur la modale de sélection des mises à jour</li>
+ 	<li>Console / Console Log : correction du redimensionnement de la console qui dans certain cas rare pouvait créer une marge importante dans le bas</li>
+</ul>
 <h3>07/06/2019 : Console 1.8.5.700</h3>
 <ul>
  	<li>Console / StateObject Explorer : préserve la position de la scrollbar dans la modale de visualisation d'un StateObject quand la valeur est mise à jour (Refresh ou Subscribe)</li>
