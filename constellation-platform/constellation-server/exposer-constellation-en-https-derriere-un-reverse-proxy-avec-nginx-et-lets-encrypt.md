@@ -23,7 +23,7 @@ discourse_topic_id:
 discourse_permalink:
   - >
     https://forum.myconstellation.io/t/exposer-constellation-en-https-derriere-un-reverse-proxy-avec-nginx-et-lets-encrypt/996
-post_modified: 2018-10-15 09:59:19
+post_modified: 2019-08-28 16:46:13
 ---
 Pour sécuriser votre Constellation vous devez utilise le protocole HTTPS afin de chiffrer toutes les communications en SSL.
 
@@ -60,7 +60,7 @@ Plusieurs options s'offre à vous :
  	<li>Si vous avez un nom de domaine, modifiez votre zone DNS pour ajouter un “host” (enregistrement A ou AAAA) vers l’adresse IP (public) de votre Constellation.</li>
  	<li>SI vous n’avez pas de nom de domaine :
 <ul>
- 	<li>Achetez-en un ! Comptez environ 15€/an pour les extensions standards (.fr, .net, .com), 2,99€ HT par an pour  un <a href="https://www.ovh.com/fr/domaines/" target="_blank" rel="noopener">.ovh</a></li>
+ 	<li>Achetez-en un ! Comptez environ 15€/an pour les extensions standards (.fr, .net, .com), 2,99€ HT par an pour  un <a href="https://www.ovh.com/fr/domaines/" target="_blank" rel="noopener noreferrer">.ovh</a></li>
  	<li>Utilisez un service de “Dynamic DNS” comme dyndns.fr, dyn.com ou autre</li>
  	<li>Certains FAI comme Free proposent d'attacher un nom DNS type xxxx.hd.free.fr à votre IP de connexion</li>
  	<li>Certains NAS comme Synology permettent aussi de créer un DDNS type xxx.synology.me vers votre IP de connexion</li>
@@ -96,12 +96,18 @@ Comme vous l’aurez compris le contenu de cette configuration par défaut est t
 Maintenant nous allons créer une configuration pour notre reverse proxy avec la commande :
 <pre title="Création de la configuration Constellation" class="lang:shell decode:true">sudo nano /etc/nginx/sites-available/constellation</pre>
 Dans ce fichier, copiez le contenu suivant :
-<pre title="Configuration du proxy Constellation" class="lang:shell decode:true">server {
+<pre class="lang:default decode:true" title="Configuration du proxy Constellation">server {
     listen 80; listen [::]:80;
     server_name demo.internal.myconstellation.io;
 
     location / {
         proxy_pass http://localhost:8088;
+
+        set $content_length_safe $http_content_length;
+        if ($content_length_safe = "") {
+            set $content_length_safe 0;
+        }
+        proxy_set_header Content-Length $content_length_safe;
 
         proxy_set_header Host $host;
         proxy_set_header Connection "";
@@ -140,7 +146,7 @@ Maintenant que votre service Constellation est exposé dernière le serveur Ngin
 
 Pour activer le HTTPS, il vous faut un certificat SSL. Pour simplifier la démarche, Let’s Encrypt est une autorité de certification lancée en 2015 qui permet d’automatiser la génération de certificat. De plus le service est gratuit ! Les certificats sont valides trois mois, il faudra donc régulièrement les renouveler mais vous allez voir que cette action est entièrement automatisable.
 
-Ici nous allons utiliser <a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>, un agent installé sur le serveur qui permet de générer et renouveler automatiquement les certificats SSL Let’s Encrypt.
+Ici nous allons utiliser <a href="https://certbot.eff.org/" target="_blank" rel="noopener noreferrer">Certbot</a>, un agent installé sur le serveur qui permet de générer et renouveler automatiquement les certificats SSL Let’s Encrypt.
 
 Commencez par ajouter le repository suivant :
 <pre class="lang:default decode:true" title="Installer le repository pour Certbot">sudo add-apt-repository ppa:certbot/certbot
