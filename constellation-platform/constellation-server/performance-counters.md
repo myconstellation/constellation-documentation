@@ -25,7 +25,7 @@ discourse_permalink:
     https://forum.myconstellation.io/t/surveiller-et-monitorer-les-indicateurs-de-performance-du-serveur-constellation/943
 wpdc_auto_publish_overridden:
   - "1"
-post_modified: 2020-06-16 12:01:17
+post_modified: 2020-06-16 12:04:28
 ---
 Sur un environnement Windows le serveur Constellation peut publier des compteurs de performance afin de suivre son activité en temps réel.
 
@@ -63,6 +63,43 @@ Tous les compteurs Constellation sont disponibles dans la catégories “Constel
 <p align="left">A noter que cette fonctionnalité n’est disponible que sur un environnement Windows, la plateforme Linux n’ayant pas d’équivalent.</p>
 
 <h3>Utiliser le package PerfCounter</h3>
-Le package PerfCounter permet de suivre des compteurs de performance Windows et de les injecter en tant que StateObject dans Constellation. Vous pouvez donc suivre l'activité et les performances de votre Constellation via des StateObjects de votre Constellation.
+Le package PerfCounter permet de suivre des compteurs de performance Windows et de les injecter en tant que StateObject dans Constellation. Il est donc possible suivre l'activité et les performances de votre Constellation via des StateObjects de votre Constellation.
 
 Pour plus d'information sur ce package et son utilisation : <a href="https://developer.myconstellation.io/package-library/perfcounter/">https://developer.myconstellation.io/package-library/perfcounter/ </a>
+
+Ci-dessous la définition des compteurs de performance publiés Constellation pour le package PerfCounter :
+<pre class="lang:xhtml decode:true">&lt;!-- Constellation Server / StateObjects provider --&gt;
+&lt;perfCounter id="ConstellationPushStateObject" categoryName="Constellation Server" counterName="# PushStateObject / sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationPushStateObjectCount" categoryName="Constellation Server" counterName="Total PushStateObject" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationUpdateStateObject" categoryName="Constellation Server" counterName="# UpdateStateObject / sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationUpdateStateObjectCount" categoryName="Constellation Server" counterName="Total UpdateStateObject" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationRequestStateObjects" categoryName="Constellation Server" counterName="# RequestStateObjects /sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationRequestStateObjectsCount" categoryName="Constellation Server" counterName="Total RequestStateObjects" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationSubscribeStateObjects" categoryName="Constellation Server" counterName="# SubscribeStateObjects / sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationSubscribeStateObjectsCount" categoryName="Constellation Server" counterName="Total SubscribeStateObjects" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationStateObjectsCount" categoryName="Constellation Server" counterName="Current StateObjects Count" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationStateObjectSubscriptionCount" categoryName="Constellation Server" counterName="Current StateObject Subscriptions" instanceName="default" /&gt;
+&lt;!-- Constellation Server / Messaging --&gt;
+&lt;perfCounter id="ConstellationSendMessage" categoryName="Constellation Server" counterName="# SendMessage / sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationSendMessageCount" categoryName="Constellation Server" counterName="Total SendMessage" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationReceiveMessage" categoryName="Constellation Server" counterName="# ReceiveMessage / sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationReceiveMessageCount" categoryName="Constellation Server" counterName="Total ReceiveMessage" instanceName="default" /&gt;
+&lt;!-- Constellation Server / Logging --&gt;
+&lt;perfCounter id="ConstellationWriteLog" categoryName="Constellation Server" counterName="# WriteLog / sec" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationWriteLogCount" categoryName="Constellation Server" counterName="Total WriteLog" instanceName="default" /&gt;
+&lt;!-- Constellation Server / Packages --&gt;
+&lt;perfCounter id="ConstellationPackageConnections" categoryName="Constellation Server" counterName="Total Package connections" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationPackageDisconnections" categoryName="Constellation Server" counterName="Total Package disconnections" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationPackagesConnected" categoryName="Constellation Server" counterName="Current Packages connected" instanceName="default" /&gt;
+&lt;!-- Constellation Server / Sentinels --&gt;
+&lt;perfCounter id="ConstellationSentinelConnections" categoryName="Constellation Server" counterName="Total Sentinel connections" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationSentinelDisconnections" categoryName="Constellation Server" counterName="Total Sentinel disconnections" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationSentinelsConnected" categoryName="Constellation Server" counterName="Current Sentinels connected" instanceName="default" /&gt;
+&lt;!-- Constellation Server / Consumers --&gt;
+&lt;perfCounter id="ConstellationConsumerConnections" categoryName="Constellation Server" counterName="Total Consumers connections" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationConsumerDisconnections" categoryName="Constellation Server" counterName="Total Consumers disconnections" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationConsumerConnected" categoryName="Constellation Server" counterName="Current Consumers connected" instanceName="default" /&gt;
+&lt;!-- Constellation Server / API REST --&gt;
+&lt;perfCounter id="ConstellationWebApiSubscriptionCount" categoryName="Constellation Server" counterName="Current subscriptions (HTTP REST API)" instanceName="default" /&gt;
+&lt;perfCounter id="ConstellationWebApiRequestInProcess" categoryName="Constellation Server" counterName="Current long-polling requests (HTTP REST API)" instanceName="default" /&gt;</pre>
+&nbsp;
